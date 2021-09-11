@@ -1,14 +1,70 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
+import { GraduatesComponent } from './graduates/graduates.component';
+import { VisaComponent } from './visa/visa.component';
+import { EnglishComponent } from './english/english.component';
+import { FoundationComponent } from './foundation/foundation.component';
+import { TutoringComponent } from './tutoring/tutoring.component';
+import { EventsComponent } from './events/events.component';
+import { JobvacancyComponent } from './jobvacancy/jobvacancy.component';
+import { CareeradviceComponent } from './careeradvice/careeradvice.component';
+import { ConnectComponent } from './connect/connect.component';
+import { ForumComponent } from './forum/forum.component';
+import { BecomepartnerComponent } from './becomepartner/becomepartner.component';
+import { RecruitmentComponent } from './recruitment/recruitment.component';
+import { ListpartnershipComponent } from './listpartnership/listpartnership.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { AccountComponent } from './account/account.component';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
+import { UndergraduatesComponent } from './undergraduates/undergraduates.component';
+import { AucklanduniComponent } from './universities/aucklanduni/aucklanduni.component';
+import { AutComponent } from './universities/aut/aut.component';
+import { CanterburyComponent } from './universities/canterbury/canterbury.component';
+import { LincolnComponent } from './universities/lincoln/lincoln.component';
+import { MasseyComponent } from './universities/massey/massey.component';
+import { OtagoComponent } from './universities/otago/otago.component';
+import { VictoriaComponent } from './universities/victoria/victoria.component';
+import { WaikatoComponent } from './universities/waikato/waikato.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent,
+    GraduatesComponent,
+    VisaComponent,
+    EnglishComponent,
+    FoundationComponent,
+    TutoringComponent,
+    EventsComponent,
+    JobvacancyComponent,
+    CareeradviceComponent,
+    ConnectComponent,
+    ForumComponent,
+    BecomepartnerComponent,
+    RecruitmentComponent,
+    ListpartnershipComponent,
+    AboutusComponent,
+    AccountComponent,
+    NavComponent,
+    FooterComponent,
+    UndergraduatesComponent,
+    AucklanduniComponent,
+    AutComponent,
+    CanterburyComponent,
+    LincolnComponent,
+    MasseyComponent,
+    OtagoComponent,
+    VictoriaComponent,
+    WaikatoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "9464806b-18a6-42ad-a1a6-dbe9d121a163"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -17,6 +20,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/css/open-iconic-bootstrap.min.css",
+                "src/assets/css/animate.css" ,
+                "src/assets/css/owl.carousel.min.css", 
+                "src/assets/css/owl.theme.default.min.css", 
+                "src/assets/css/magnific-popup.css",
+                "src/assets/css/aos.css",
+                "src/assets/css/ionicons.min.css", 
+                "src/assets/css/flaticon.css",
+                "src/assets/css/icomoon.css"
+                         ]
+            },
             "outputPath": "dist/my-dream-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -27,9 +43,38 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/open-iconic-bootstrap.min.css",
+              "src/assets/css/animate.css" ,
+              "src/assets/css/owl.theme.default.min.css", 
+              "src/assets/css/magnific-popup.css",
+              "src/assets/css/aos.css",
+              "src/assets/css/ionicons.min.css", 
+              "src/assets/css/flaticon.css",
+              "src/assets/css/icomoon.css",
+              "src/assets/css/style.css"
+              
             ],
-            "scripts": []
+
+            "scripts": [
+              "src/assets/jquery.min.js",
+              "src/assets/jquery-migrate-3.0.1.min.js",
+              "src/assets/popper.min.js",
+              "src/assets/jquery.easing.1.3.js",
+              "src/assets/jquery.waypoints.min.js",  
+              "src/assets/jquery.stellar.min.js"  ,
+              "src/assets/owl.carousel.min.js"  ,
+              "src/assets/jquery.magnific-popup.min.js",  
+              "src/assets/aos.js"  ,
+              "src/assets/jquery.animateNumber.min.js",  
+              "src/assets/scrollax.min.js"  ,
+              "src/assets/main.js",
+              "src/assets/bootstrap.min.js"
+
+            ]
+
+
+  
           },
           "configurations": {
             "production": {
