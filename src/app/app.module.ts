@@ -30,6 +30,11 @@ import { MasseyComponent } from './universities/massey/massey.component';
 import { OtagoComponent } from './universities/otago/otago.component';
 import { VictoriaComponent } from './universities/victoria/victoria.component';
 import { WaikatoComponent } from './universities/waikato/waikato.component';
+import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JobSearchComponent } from './job-search/job-search.component';
+import { StudentApplicationComponent } from './student-application/student-application.component';
 
 @NgModule({
   declarations: [
@@ -60,13 +65,23 @@ import { WaikatoComponent } from './universities/waikato/waikato.component';
     MasseyComponent,
     OtagoComponent,
     VictoriaComponent,
-    WaikatoComponent
-  ],
+    WaikatoComponent,
+    JobSearchComponent,
+    StudentApplicationComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule.forRoot({
+      ...env.auth,
+    })
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthHttpInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

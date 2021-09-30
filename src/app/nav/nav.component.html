@@ -66,8 +66,11 @@
         </li>
         <li class="nav-item dropdown" ><a href="" class="nav-link">Account</a>
             <div class="dropdown-content" style="height: 100px;min-width: 100px;">
-                    <a href="#">Sign In</a>
-                    <a href="#">Sign Up</a>
+                    <a  (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Sign In</a>
+                    <a  [routerLink]="['account']" *ngIf="(auth.isAuthenticated$ | async) === true">Account</a>
+                    <a  (click)="loginWithRedirect()" [routerLink]="['account']" *ngIf="(auth.isAuthenticated$ | async) === true">Sign Out</a>
+
+
               </div>
         </li>
         </ul>

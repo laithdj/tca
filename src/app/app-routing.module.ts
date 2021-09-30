@@ -10,10 +10,12 @@ import { EventsComponent } from './events/events.component';
 import { ForumComponent } from './forum/forum.component';
 import { FoundationComponent } from './foundation/foundation.component';
 import { GraduatesComponent } from './graduates/graduates.component';
+import { JobSearchComponent } from './job-search/job-search.component';
 import { JobvacancyComponent } from './jobvacancy/jobvacancy.component';
 import { ListpartnershipComponent } from './listpartnership/listpartnership.component';
 import { MainComponent } from './main/main.component';
 import { RecruitmentComponent } from './recruitment/recruitment.component';
+import { StudentApplicationComponent } from './student-application/student-application.component';
 import { TutoringComponent } from './tutoring/tutoring.component';
 import { UndergraduatesComponent } from './undergraduates/undergraduates.component';
 import { AucklanduniComponent } from './universities/aucklanduni/aucklanduni.component';
@@ -38,13 +40,13 @@ const appRoutes: Routes = [
   { path: 'foundation', component: FoundationComponent },
   { path: 'forum', component: ForumComponent },
   { path: 'events', component: EventsComponent },
+  { path: 'job-search', component: JobSearchComponent },
   { path: 'english', component: EnglishComponent },
   { path: 'connect', component: ConnectComponent },
   { path: 'career-advice', component: CareeradviceComponent },
   { path: 'becomepartner', component: BecomepartnerComponent },
   { path: 'account', component: AccountComponent },
   { path: 'aboutus', component: AboutusComponent },
-
   { path: 'aucklanduni', component: AucklanduniComponent },
   { path: 'aut', component: AutComponent },
   { path: 'canterbury', component: CanterburyComponent },
@@ -53,6 +55,8 @@ const appRoutes: Routes = [
   { path: 'otago', component: OtagoComponent },
   { path: 'victoria', component: VictoriaComponent },
   { path: 'waikato', component: WaikatoComponent },
+  { path: 'student-application', component: StudentApplicationComponent },
+
 
 ];
 

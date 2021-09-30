@@ -30,7 +30,9 @@
                 "src/assets/css/aos.css",
                 "src/assets/css/ionicons.min.css", 
                 "src/assets/css/flaticon.css",
-                "src/assets/css/icomoon.css"
+                "src/assets/css/icomoon.css",
+                "src/assets/css/main.css"
+
                          ]
             },
             "outputPath": "dist/my-dream-app",
@@ -53,6 +55,7 @@
               "src/assets/css/flaticon.css",
               "src/assets/css/icomoon.css",
               "src/assets/css/style.css"
+
               
             ],
 
@@ -69,7 +72,9 @@
               "src/assets/jquery.animateNumber.min.js",  
               "src/assets/scrollax.min.js"  ,
               "src/assets/main.js",
-              "src/assets/bootstrap.min.js"
+              "src/assets/bootstrap.min.js",
+              "src/assets/css/main.css"
+
 
             ]
 
