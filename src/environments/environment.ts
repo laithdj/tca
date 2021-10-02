@@ -9,7 +9,8 @@ export const environment = {
     domain:"laithdj.auth0.com",
     clientId:"SFw2ARsxLPiDYAmoHaZAJanyyinhch4G",
     redirectUrl: window.location.origin
-  }
+  },
+  api_url: ""
 };
 
 /*

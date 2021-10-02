@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ConstServiceService {
+export class ConstService {
   public country_list = [
     "Afghanistan",
     "Albania",
