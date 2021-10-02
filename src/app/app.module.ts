@@ -35,6 +35,7 @@ import { environment as env } from '../environments/environment';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { StudentApplicationComponent } from './student-application/student-appli
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatSelectCountryModule.forRoot('de'), // you can use 'br' | 'de' | 'en' | 'es' | 'fr' | 'hr' | 'it' | 'nl' | 'pt' --> MatSelectCountrySupportedLanguages
     AuthModule.forRoot({
       ...env.auth,
     })
