@@ -80,36 +80,43 @@
                   *
                 </span>
               </label>
-              <div id="cid_15" class="form-input jf-required">
-                <div data-wrapper-react="true">
-                  <input formControlName="gender" type="date" class="customDateField" #calendar/>
+              <div id="cid_15" class="form-input jf-required width-100">
+                <div data-wrapper-react="true" class="width-100">
+                  <input
+                      formControlName="gender"
+                      type="date"
+                      class="customDateField width-100"
+                      #calendar
+                    />
                 </div>
               </div>
             </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_63">
-              <label class="form-label form-label-left form-label-auto" id="label_63" for="input_63">
-                Nationality
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_63" class="form-input jf-required">
-                <input  formControlName="nationality" type="text" id="input_63" name="q63_nationality" data-type="input-textbox"
-                  class="form-textbox validate[required]" data-defaultvalue="" size="20" value="" placeholder=" "
-                  data-component="textbox" aria-labelledby="label_63" required="" />
+            <li class="form-line jf-required d-flex" data-type="control_textbox" id="id_63">
+              <div class="flex-1">
+                <label class="form-label form-label-left form-label-auto" id="label_63" for="input_63">
+                  Nationality
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_63" class="form-input jf-required width-100">
+                  <input formControlName="nationality" type="text" id="input_63" name="q63_nationality" data-type="input-textbox"
+                    class="form-textbox validate[required] width-80" data-defaultvalue="" size="20" value="" placeholder=" "
+                    data-component="textbox" aria-labelledby="label_63" required="" />
+                </div>
               </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_64">
-              <label class="form-label form-label-left form-label-auto" id="label_64" for="input_64">
-                Country of birth
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div formControlName="countryOfBirth" id="cid_64" class="form-input jf-required">
-                <input type="text" id="input_64" name="q64_countryOf" data-type="input-textbox"
-                  class="form-textbox validate[required]" data-defaultvalue="" size="20" value="" placeholder=" "
-                  data-component="textbox" aria-labelledby="label_64" required="" />
+              <div class="flex-1">
+                <label class="form-label form-label-left form-label-auto" id="label_64" for="input_64">
+                  Country of birth
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_64" class="form-input jf-required width-100">
+                  <input formControlName="countryOfBirth" type="text" id="input_64" name="q64_countryOf" data-type="input-textbox"
+                    class="form-textbox validate[required] width-80" data-defaultvalue="" size="20" value="" placeholder=" "
+                    data-component="textbox" aria-labelledby="label_64" required="" />
+                </div>
               </div>
             </li>
             <li class="form-line jf-required" data-type="control_address" id="id_44">
