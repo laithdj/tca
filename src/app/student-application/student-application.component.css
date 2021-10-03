@@ -1,5 +1,29 @@
-label {
-    color: White;
+.lable-fonts{
+    color: black !important;
+    font-size: 12px !important;
+}
+
+.width-100{
+    width: 100%;
+}
+
+.width-339{
+    width: 339px !important;
+}
+
+.width-80{
+    width: 80%;
+}
+
+.width-50{
+    width: 50%;
+}
+
+.d-flex{
+    display: flex;
+}
+.flex-1{
+    flex: 1;
 }
 
 .form-all {
@@ -3605,9 +3629,9 @@ div.calendar tr.days td.otherDay {
     width: 100%;
 }
 
-.form-label.form-label-left, .form-label.form-label-right, .form-label.form-label-left.form-label-auto, .form-label.form-label-right.form-label-auto {
+/* .form-label.form-label-left, .form-label.form-label-right, .form-label.form-label-left.form-label-auto, .form-label.form-label-right.form-label-auto {
     width: 339px;
-}
+} */
 
 .form-all {
     font-size: 12pxpx
@@ -3622,7 +3646,7 @@ div.calendar tr.days td.otherDay {
 }
 
 .supernova .form-all, .form-all {
-    background-color: ;
+
     border: 1px solid transparent;
 }
 
