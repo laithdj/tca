@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConstService } from '../services/const-service';
 
 @Component({
@@ -12,51 +12,55 @@ export class StudentApplicationComponent implements OnInit {
   public countries:any;
   public studentApplicationForm : FormGroup = new FormGroup({});
   educations!: FormArray;
-
+  todayDate: Date = new Date();
 
   constructor(
-    public constantService: ConstService
+    public constantService: ConstService,
+    private fb: FormBuilder
     ) { }
 
   ngOnInit(): void {
     this.countries = this.constantService.country_list;
-    console.log(this.countries)
     this.initForm();
   }
 
   initForm() {
-    this.studentApplicationForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      middleName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      gender: new FormControl('', [Validators.required]),
-      dateOfBirth: new FormControl('', [Validators.required]),
-      nationality: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      countryOfBirth: new FormControl('', [Validators.required]),
+    this.studentApplicationForm = this.fb.group({
 
-      homeAddress: new FormGroup({
-        streetAddressLine1: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        streetAddressLine2: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        city: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        stateOrProvince: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        postalCode: new FormControl('', [Validators.required,  Validators.minLength(3)]),
-        // country: new FormControl('', [Validators.required]),
+      name: this.fb.group({
+        firstName: ['' ,[Validators.required, Validators.minLength(3)]],
+        middleName: [''],
+        lastName: ['',[Validators.required, Validators.minLength(3)]],
       }),
-      contact: new FormControl('', [Validators.required,  Validators.minLength(6)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      gender: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      nationality: ['',[Validators.required, Validators.minLength(3)]],
+      countryOfBirth: ['', Validators.required],
 
-      guardian: new FormGroup({
-        guardianName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        guardianRelationship: new FormControl('', [Validators.required]),
-        guardianContact: new FormControl('', [Validators.required, Validators.minLength(6)]),
-        guardianAddress: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      homeAddress: this.fb.group({
+        streetAddressLine1: ['',[Validators.required, Validators.minLength(3)]],
+        streetAddressLine2: ['',[Validators.required, Validators.minLength(3)]],
+        city: ['',[Validators.required, Validators.minLength(3)]],
+        stateOrProvince: ['',[Validators.required, Validators.minLength(3)]],
+        postalCode: ['',[Validators.required, Validators.minLength(3)]],
+        country: ['',[Validators.required, Validators.minLength(3)]],
       }),
 
-      applicationDetails: new FormGroup({
-        intendedDegree: new FormControl('', [Validators.required,  Validators.minLength(3)]),
-        propoosedStartDate: new FormControl('', [Validators.required]), //March 2022
-        tutionFeeMode: new FormControl('', [Validators.required]),
-        sponser: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      contact: ['',[Validators.required, Validators.minLength(6)]],
+      email: ['',[Validators.required, Validators.email]],
+
+      guardian: this.fb.group({
+        guardianName: ['',[Validators.required, Validators.minLength(3)]],
+        guardianRelationship: ['',[Validators.required, Validators.minLength(3)]],
+        guardianContact: ['',[Validators.required, Validators.minLength(6)]],
+        guardianAddress: ['',[Validators.required, Validators.minLength(3)]],
+      }),
+
+      applicationDetails: this.fb.group({
+        intendedDegree: ['',[Validators.required, Validators.minLength(3)]],
+        propoosedStartDate: ['',[Validators.required, Validators.minLength(3)]], //March 2022
+        tutionFeeMode: ['',[Validators.required]],
+        sponser: ['',[Validators.required, Validators.minLength(3)]],
       }),
 
       //should be form array
@@ -81,13 +85,15 @@ export class StudentApplicationComponent implements OnInit {
         grade: new FormControl('', [Validators.required]),
         date: new FormControl('', [Validators.required])
       }),
-      statement: new FormControl('', [Validators.required]),
-      declaration: new FormGroup({
-        firstName: new FormControl('', [Validators.required, Validators.minLength(3)]), 
-        middleName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        lastName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        signature: new FormControl('', [Validators.required]),
-        date: new FormControl('', [Validators.required])
+
+      statement: ['',[Validators.required, Validators.minLength(6)]],
+
+      declaration: this.fb.group({
+        firstName: ['',[Validators.required, Validators.minLength(3)]],
+        middleName: ['',[Validators.required, Validators.minLength(3)]],
+        lastName: ['',[Validators.required, Validators.minLength(3)]],
+        signature: ['',Validators.required],
+        date: ['',[Validators.required]],
       }),
     });
   }
@@ -105,6 +111,6 @@ export class StudentApplicationComponent implements OnInit {
     this.educations.push(this.createItem());
   }
   onSubmit(){
-    console.log(this.studentApplicationForm.value)
+    console.log(this.studentApplicationForm.get('name.firstName')?.touched)
   }
 }
