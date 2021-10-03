@@ -30,7 +30,7 @@
                       aria-labelledby="label_4 sublabel_4_first" required="" />
                     <label class="form-sub-label" for="first_4" id="sublabel_4_first" style="min-height:13px"
                       aria-hidden="false"> First Name </label>
-                      <div *ngIf="" class="form-error-message" role="alert">
+                      <div *ngIf="studentApplicationForm.get('name.firstName')?.touched && studentApplicationForm.get('name.firstName')?.invalid" class="form-error-message" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
                          This field is required.
                         <div class="form-error-arrow">
@@ -53,7 +53,7 @@
                       aria-labelledby="label_4 sublabel_4_last" required="" />
                     <label class="form-sub-label" for="last_4" id="sublabel_4_last" style="min-height:13px"
                       aria-hidden="false"> Last Name </label>
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('name.lastName')?.touched && studentApplicationForm.get('name.lastName')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                         This field is required.
                       <div class="form-error-arrow">
@@ -80,7 +80,7 @@
                     <span class="dragger-item">
                     </span>
                     <input formControlName="gender" type="radio" aria-describedby="label_61" class="form-radio validate[required]"
-                      id="input_61_0" name="q61_gender" value="Male" required="" />
+                      id="input_61_0" name="q61_gender" value="Male" required="" checked/>
                     <label id="label_input_61_0" for="input_61_0"> Male </label>
                   </span>
                   <span class="form-radio-item" style="clear:left">
@@ -108,7 +108,7 @@
                       class="customDateField width-92"
                       #calendar
                     />
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
@@ -132,7 +132,7 @@
                   <input formControlName="nationality" type="text" id="input_63" name="q63_nationality" data-type="input-textbox"
                     class="form-textbox validate[required] width-80" data-defaultvalue="" size="20" value="" placeholder=" "
                     data-component="textbox" aria-labelledby="label_63" required="" />
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('nationality')?.touched && studentApplicationForm.get('nationality')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
@@ -154,7 +154,7 @@
                   <input formControlName="countryOfBirth" type="text" id="input_64" name="q64_countryOf" data-type="input-textbox"
                     class="form-textbox validate[required] width-80" data-defaultvalue="" size="20" value="" placeholder=" "
                     data-component="textbox" aria-labelledby="label_64" required="" />
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('countryOfBirth')?.touched && studentApplicationForm.get('countryOfBirth')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
@@ -186,7 +186,7 @@
                           required="" />
                         <label class="form-sub-label" for="input_44_addr_line1" id="sublabel_44_addr_line1"
                           style="min-height:13px" aria-hidden="false"> Street Address </label>
-                          <div class="form-error-message" role="alert">
+                          <div *ngIf="studentApplicationForm.get('homeAddress.streetAddressLine1')?.touched && studentApplicationForm.get('homeAddress.streetAddressLine1')?.invalid" class="form-error-message" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
                              This field is required.
                             <div class="form-error-arrow">
@@ -206,6 +206,7 @@
                           data-component="address_line_2" aria-labelledby="label_44 sublabel_44_addr_line2" />
                         <label class="form-sub-label" for="input_44_addr_line2" id="sublabel_44_addr_line2"
                           style="min-height:13px" aria-hidden="false"> Street Address Line 2 </label>
+                          
                       </span>
                     </span>
                   </div>
@@ -217,6 +218,15 @@
                           data-component="city" aria-labelledby="label_44 sublabel_44_city" required="" />
                         <label class="form-sub-label" for="input_44_city" id="sublabel_44_city" style="min-height:13px"
                           aria-hidden="false"> City </label>
+                          <div *ngIf="studentApplicationForm.get('homeAddress.city')?.touched && studentApplicationForm.get('homeAddress.city')?.invalid" class="form-error-message" role="alert">
+                            <img src="../../assets/icons/exclamation-octagon.png">
+                             This field is required.
+                            <div class="form-error-arrow">
+                              <div class="form-error-arrow-inner">
+            
+                              </div>
+                            </div>
+                          </div>
                       </span>
                     </span>
                     <span class="form-address-line form-address-state-line jsTest-address-lineField ">
@@ -226,6 +236,15 @@
                           data-component="state" aria-labelledby="label_44 sublabel_44_state" required="" />
                         <label class="form-sub-label" for="input_44_state" id="sublabel_44_state"
                           style="min-height:13px" aria-hidden="false"> State / Province </label>
+                          <div *ngIf="studentApplicationForm.get('homeAddress.stateOrProvince')?.touched && studentApplicationForm.get('homeAddress.stateOrProvince')?.invalid" class="form-error-message" role="alert">
+                            <img src="../../assets/icons/exclamation-octagon.png">
+                             This field is required.
+                            <div class="form-error-arrow">
+                              <div class="form-error-arrow-inner">
+            
+                              </div>
+                            </div>
+                          </div>
                       </span>
                     </span>
                   </div>
@@ -237,6 +256,15 @@
                           data-component="zip" aria-labelledby="label_44 sublabel_44_postal" required="" />
                         <label class="form-sub-label" for="input_44_postal" id="sublabel_44_postal"
                           style="min-height:13px" aria-hidden="false"> Postal / Zip Code </label>
+                          <div *ngIf="studentApplicationForm.get('homeAddress.postalCode')?.touched && studentApplicationForm.get('homeAddress.postalCode')?.invalid" class="form-error-message" role="alert">
+                            <img src="../../assets/icons/exclamation-octagon.png">
+                             This field is required.
+                            <div class="form-error-arrow">
+                              <div class="form-error-arrow-inner">
+            
+                              </div>
+                            </div>
+                          </div>
                       </span>
                     </span>
                     <span class="form-address-line form-address-country-line jsTest-address-lineField ">
@@ -245,10 +273,19 @@
                           id="input_44_country" data-component="country" required=""
                           aria-labelledby="label_44 sublabel_44_country">
                           <option value=""> Please Select </option>
-                          <option *ngFor="let country of countries" [value]="country"> {{country}} </option>
+                          <!-- <option *ngFor="let country of countries" [value]="country"> {{country}} </option> -->
                         </select>
                         <label class="form-sub-label" for="input_44_country" id="sublabel_44_country"
                           style="min-height:13px" aria-hidden="false"> Country </label>
+                          <div *ngIf="studentApplicationForm.get('homeAddress.country')?.touched && studentApplicationForm.get('homeAddress.country')?.invalid" class="form-error-message" role="alert">
+                            <img src="../../assets/icons/exclamation-octagon.png">
+                             This field is required.
+                            <div class="form-error-arrow">
+                              <div class="form-error-arrow-inner">
+            
+                              </div>
+                            </div>
+                          </div>
                       </span>
                     </span>
                   </div>
@@ -267,7 +304,7 @@
                 <input formControlName="contact" type="number" id="input_11" name="q11_contactNumber" data-type="input-textbox"
                   class="form-textbox validate[required, Numeric] width-50" data-defaultvalue="" size="50" value=""
                   maxLength="25" placeholder=" " data-component="textbox" aria-labelledby="label_11" required="" />
-                  <div class="form-error-message" role="alert">
+                  <div *ngIf="studentApplicationForm.get('contact')?.touched && studentApplicationForm.get('contact')?.invalid" class="form-error-message" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
                      This field is required.
                     <div class="form-error-arrow">
@@ -292,7 +329,7 @@
                     maxLength="50" data-component="email" aria-labelledby="label_10 sublabel_input_10" required="" />
                   <label class="form-sub-label" for="input_10" id="sublabel_input_10" style="min-height:13px"
                     aria-hidden="false"> e.g. example@gmail.com </label>
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('email')?.touched && studentApplicationForm.get('email')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
@@ -320,7 +357,7 @@
                     placeholder=" " data-component="textbox" aria-labelledby="label_21 sublabel_input_21" required="" />
                   <label class="form-sub-label" for="input_21" id="sublabel_input_21" style="min-height:13px"
                     aria-hidden="false"> Name of Parent/Guardian </label>
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('guardian.guardianName')?.touched && studentApplicationForm.get('guardian.guardianName')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
@@ -346,7 +383,7 @@
                     placeholder=" " data-component="textbox" aria-labelledby="label_46 sublabel_input_46" required="" />
                   <label class="form-sub-label" for="input_46" id="sublabel_input_46" style="min-height:13px"
                     aria-hidden="false"> e.g. Father, Mother, Brother, Sister, Guardian etc. </label>
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('guardian.guardianRelationship')?.touched && studentApplicationForm.get('guardian.guardianRelationship')?.invalid" class="form-error-message" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
@@ -373,7 +410,7 @@
                       aria-labelledby="label_123 sublabel_123_phone" required="" />
                     <label class="form-sub-label" for="input_123_phone" id="sublabel_123_phone" style="min-height:13px"
                       aria-hidden="false"> Phone Number </label>
-                      <div class="form-error-message" role="alert">
+                      <div *ngIf="studentApplicationForm.get('guardian.guardianContact')?.touched && studentApplicationForm.get('guardian.guardianContact')?.invalid" class="form-error-message" class="form-error-message" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
                          This field is required.
                         <div class="form-error-arrow">
@@ -393,6 +430,15 @@
                 <input formControlName="guardianAddress"  type="text" id="input_22" name="q22_addressOf" data-type="input-textbox" class="form-textbox"
                   data-defaultvalue="" size="65" value="" placeholder=" " data-component="textbox"
                   aria-labelledby="label_22" />
+              </div>
+              <div *ngIf="studentApplicationForm.get('guardian.guardianAddress')?.touched && studentApplicationForm.get('guardian.guardianAddress')?.invalid" class="form-error-message" role="alert">
+                <img src="../../assets/icons/exclamation-octagon.png">
+                 This field is required.
+                <div class="form-error-arrow">
+                  <div class="form-error-arrow-inner">
+
+                  </div>
+                </div>
               </div>
             </li>
           </div>
@@ -428,7 +474,7 @@
                   <label class="form-sub-label" for="input_124" id="sublabel_input_124" style="min-height:13px"
                     aria-hidden="false"> e.g. Civil engineering, Mechanical engineering, Medicine, Science, English
                     Program </label>
-                    <div class="form-error-message" role="alert">
+                    <div  *ngIf="studentApplicationForm.get('applicationDetails.intendedDegree')?.touched && studentApplicationForm.get('applicationDetails.intendedDegree')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
@@ -454,12 +500,11 @@
                     data-component="textbox" aria-labelledby="label_27 sublabel_input_27" required="" />
                   <label class="form-sub-label" for="input_27" id="sublabel_input_27" style="min-height:13px"
                     aria-hidden="false"> When do you intend to start? e.g. March 2021, July 2021 </label>
-                    <div class="form-error-message" role="alert">
+                    <div *ngIf="studentApplicationForm.get('applicationDetails.propoosedStartDate')?.touched && studentApplicationForm.get('applicationDetails.propoosedStartDate')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
                         <div class="form-error-arrow-inner">
-      
                         </div>
                       </div>
                     </div>
@@ -493,7 +538,7 @@
                     <span class="dragger-item">
                     </span>
                     <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73" class="form-radio validate[required]"
-                      id="input_73_2" name="q73_howDo" value="Self-Funded" required="" />
+                      id="input_73_2" name="q73_howDo" value="Self-Funded" required="" checked="true"/>
                     <label id="label_input_73_2" for="input_73_2"> Self-Funded </label>
                   </span>
                 </div>
@@ -506,6 +551,14 @@
                 <input formControlName="sponser" type="text" id="input_74" name="q74_nameAnd" data-type="input-textbox" class="form-textbox"
                   data-defaultvalue="" size="65" value="" placeholder=" " data-component="textbox"
                   aria-labelledby="label_74" />
+              </div>
+              <div *ngIf="studentApplicationForm.get('applicationDetails.sponser')?.touched && studentApplicationForm.get('applicationDetails.sponser')?.invalid" class="form-error-message" role="alert">
+                <img src="../../assets/icons/exclamation-octagon.png">
+                 This field is required.
+                <div class="form-error-arrow">
+                  <div class="form-error-arrow-inner">
+                  </div>
+                </div>
               </div>
             </li>
           </div>
@@ -883,15 +936,25 @@
               </div>
             </li>
             <li class="form-line jf-required" data-type="control_textarea" id="id_91">
+              
               <label class="form-label form-label-top" id="label_91" for="input_91">
                 Type your answer here:
                 <span class="form-required">
                   *
                 </span>
               </label>
+             
               <div id="cid_91" class="form-input-wide jf-required">
                 <textarea formControlName="statement" id="input_91" class="form-textarea validate[required] width-100" name="q91_typeYour" cols="65" rows="6"
                   data-component="textarea" required="" aria-labelledby="label_91"></textarea>
+              </div>
+              <div *ngIf="studentApplicationForm.get('statement')?.touched && studentApplicationForm.get('statement')?.invalid" class="form-error-message" role="alert">
+                <img src="../../assets/icons/exclamation-octagon.png">
+                 This field is required.
+                <div class="form-error-arrow">
+                  <div class="form-error-arrow-inner">
+                  </div>
+                </div>
               </div>
             </li>
             <!-- Declaration -->
@@ -931,12 +994,11 @@
                       aria-labelledby="label_127 sublabel_127_first" required="" />
                     <label class="form-sub-label" for="first_127" id="sublabel_127_first" style="min-height:13px"
                       aria-hidden="false"> First Name </label>
-                      <div class="form-error-message" role="alert">
+                      <div *ngIf="studentApplicationForm.get('declaration.firstName')?.touched && studentApplicationForm.get('declaration.firstName')?.invalid" class="form-error-message" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
                          This field is required.
                         <div class="form-error-arrow">
                           <div class="form-error-arrow-inner">
-        
                           </div>
                         </div>
                       </div>
@@ -954,6 +1016,14 @@
                       aria-labelledby="label_127 sublabel_127_last" required="" />
                     <label class="form-sub-label" for="last_127" id="sublabel_127_last" style="min-height:13px"
                       aria-hidden="false"> Last Name </label>
+                      <div *ngIf="studentApplicationForm.get('declaration.lastName')?.touched && studentApplicationForm.get('declaration.lastName')?.invalid" class="form-error-message" role="alert">
+                        <img src="../../assets/icons/exclamation-octagon.png">
+                         This field is required.
+                        <div class="form-error-arrow">
+                          <div class="form-error-arrow-inner">
+                          </div>
+                        </div>
+                      </div>
                   </span>
                 </div>
               </div>

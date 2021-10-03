@@ -12,7 +12,7 @@ export class StudentApplicationComponent implements OnInit {
   public countries:any;
   public studentApplicationForm : FormGroup = new FormGroup({});
   educations!: FormArray;
-
+  todayDate: Date = new Date();
 
   constructor(
     public constantService: ConstService,
@@ -111,6 +111,6 @@ export class StudentApplicationComponent implements OnInit {
     this.educations.push(this.createItem());
   }
   onSubmit(){
-    console.log(this.studentApplicationForm.value)
+    console.log(this.studentApplicationForm.get('name.firstName')?.touched)
   }
 }
