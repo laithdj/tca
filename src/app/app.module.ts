@@ -36,6 +36,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { SharedModule } from './shared/shared/shared.module';
+import { JobCardComponent } from './job-search/job-cards/job-card/job-card.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { SharedModule } from './shared/shared/shared.module';
     VictoriaComponent,
     WaikatoComponent,
     JobSearchComponent,
-    StudentApplicationComponent  ],
+    StudentApplicationComponent,
+    JobCardComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

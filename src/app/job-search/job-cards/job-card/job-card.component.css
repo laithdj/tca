@@ -1,0 +1,16 @@
+.margin-bottom-5{
+    margin-bottom: 5px;
+}
+.display-flex{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    background: white;
+    width: 62%;
+    align-items: center;
+    margin-left: 9%;
+    padding: 15px;
+    display: block;
+}
