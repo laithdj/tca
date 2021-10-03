@@ -102,18 +102,12 @@
               </label>
               <div id="cid_15" class="form-input jf-required width-100 date-birth">
                 <div data-wrapper-react="true" class="width-62">
-                  <input
-                      formControlName="gender"
-                      type="date"
-                      class="customDateField width-92"
-                      #calendar
-                    />
+                  <input formControlName="dateOfBirth" type="date" class="customDateField width-92" #calendar/>
                     <div *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                        This field is required.
                       <div class="form-error-arrow">
                         <div class="form-error-arrow-inner">
-      
                         </div>
                       </div>
                     </div>
@@ -958,7 +952,7 @@
               </div>
             </li>
             <!-- Declaration -->
-            <div formGroupName="declaration">
+          <div formGroupName="declaration">
             <li id="cid_108" class="form-input-wide" data-type="control_head">
               <div class="form-header-group  header-default">
                 <div class="header-text httal htvam display-flex">

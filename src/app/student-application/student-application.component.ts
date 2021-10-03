@@ -111,6 +111,6 @@ export class StudentApplicationComponent implements OnInit {
     this.educations.push(this.createItem());
   }
   onSubmit(){
-    console.log(this.studentApplicationForm.get('name.firstName')?.touched)
+    console.log(this.studentApplicationForm.value)
   }
 }
