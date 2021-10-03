@@ -7,16 +7,39 @@
     width: 100%;
 }
 
+.width-62{
+    width: 62% !important;
+}
+
+.width-92{
+    width: 92% !important;
+}
+
 .width-339{
     width: 339px !important;
 }
 
+.date-birth{
+    display: flex !important;
+    justify-content: flex-end;
+}
+
 .width-80{
-    width: 80%;
+    width: 92%;
 }
 
 .width-50{
     width: 50%;
+}
+
+.country-select{
+    padding: 7px;
+    width: 96% !important;
+}
+
+.display-flex{
+    display: flex;
+    justify-content: center;
 }
 
 .d-flex{

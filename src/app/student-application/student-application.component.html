@@ -80,12 +80,12 @@
                   *
                 </span>
               </label>
-              <div id="cid_15" class="form-input jf-required width-100">
-                <div data-wrapper-react="true" class="width-100">
+              <div id="cid_15" class="form-input jf-required width-100 date-birth">
+                <div data-wrapper-react="true" class="width-62">
                   <input
                       formControlName="gender"
                       type="date"
-                      class="customDateField width-100"
+                      class="customDateField width-92"
                       #calendar
                     />
                 </div>
@@ -183,7 +183,7 @@
                     </span>
                     <span class="form-address-line form-address-country-line jsTest-address-lineField ">
                       <span class="form-sub-label-container" style="vertical-align:top">
-                        <select class="form-dropdown form-address-country noTranslate" name="q44_homeAddress[country]"
+                        <select class="form-dropdown form-address-country noTranslate country-select" name="q44_homeAddress[country]"
                           id="input_44_country" data-component="country" required=""
                           aria-labelledby="label_44 sublabel_44_country">
                           <option value=""> Please Select </option>
@@ -197,7 +197,7 @@
                 </div>
               </div>
             </li>
-            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_textbox" id="id_11">
+            <li class="form-line form-line-column form-col-1 jf-required width-92" data-type="control_textbox" id="id_11">
               <label class="form-label form-label-top" id="label_11" for="input_11">
                 Contact Number
                 <span class="form-required">
@@ -206,73 +206,73 @@
               </label>
               <div id="cid_11" class="form-input-wide jf-required">
                 <input formControlName="contact" type="text" id="input_11" name="q11_contactNumber" data-type="input-textbox"
-                  class="form-textbox validate[required, Numeric]" data-defaultvalue="" size="50" value=""
+                  class="form-textbox validate[required, Numeric] width-50" data-defaultvalue="" size="50" value=""
                   maxLength="25" placeholder=" " data-component="textbox" aria-labelledby="label_11" required="" />
               </div>
             </li>
-            <li class="form-line jf-required" data-type="control_email" id="id_10">
+            <li class="form-line jf-required width-92" data-type="control_email" id="id_10">
               <label class="form-label form-label-left form-label-auto" id="label_10" for="input_10">
                 Email Address
                 <span class="form-required">
                   *
                 </span>
               </label>
-              <div id="cid_10" class="form-input jf-required">
-                <span class="form-sub-label-container" style="vertical-align:top">
+              <div id="cid_10" class="form-input jf-required width-100">
+                <span class="form-sub-label-container width-100" style="vertical-align:top">
                   <input formControlName="email" type="email" id="input_10" name="q10_emailAddress"
-                    class="form-textbox validate[required, Email]" data-defaultvalue="" size="65" value=""
+                    class="form-textbox validate[required, Email] width-50" data-defaultvalue="" size="65" value=""
                     maxLength="50" data-component="email" aria-labelledby="label_10 sublabel_input_10" required="" />
                   <label class="form-sub-label" for="input_10" id="sublabel_input_10" style="min-height:13px"
                     aria-hidden="false"> e.g. example@gmail.com </label>
                 </span>
               </div>
             </li>
-            <li class="form-line form-line-column form-col-1 jf-required" data-type="control_textbox" id="id_21">
+            <li class="form-line form-line-column form-col-1 jf-required width-92" data-type="control_textbox" id="id_21">
               <label class="form-label form-label-top" id="label_21" for="input_21">
                 Person to contact in case of emergency:
                 <span class="form-required">
                   *
                 </span>
               </label>
-              <div id="cid_21" class="form-input-wide jf-required">
-                <span class="form-sub-label-container" style="vertical-align:top">
+              <div id="cid_21" class="form-input-wide jf-required width-100">
+                <span class="form-sub-label-container width-100" style="vertical-align:top">
                   <input formControlName="guardianName" type="text" id="input_21" name="q21_personTo" data-type="input-textbox"
-                    class="form-textbox validate[required]" data-defaultvalue="" size="50" value="" maxLength="100"
+                    class="form-textbox validate[required] width-50" data-defaultvalue="" size="50" value="" maxLength="100"
                     placeholder=" " data-component="textbox" aria-labelledby="label_21 sublabel_input_21" required="" />
                   <label class="form-sub-label" for="input_21" id="sublabel_input_21" style="min-height:13px"
                     aria-hidden="false"> Name of Parent/Guardian </label>
                 </span>
               </div>
             </li>
-            <li class="form-line form-line-column form-col-2 jf-required" data-type="control_textbox" id="id_46">
+            <li class="form-line form-line-column form-col-2 jf-required width-92" data-type="control_textbox" id="id_46">
               <label class="form-label form-label-top" id="label_46" for="input_46">
                 Relationship to Applicant
                 <span class="form-required">
                   *
                 </span>
               </label>
-              <div id="cid_46" class="form-input-wide jf-required">
-                <span class="form-sub-label-container" style="vertical-align:top">
+              <div id="cid_46" class="form-input-wide jf-required width-100">
+                <span class="form-sub-label-container width-100" style="vertical-align:top">
                   <input formControlName="guardianRelationship" type="text" id="input_46" name="q46_relationshipTo" data-type="input-textbox"
-                    class="form-textbox validate[required]" data-defaultvalue="" size="30" value="" maxLength="100"
+                    class="form-textbox validate[required] width-50" data-defaultvalue="" size="30" value="" maxLength="100"
                     placeholder=" " data-component="textbox" aria-labelledby="label_46 sublabel_input_46" required="" />
                   <label class="form-sub-label" for="input_46" id="sublabel_input_46" style="min-height:13px"
                     aria-hidden="false"> e.g. Father, Mother, Brother, Sister, Guardian etc. </label>
                 </span>
               </div>
             </li>
-            <li class="form-line jf-required" data-type="control_phone" id="id_123">
+            <li class="form-line jf-required width-92" data-type="control_phone" id="id_123">
               <label class="form-label form-label-left form-label-auto" id="label_123" for="input_123_country">
                 Contact Number
                 <span class="form-required">
                   *
                 </span>
               </label>
-              <div id="cid_123" class="form-input jf-required">
-                <div data-wrapper-react="true" class="extended">
-                  <span class="form-sub-label-container" style="vertical-align:top" data-input-type="phone">
+              <div id="cid_123" class="form-input jf-required width-100">
+                <div data-wrapper-react="true" class="extended width-100">
+                  <span class="form-sub-label-container width-100" style="vertical-align:top" data-input-type="phone">
                     <input formControlName="guardianContact" type="tel" id="input_123_phone" name="q123_contactNumber123[phone]"
-                      class="form-textbox validate[required]" data-defaultvalue="" value="" data-component="phone"
+                      class="form-textbox validate[required] width-50" data-defaultvalue="" value="" data-component="phone"
                       aria-labelledby="label_123 sublabel_123_phone" required="" />
                     <label class="form-sub-label" for="input_123_phone" id="sublabel_123_phone" style="min-height:13px"
                       aria-hidden="false"> Phone Number </label>
@@ -762,9 +762,9 @@
             </li>
             <li id="cid_108" class="form-input-wide" data-type="control_head">
               <div class="form-header-group  header-default">
-                <div class="header-text httal htvam">
+                <div class="header-text httal htvam display-flex">
                   <h2 id="header_108" class="form-header" data-component="header">
-                    Declaration:
+                    Declaration
                   </h2>
                 </div>
               </div>
@@ -846,10 +846,10 @@
             <li class="form-line d-flex" data-type="control_birthdate" id="id_121">
               <label class="form-label form-label-left form-label-auto" id="label_121" for="input_121"> Date </label>
               <div id="cid_121" class="form-input width-100">
-                <div data-wrapper-react="true" class="width-100">
+                <div data-wrapper-react="true" class="width-62">
                   <input
                       type="date"
-                      class="customDateField width-100"
+                      class="customDateField width-92"
                       #calendar
                     />
                 </div>
