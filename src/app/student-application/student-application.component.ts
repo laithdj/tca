@@ -11,7 +11,7 @@ import { ConstService } from '../services/const-service';
 export class StudentApplicationComponent implements OnInit {
   public countries:any;
   public studentApplicationForm : FormGroup = new FormGroup({});
-  educations!: FormArray;
+  educationDetails: FormArray = new FormArray([]);
   todayDate: Date = new Date();
 
   constructor(
@@ -109,8 +109,8 @@ export class StudentApplicationComponent implements OnInit {
   }
   
   addItem(): void {
-    this.educations = this.studentApplicationForm.get('educations') as FormArray;
-    this.educations.push(this.createItem());
+    // this.educations = this.studentApplicationForm.get('educations') as FormArray;
+    // this.educations.push(this.createItem());
   }
 
   get educationDetailGroups(){

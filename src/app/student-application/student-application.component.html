@@ -597,7 +597,7 @@
                   </tr>
                 <div formArrayName="educationDetails" >
                   <div *ngFor="let educationDetailGroup of educationDetailGroups.controls; let i=index">
-                  <tr formGroupName="i" class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_79 label_79_row_0">
+                  <tr [formGroupName]="i" class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_79 label_79_row_0">
                     <th scope="row" class="form-matrix-headers form-matrix-row-headers">
                       <label id="label_79_row_0"> </label>
                     </th>
