@@ -16,56 +16,60 @@
             </li>
             <li class="form-line jf-required" data-type="control_fullname" id="id_4">
               <div formGroupName="name">
-              <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4">
-                Full Name
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_4" class="form-input jf-required width-100">
-                <div data-wrapper-react="true" class="extended d-flex">
-                  <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="first">
-                    <input formControlName="firstName" type="text" id="first_4" name="q4_fullName4[first]" class="form-textbox validate[required] width-100"
-                      data-defaultvalue="" size="10" value="" data-component="first"
-                      aria-labelledby="label_4 sublabel_4_first" required="" />
-                    <label class="form-sub-label" for="first_4" id="sublabel_4_first" style="min-height:13px"
-                      aria-hidden="false"> First Name </label>
-                      <div *ngIf="studentApplicationForm.get('name.firstName')?.touched && studentApplicationForm.get('name.firstName')?.invalid" class="form-error-message" role="alert">
+                <label class="form-label form-label-left form-label-auto" id="label_4" for="first_4">
+                  Full Name
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_4" class="form-input jf-required width-100">
+                  <div data-wrapper-react="true" class="extended d-flex">
+                    <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="first">
+                      <input formControlName="firstName" type="text" id="first_4" name="q4_fullName4[first]"
+                        class="form-textbox validate[required] width-100" data-defaultvalue="" size="10" value=""
+                        data-component="first" aria-labelledby="label_4 sublabel_4_first" required="" />
+                      <label class="form-sub-label" for="first_4" id="sublabel_4_first" style="min-height:13px"
+                        aria-hidden="false"> First Name </label>
+                      <div
+                        *ngIf="studentApplicationForm.get('name.firstName')?.touched && studentApplicationForm.get('name.firstName')?.invalid"
+                        class="form-error-message" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
-                         This field is required.
+                        This field is required.
                         <div class="form-error-arrow">
                           <div class="form-error-arrow-inner">
 
                           </div>
                         </div>
                       </div>
-                  </span>
-                  <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="middle">
-                    <input formControlName="middleName" type="text" id="middle_4" name="q4_fullName4[middle]" class="form-textbox width-100"
-                      data-defaultvalue="" size="10" value="" data-component="middle"
-                      aria-labelledby="label_4 sublabel_4_middle" required="" />
-                    <label class="form-sub-label" for="middle_4" id="sublabel_4_middle" style="min-height:13px"
-                      aria-hidden="false"> Middle Name </label>
-                  </span>
-                  <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="last">
-                    <input formControlName="lastName" type="text" id="last_4" name="q4_fullName4[last]" class="form-textbox validate[required] width-100"
-                      data-defaultvalue="" size="15" value="" data-component="last"
-                      aria-labelledby="label_4 sublabel_4_last" required="" />
-                    <label class="form-sub-label" for="last_4" id="sublabel_4_last" style="min-height:13px"
-                      aria-hidden="false"> Last Name </label>
-                    <div *ngIf="studentApplicationForm.get('name.lastName')?.touched && studentApplicationForm.get('name.lastName')?.invalid" class="form-error-message" role="alert">
-                      <img src="../../assets/icons/exclamation-octagon.png">
+                    </span>
+                    <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="middle">
+                      <input formControlName="middleName" type="text" id="middle_4" name="q4_fullName4[middle]"
+                        class="form-textbox width-100" data-defaultvalue="" size="10" value="" data-component="middle"
+                        aria-labelledby="label_4 sublabel_4_middle" required="" />
+                      <label class="form-sub-label" for="middle_4" id="sublabel_4_middle" style="min-height:13px"
+                        aria-hidden="false"> Middle Name </label>
+                    </span>
+                    <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="last">
+                      <input formControlName="lastName" type="text" id="last_4" name="q4_fullName4[last]"
+                        class="form-textbox validate[required] width-100" data-defaultvalue="" size="15" value=""
+                        data-component="last" aria-labelledby="label_4 sublabel_4_last" required="" />
+                      <label class="form-sub-label" for="last_4" id="sublabel_4_last" style="min-height:13px"
+                        aria-hidden="false"> Last Name </label>
+                      <div
+                        *ngIf="studentApplicationForm.get('name.lastName')?.touched && studentApplicationForm.get('name.lastName')?.invalid"
+                        class="form-error-message" role="alert">
+                        <img src="../../assets/icons/exclamation-octagon.png">
                         This field is required.
-                      <div class="form-error-arrow">
-                        <div class="form-error-arrow-inner">
+                        <div class="form-error-arrow">
+                          <div class="form-error-arrow-inner">
 
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </span>
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
             </li>
             <li class="form-line jf-required" data-type="control_radio" id="id_61">
               <label class="form-label form-label-left" id="label_61" for="input_61">
@@ -79,15 +83,17 @@
                   <span class="form-radio-item" style="clear:left">
                     <span class="dragger-item">
                     </span>
-                    <input formControlName="gender" type="radio" aria-describedby="label_61" class="form-radio validate[required]"
-                      id="input_61_0" name="q61_gender" value="Male" required="" checked/>
+                    <input formControlName="gender" type="radio" aria-describedby="label_61"
+                      class="form-radio validate[required]" id="input_61_0" name="q61_gender" value="Male" required=""
+                      checked />
                     <label id="label_input_61_0" for="input_61_0"> Male </label>
                   </span>
                   <span class="form-radio-item" style="clear:left">
                     <span class="dragger-item">
                     </span>
-                    <input formControlName="gender" type="radio" aria-describedby="label_61" class="form-radio validate[required]"
-                      id="input_61_1" name="q61_gender" value="Female" required="" />
+                    <input formControlName="gender" type="radio" aria-describedby="label_61"
+                      class="form-radio validate[required]" id="input_61_1" name="q61_gender" value="Female"
+                      required="" />
                     <label id="label_input_61_1" for="input_61_1"> Female </label>
                   </span>
                 </div>
@@ -102,15 +108,17 @@
               </label>
               <div id="cid_15" class="form-input jf-required width-100 date-birth">
                 <div data-wrapper-react="true" class="width-62">
-                  <input formControlName="dateOfBirth" type="date" class="customDateField width-92" #calendar/>
-                    <div *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid" class="form-error-message" role="alert">
-                      <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
-                      <div class="form-error-arrow">
-                        <div class="form-error-arrow-inner">
-                        </div>
+                  <input formControlName="dateOfBirth" type="date" class="customDateField width-92" #calendar />
+                  <div
+                    *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid"
+                    class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                    This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
                       </div>
                     </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -123,18 +131,21 @@
                   </span>
                 </label>
                 <div id="cid_63" class="form-input jf-required width-100">
-                  <input formControlName="nationality" type="text" id="input_63" name="q63_nationality" data-type="input-textbox"
-                    class="form-textbox validate[required] width-80" data-defaultvalue="" size="20" value="" placeholder=" "
-                    data-component="textbox" aria-labelledby="label_63" required="" />
-                    <div *ngIf="studentApplicationForm.get('nationality')?.touched && studentApplicationForm.get('nationality')?.invalid" class="form-error-message" role="alert">
-                      <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
-                      <div class="form-error-arrow">
-                        <div class="form-error-arrow-inner">
-      
-                        </div>
+                  <input formControlName="nationality" type="text" id="input_63" name="q63_nationality"
+                    data-type="input-textbox" class="form-textbox validate[required] width-80" data-defaultvalue=""
+                    size="20" value="" placeholder=" " data-component="textbox" aria-labelledby="label_63"
+                    required="" />
+                  <div
+                    *ngIf="studentApplicationForm.get('nationality')?.touched && studentApplicationForm.get('nationality')?.invalid"
+                    class="form-error-message width-80" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                    This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+
                       </div>
                     </div>
+                  </div>
                 </div>
               </div>
               <div class="flex-1">
@@ -145,149 +156,166 @@
                   </span>
                 </label>
                 <div id="cid_64" class="form-input jf-required width-100">
-                  <input formControlName="countryOfBirth" type="text" id="input_64" name="q64_countryOf" data-type="input-textbox"
-                    class="form-textbox validate[required] width-80" data-defaultvalue="" size="20" value="" placeholder=" "
-                    data-component="textbox" aria-labelledby="label_64" required="" />
-                    <div *ngIf="studentApplicationForm.get('countryOfBirth')?.touched && studentApplicationForm.get('countryOfBirth')?.invalid" class="form-error-message" role="alert">
-                      <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
-                      <div class="form-error-arrow">
-                        <div class="form-error-arrow-inner">
-      
-                        </div>
+                  <input formControlName="countryOfBirth" type="text" id="input_64" name="q64_countryOf"
+                    data-type="input-textbox" class="form-textbox validate[required] width-80" data-defaultvalue=""
+                    size="20" value="" placeholder=" " data-component="textbox" aria-labelledby="label_64"
+                    required="" />
+                  <div
+                    *ngIf="studentApplicationForm.get('countryOfBirth')?.touched && studentApplicationForm.get('countryOfBirth')?.invalid"
+                    class="form-error-message width-80" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                    This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+
                       </div>
                     </div>
+                  </div>
                 </div>
               </div>
             </li>
             <!-- Address -->
             <li class="form-line jf-required" data-type="control_address" id="id_44">
               <div formGroupName="homeAddress">
-              <label class="form-label form-label-left form-label-auto" id="label_44" for="input_44_addr_line1">
-                Home Address
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_44" class="form-input jf-required width-100">
-                <div summary="" class="jsTest-addressField width-100">
-                  <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                    <span class="form-address-line form-address-street-line jsTest-address-lineField">
-                      <span class="form-sub-label-container" style="vertical-align:top">
-                        <input formControlName="streetAddressLine1" type="text" id="input_44_addr_line1" name="q44_homeAddress[addr_line1]"
-                          class="form-textbox validate[required] form-address-line" data-defaultvalue="" value=""
-                          data-component="address_line_1" aria-labelledby="label_44 sublabel_44_addr_line1"
-                          required="" />
-                        <label class="form-sub-label" for="input_44_addr_line1" id="sublabel_44_addr_line1"
-                          style="min-height:13px" aria-hidden="false"> Street Address </label>
-                          <div *ngIf="studentApplicationForm.get('homeAddress.streetAddressLine1')?.touched && studentApplicationForm.get('homeAddress.streetAddressLine1')?.invalid" class="form-error-message" role="alert">
+                <label class="form-label form-label-left form-label-auto" id="label_44" for="input_44_addr_line1">
+                  Home Address
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_44" class="form-input jf-required width-100">
+                  <div summary="" class="jsTest-addressField width-100">
+                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                      <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input formControlName="streetAddressLine1" type="text" id="input_44_addr_line1"
+                            name="q44_homeAddress[addr_line1]" class="form-textbox validate[required] form-address-line"
+                            data-defaultvalue="" value="" data-component="address_line_1"
+                            aria-labelledby="label_44 sublabel_44_addr_line1" required="" />
+                          <label class="form-sub-label" for="input_44_addr_line1" id="sublabel_44_addr_line1"
+                            style="min-height:13px" aria-hidden="false"> Street Address </label>
+                          <div
+                            *ngIf="studentApplicationForm.get('homeAddress.streetAddressLine1')?.touched && studentApplicationForm.get('homeAddress.streetAddressLine1')?.invalid"
+                            class="form-error-message" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
-                             This field is required.
+                            This field is required.
                             <div class="form-error-arrow">
                               <div class="form-error-arrow-inner">
-            
+
                               </div>
                             </div>
                           </div>
+                        </span>
                       </span>
-                    </span>
-                  </div>
-                  <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                    <span class="form-address-line form-address-street-line jsTest-address-lineField">
-                      <span class="form-sub-label-container" style="vertical-align:top">
-                        <input formControlName="streetAddressLine2" type="text" id="input_44_addr_line2" name="q44_homeAddress[addr_line2]"
-                          class="form-textbox form-address-line" data-defaultvalue="" value=""
-                          data-component="address_line_2" aria-labelledby="label_44 sublabel_44_addr_line2" />
-                        <label class="form-sub-label" for="input_44_addr_line2" id="sublabel_44_addr_line2"
-                          style="min-height:13px" aria-hidden="false"> Street Address Line 2 </label>
-                          
+                    </div>
+                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                      <span class="form-address-line form-address-street-line jsTest-address-lineField">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input formControlName="streetAddressLine2" type="text" id="input_44_addr_line2"
+                            name="q44_homeAddress[addr_line2]" class="form-textbox form-address-line"
+                            data-defaultvalue="" value="" data-component="address_line_2"
+                            aria-labelledby="label_44 sublabel_44_addr_line2" />
+                          <label class="form-sub-label" for="input_44_addr_line2" id="sublabel_44_addr_line2"
+                            style="min-height:13px" aria-hidden="false"> Street Address Line 2 </label>
+
+                        </span>
                       </span>
-                    </span>
-                  </div>
-                  <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                    <span class="form-address-line form-address-city-line jsTest-address-lineField ">
-                      <span class="form-sub-label-container" style="vertical-align:top">
-                        <input formControlName="city" type="text" id="input_44_city" name="q44_homeAddress[city]"
-                          class="form-textbox validate[required] form-address-city" data-defaultvalue="" value=""
-                          data-component="city" aria-labelledby="label_44 sublabel_44_city" required="" />
-                        <label class="form-sub-label" for="input_44_city" id="sublabel_44_city" style="min-height:13px"
-                          aria-hidden="false"> City </label>
-                          <div *ngIf="studentApplicationForm.get('homeAddress.city')?.touched && studentApplicationForm.get('homeAddress.city')?.invalid" class="form-error-message" role="alert">
+                    </div>
+                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                      <span class="form-address-line form-address-city-line jsTest-address-lineField ">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input formControlName="city" type="text" id="input_44_city" name="q44_homeAddress[city]"
+                            class="form-textbox validate[required] form-address-city" data-defaultvalue="" value=""
+                            data-component="city" aria-labelledby="label_44 sublabel_44_city" required="" />
+                          <label class="form-sub-label" for="input_44_city" id="sublabel_44_city"
+                            style="min-height:13px" aria-hidden="false"> City </label>
+                          <div
+                            *ngIf="studentApplicationForm.get('homeAddress.city')?.touched && studentApplicationForm.get('homeAddress.city')?.invalid"
+                            class="form-error-message" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
-                             This field is required.
+                            This field is required.
                             <div class="form-error-arrow">
                               <div class="form-error-arrow-inner">
-            
+
                               </div>
                             </div>
                           </div>
+                        </span>
                       </span>
-                    </span>
-                    <span class="form-address-line form-address-state-line jsTest-address-lineField ">
-                      <span class="form-sub-label-container" style="vertical-align:top">
-                        <input formControlName="stateOrProvince"  type="text" id="input_44_state" name="q44_homeAddress[state]"
-                          class="form-textbox validate[required] form-address-state" data-defaultvalue="" value=""
-                          data-component="state" aria-labelledby="label_44 sublabel_44_state" required="" />
-                        <label class="form-sub-label" for="input_44_state" id="sublabel_44_state"
-                          style="min-height:13px" aria-hidden="false"> State / Province </label>
-                          <div *ngIf="studentApplicationForm.get('homeAddress.stateOrProvince')?.touched && studentApplicationForm.get('homeAddress.stateOrProvince')?.invalid" class="form-error-message" role="alert">
+                      <span class="form-address-line form-address-state-line jsTest-address-lineField ">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input formControlName="stateOrProvince" type="text" id="input_44_state"
+                            name="q44_homeAddress[state]" class="form-textbox validate[required] form-address-state"
+                            data-defaultvalue="" value="" data-component="state"
+                            aria-labelledby="label_44 sublabel_44_state" required="" />
+                          <label class="form-sub-label" for="input_44_state" id="sublabel_44_state"
+                            style="min-height:13px" aria-hidden="false"> State / Province </label>
+                          <div
+                            *ngIf="studentApplicationForm.get('homeAddress.stateOrProvince')?.touched && studentApplicationForm.get('homeAddress.stateOrProvince')?.invalid"
+                            class="form-error-message" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
-                             This field is required.
+                            This field is required.
                             <div class="form-error-arrow">
                               <div class="form-error-arrow-inner">
-            
+
                               </div>
                             </div>
                           </div>
+                        </span>
                       </span>
-                    </span>
-                  </div>
-                  <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
-                    <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
-                      <span class="form-sub-label-container" style="vertical-align:top">
-                        <input formControlName="postalCode"  type="text" id="input_44_postal" name="q44_homeAddress[postal]"
-                          class="form-textbox validate[required] form-address-postal" data-defaultvalue="" value=""
-                          data-component="zip" aria-labelledby="label_44 sublabel_44_postal" required="" />
-                        <label class="form-sub-label" for="input_44_postal" id="sublabel_44_postal"
-                          style="min-height:13px" aria-hidden="false"> Postal / Zip Code </label>
-                          <div *ngIf="studentApplicationForm.get('homeAddress.postalCode')?.touched && studentApplicationForm.get('homeAddress.postalCode')?.invalid" class="form-error-message" role="alert">
+                    </div>
+                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                      <span class="form-address-line form-address-zip-line jsTest-address-lineField ">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <input formControlName="postalCode" type="text" id="input_44_postal"
+                            name="q44_homeAddress[postal]" class="form-textbox validate[required] form-address-postal"
+                            data-defaultvalue="" value="" data-component="zip"
+                            aria-labelledby="label_44 sublabel_44_postal" required="" />
+                          <label class="form-sub-label" for="input_44_postal" id="sublabel_44_postal"
+                            style="min-height:13px" aria-hidden="false"> Postal / Zip Code </label>
+                          <div
+                            *ngIf="studentApplicationForm.get('homeAddress.postalCode')?.touched && studentApplicationForm.get('homeAddress.postalCode')?.invalid"
+                            class="form-error-message" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
-                             This field is required.
+                            This field is required.
                             <div class="form-error-arrow">
                               <div class="form-error-arrow-inner">
-            
+
                               </div>
                             </div>
                           </div>
+                        </span>
                       </span>
-                    </span>
-                    <span class="form-address-line form-address-country-line jsTest-address-lineField ">
-                      <span class="form-sub-label-container" style="vertical-align:top">
-                        <select class="form-dropdown form-address-country noTranslate country-select" name="q44_homeAddress[country]"
-                          id="input_44_country" data-component="country" required=""
-                          aria-labelledby="label_44 sublabel_44_country">
-                          <option value=""> Please Select </option>
-                          <!-- <option *ngFor="let country of countries" [value]="country"> {{country}} </option> -->
-                        </select>
-                        <label class="form-sub-label" for="input_44_country" id="sublabel_44_country"
-                          style="min-height:13px" aria-hidden="false"> Country </label>
-                          <div *ngIf="studentApplicationForm.get('homeAddress.country')?.touched && studentApplicationForm.get('homeAddress.country')?.invalid" class="form-error-message" role="alert">
+                      <span class="form-address-line form-address-country-line jsTest-address-lineField ">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                          <select class="form-dropdown form-address-country noTranslate country-select"
+                            name="q44_homeAddress[country]" id="input_44_country" data-component="country" required=""
+                            aria-labelledby="label_44 sublabel_44_country">
+                            <option value=""> Please Select </option>
+                            <!-- <option *ngFor="let country of countries" [value]="country"> {{country}} </option> -->
+                          </select>
+                          <label class="form-sub-label" for="input_44_country" id="sublabel_44_country"
+                            style="min-height:13px" aria-hidden="false"> Country </label>
+                          <div
+                            *ngIf="studentApplicationForm.get('homeAddress.country')?.touched && studentApplicationForm.get('homeAddress.country')?.invalid"
+                            class="form-error-message" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
-                             This field is required.
+                            This field is required.
                             <div class="form-error-arrow">
                               <div class="form-error-arrow-inner">
-            
+
                               </div>
                             </div>
                           </div>
+                        </span>
                       </span>
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
             </li>
-            <li class="form-line form-line-column form-col-1 jf-required width-92" data-type="control_textbox" id="id_11">
+            <li class="form-line form-line-column form-col-1 jf-required width-92" data-type="control_textbox"
+              id="id_11">
               <label class="form-label form-label-top" id="label_11" for="input_11">
                 Contact Number
                 <span class="form-required">
@@ -295,18 +323,21 @@
                 </span>
               </label>
               <div id="cid_11" class="form-input-wide jf-required">
-                <input formControlName="contact" type="number" id="input_11" name="q11_contactNumber" data-type="input-textbox"
-                  class="form-textbox validate[required, Numeric] width-50" data-defaultvalue="" size="50" value=""
-                  maxLength="25" placeholder=" " data-component="textbox" aria-labelledby="label_11" required="" />
-                  <div *ngIf="studentApplicationForm.get('contact')?.touched && studentApplicationForm.get('contact')?.invalid" class="form-error-message" role="alert">
-                    <img src="../../assets/icons/exclamation-octagon.png">
-                     This field is required.
-                    <div class="form-error-arrow">
-                      <div class="form-error-arrow-inner">
-    
-                      </div>
+                <input formControlName="contact" type="number" id="input_11" name="q11_contactNumber"
+                  data-type="input-textbox" class="form-textbox validate[required, Numeric] width-50"
+                  data-defaultvalue="" size="50" value="" maxLength="25" placeholder=" " data-component="textbox"
+                  aria-labelledby="label_11" required="" />
+                <div
+                  *ngIf="studentApplicationForm.get('contact')?.touched && studentApplicationForm.get('contact')?.invalid"
+                  class="form-error-message" role="alert">
+                  <img src="../../assets/icons/exclamation-octagon.png">
+                  This field is required.
+                  <div class="form-error-arrow">
+                    <div class="form-error-arrow-inner">
+
                     </div>
                   </div>
+                </div>
               </div>
             </li>
             <li class="form-line jf-required width-92" data-type="control_email" id="id_10">
@@ -323,317 +354,345 @@
                     maxLength="50" data-component="email" aria-labelledby="label_10 sublabel_input_10" required="" />
                   <label class="form-sub-label" for="input_10" id="sublabel_input_10" style="min-height:13px"
                     aria-hidden="false"> e.g. example@gmail.com </label>
-                    <div *ngIf="studentApplicationForm.get('email')?.touched && studentApplicationForm.get('email')?.invalid" class="form-error-message" role="alert">
-                      <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
-                      <div class="form-error-arrow">
-                        <div class="form-error-arrow-inner">
-      
-                        </div>
+                  <div
+                    *ngIf="studentApplicationForm.get('email')?.touched && studentApplicationForm.get('email')?.invalid"
+                    class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                    This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+
                       </div>
                     </div>
+                  </div>
                 </span>
               </div>
             </li>
             <!-- Guardian -->
-          <div formGroupName="guardian">
-            <li class="form-line form-line-column form-col-1 jf-required width-92" data-type="control_textbox" id="id_21">
-              <label class="form-label form-label-top" id="label_21" for="input_21">
-                Person to contact in case of emergency:
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_21" class="form-input-wide jf-required width-100">
-                <span class="form-sub-label-container width-100" style="vertical-align:top">
-                  <input formControlName="guardianName" type="text" id="input_21" name="q21_personTo" data-type="input-textbox"
-                    class="form-textbox validate[required] width-50" data-defaultvalue="" size="50" value="" maxLength="100"
-                    placeholder=" " data-component="textbox" aria-labelledby="label_21 sublabel_input_21" required="" />
-                  <label class="form-sub-label" for="input_21" id="sublabel_input_21" style="min-height:13px"
-                    aria-hidden="false"> Name of Parent/Guardian </label>
-                    <div *ngIf="studentApplicationForm.get('guardian.guardianName')?.touched && studentApplicationForm.get('guardian.guardianName')?.invalid" class="form-error-message" role="alert">
+            <div formGroupName="guardian">
+              <li class="form-line form-line-column form-col-1 jf-required width-92" data-type="control_textbox"
+                id="id_21">
+                <label class="form-label form-label-top" id="label_21" for="input_21">
+                  Person to contact in case of emergency:
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_21" class="form-input-wide jf-required width-100">
+                  <span class="form-sub-label-container width-100" style="vertical-align:top">
+                    <input formControlName="guardianName" type="text" id="input_21" name="q21_personTo"
+                      data-type="input-textbox" class="form-textbox validate[required] width-50" data-defaultvalue=""
+                      size="50" value="" maxLength="100" placeholder=" " data-component="textbox"
+                      aria-labelledby="label_21 sublabel_input_21" required="" />
+                    <label class="form-sub-label" for="input_21" id="sublabel_input_21" style="min-height:13px"
+                      aria-hidden="false"> Name of Parent/Guardian </label>
+                    <div
+                      *ngIf="studentApplicationForm.get('guardian.guardianName')?.touched && studentApplicationForm.get('guardian.guardianName')?.invalid"
+                      class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
+                      This field is required.
                       <div class="form-error-arrow">
                         <div class="form-error-arrow-inner">
-      
+
                         </div>
                       </div>
                     </div>
-                </span>
-              </div>
-            </li>
-            <li class="form-line form-line-column form-col-2 jf-required width-92" data-type="control_textbox" id="id_46">
-              <label class="form-label form-label-top" id="label_46" for="input_46">
-                Relationship to Applicant
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_46" class="form-input-wide jf-required width-100">
-                <span class="form-sub-label-container width-100" style="vertical-align:top">
-                  <input formControlName="guardianRelationship" type="text" id="input_46" name="q46_relationshipTo" data-type="input-textbox"
-                    class="form-textbox validate[required] width-50" data-defaultvalue="" size="30" value="" maxLength="100"
-                    placeholder=" " data-component="textbox" aria-labelledby="label_46 sublabel_input_46" required="" />
-                  <label class="form-sub-label" for="input_46" id="sublabel_input_46" style="min-height:13px"
-                    aria-hidden="false"> e.g. Father, Mother, Brother, Sister, Guardian etc. </label>
-                    <div *ngIf="studentApplicationForm.get('guardian.guardianRelationship')?.touched && studentApplicationForm.get('guardian.guardianRelationship')?.invalid" class="form-error-message" class="form-error-message" role="alert">
+                  </span>
+                </div>
+              </li>
+              <li class="form-line form-line-column form-col-2 jf-required width-92" data-type="control_textbox"
+                id="id_46">
+                <label class="form-label form-label-top" id="label_46" for="input_46">
+                  Relationship to Applicant
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_46" class="form-input-wide jf-required width-100">
+                  <span class="form-sub-label-container width-100" style="vertical-align:top">
+                    <input formControlName="guardianRelationship" type="text" id="input_46" name="q46_relationshipTo"
+                      data-type="input-textbox" class="form-textbox validate[required] width-50" data-defaultvalue=""
+                      size="30" value="" maxLength="100" placeholder=" " data-component="textbox"
+                      aria-labelledby="label_46 sublabel_input_46" required="" />
+                    <label class="form-sub-label" for="input_46" id="sublabel_input_46" style="min-height:13px"
+                      aria-hidden="false"> e.g. Father, Mother, Brother, Sister, Guardian etc. </label>
+                    <div
+                      *ngIf="studentApplicationForm.get('guardian.guardianRelationship')?.touched && studentApplicationForm.get('guardian.guardianRelationship')?.invalid"
+                      class="form-error-message" class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
+                      This field is required.
                       <div class="form-error-arrow">
                         <div class="form-error-arrow-inner">
-      
+
                         </div>
                       </div>
                     </div>
-                </span>
-              </div>
-            </li>
-            <li class="form-line jf-required width-92" data-type="control_phone" id="id_123">
-              <label class="form-label form-label-left form-label-auto" id="label_123" for="input_123_country">
-                Contact Number
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_123" class="form-input jf-required width-100">
-                <div data-wrapper-react="true" class="extended width-100">
-                  <span class="form-sub-label-container width-100" style="vertical-align:top" data-input-type="phone">
-                    <input formControlName="guardianContact" type="number" id="input_123_phone" name="q123_contactNumber123[phone]"
-                      class="form-textbox validate[required] width-50" data-defaultvalue="" value="" data-component="phone"
-                      aria-labelledby="label_123 sublabel_123_phone" required="" />
-                    <label class="form-sub-label" for="input_123_phone" id="sublabel_123_phone" style="min-height:13px"
-                      aria-hidden="false"> Phone Number </label>
-                      <div *ngIf="studentApplicationForm.get('guardian.guardianContact')?.touched && studentApplicationForm.get('guardian.guardianContact')?.invalid" class="form-error-message" class="form-error-message" role="alert">
+                  </span>
+                </div>
+              </li>
+              <li class="form-line jf-required width-92" data-type="control_phone" id="id_123">
+                <label class="form-label form-label-left form-label-auto" id="label_123" for="input_123_country">
+                  Contact Number
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_123" class="form-input jf-required width-100">
+                  <div data-wrapper-react="true" class="extended width-100">
+                    <span class="form-sub-label-container width-100" style="vertical-align:top" data-input-type="phone">
+                      <input formControlName="guardianContact" type="number" id="input_123_phone"
+                        name="q123_contactNumber123[phone]" class="form-textbox validate[required] width-50"
+                        data-defaultvalue="" value="" data-component="phone"
+                        aria-labelledby="label_123 sublabel_123_phone" required="" />
+                      <label class="form-sub-label" for="input_123_phone" id="sublabel_123_phone"
+                        style="min-height:13px" aria-hidden="false"> Phone Number </label>
+                      <div
+                        *ngIf="studentApplicationForm.get('guardian.guardianContact')?.touched && studentApplicationForm.get('guardian.guardianContact')?.invalid"
+                        class="form-error-message" class="form-error-message" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
-                         This field is required.
+                        This field is required.
                         <div class="form-error-arrow">
                           <div class="form-error-arrow-inner">
-        
+
                           </div>
                         </div>
                       </div>
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li class="form-line" data-type="control_textbox" id="id_22">
+                <label class="form-label form-label-left form-label-auto width-339" id="label_22" for="input_22">
+                  Address of person
+                  to contact in case of emergency </label>
+                <div id="cid_22" class="form-input">
+                  <input formControlName="guardianAddress" type="text" id="input_22" name="q22_addressOf"
+                    data-type="input-textbox" class="form-textbox" data-defaultvalue="" size="65" value=""
+                    placeholder=" " data-component="textbox" aria-labelledby="label_22" />
+                </div>
+                <div
+                  *ngIf="studentApplicationForm.get('guardian.guardianAddress')?.touched && studentApplicationForm.get('guardian.guardianAddress')?.invalid"
+                  class="form-error-message" role="alert">
+                  <img src="../../assets/icons/exclamation-octagon.png">
+                  This field is required.
+                  <div class="form-error-arrow">
+                    <div class="form-error-arrow-inner">
+
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </div>
+            <!-- Guardian End -->
+
+            <!-- Application Details -->
+            <div formGroupName="applicationDetails">
+              <li id="cid_69" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group  header-default">
+                  <div class="header-text httac htvam">
+                    <h2 id="header_69" class="form-header" data-component="header">
+                      University Application Details
+                    </h2>
+                    <div id="subHeader_69" class="form-subHeader">
+                      As part of the university application, you must state the name of the degree you wish to study and
+                      how you intend to pay the tuition fees.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="form-line jf-required" data-type="control_textbox" id="id_124">
+                <label class="form-label form-label-left form-label-auto width-339" id="label_124" for="input_124">
+                  What is the intended degree you wish to study in New Zealand?
+                  <span class="form-required">
+                    *
                   </span>
-                </div>
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_22">
-              <label class="form-label form-label-left form-label-auto width-339" id="label_22" for="input_22"> Address of person
-                to contact in case of emergency </label>
-              <div id="cid_22" class="form-input">
-                <input formControlName="guardianAddress"  type="text" id="input_22" name="q22_addressOf" data-type="input-textbox" class="form-textbox"
-                  data-defaultvalue="" size="65" value="" placeholder=" " data-component="textbox"
-                  aria-labelledby="label_22" />
-              </div>
-              <div *ngIf="studentApplicationForm.get('guardian.guardianAddress')?.touched && studentApplicationForm.get('guardian.guardianAddress')?.invalid" class="form-error-message" role="alert">
-                <img src="../../assets/icons/exclamation-octagon.png">
-                 This field is required.
-                <div class="form-error-arrow">
-                  <div class="form-error-arrow-inner">
-
-                  </div>
-                </div>
-              </div>
-            </li>
-          </div>
-          <!-- Guardian End -->
-
-          <!-- Application Details -->
-          <div formGroupName="applicationDetails">
-            <li id="cid_69" class="form-input-wide" data-type="control_head">
-              <div class="form-header-group  header-default">
-                <div class="header-text httac htvam">
-                  <h2 id="header_69" class="form-header" data-component="header">
-                    University Application Details
-                  </h2>
-                  <div id="subHeader_69" class="form-subHeader">
-                    As part of the university application, you must state the name of the degree you wish to study and
-                    how you intend to pay the tuition fees.
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_124">
-              <label class="form-label form-label-left form-label-auto width-339" id="label_124" for="input_124">
-                What is the intended degree you wish to study in New Zealand?
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_124" class="form-input jf-required">
-                <span class="form-sub-label-container" style="vertical-align:top">
-                  <input formControlName="intendedDegree" type="text" id="input_124" name="q124_whatIs" data-type="input-textbox"
-                    class="form-textbox validate[required]" data-defaultvalue="" size="65" value=""
-                    data-component="textbox" aria-labelledby="label_124 sublabel_input_124" required="" />
-                  <label class="form-sub-label" for="input_124" id="sublabel_input_124" style="min-height:13px"
-                    aria-hidden="false"> e.g. Civil engineering, Mechanical engineering, Medicine, Science, English
-                    Program </label>
-                    <div  *ngIf="studentApplicationForm.get('applicationDetails.intendedDegree')?.touched && studentApplicationForm.get('applicationDetails.intendedDegree')?.invalid" class="form-error-message" role="alert">
+                </label>
+                <div id="cid_124" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <input formControlName="intendedDegree" type="text" id="input_124" name="q124_whatIs"
+                      data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" size="65"
+                      value="" data-component="textbox" aria-labelledby="label_124 sublabel_input_124" required="" />
+                    <label class="form-sub-label" for="input_124" id="sublabel_input_124" style="min-height:13px"
+                      aria-hidden="false"> e.g. Civil engineering, Mechanical engineering, Medicine, Science, English
+                      Program </label>
+                    <div
+                      *ngIf="studentApplicationForm.get('applicationDetails.intendedDegree')?.touched && studentApplicationForm.get('applicationDetails.intendedDegree')?.invalid"
+                      class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
+                      This field is required.
                       <div class="form-error-arrow">
                         <div class="form-error-arrow-inner">
-      
+
                         </div>
                       </div>
                     </div>
-                </span>
-              </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_textbox" id="id_27">
-              <label class="form-label form-label-left form-label-auto width-339" id="label_27" for="input_27">
-                Proposed start date(Month,Year):
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_27" class="form-input jf-required">
-                <span class="form-sub-label-container" style="vertical-align:top">
-                  <input formControlName="propoosedStartDate" type="text" id="input_27" name="q27_proposedStart" data-type="input-textbox"
-                    class="form-textbox validate[required]" data-defaultvalue="" size="65" value="" placeholder=" "
-                    data-component="textbox" aria-labelledby="label_27 sublabel_input_27" required="" />
-                  <label class="form-sub-label" for="input_27" id="sublabel_input_27" style="min-height:13px"
-                    aria-hidden="false"> When do you intend to start? e.g. March 2021, July 2021 </label>
-                    <div *ngIf="studentApplicationForm.get('applicationDetails.propoosedStartDate')?.touched && studentApplicationForm.get('applicationDetails.propoosedStartDate')?.invalid" class="form-error-message" role="alert">
+                  </span>
+                </div>
+              </li>
+              <li class="form-line jf-required" data-type="control_textbox" id="id_27">
+                <label class="form-label form-label-left form-label-auto width-339" id="label_27" for="input_27">
+                  Proposed start date(Month,Year):
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_27" class="form-input jf-required">
+                  <span class="form-sub-label-container" style="vertical-align:top">
+                    <input formControlName="propoosedStartDate" type="text" id="input_27" name="q27_proposedStart"
+                      data-type="input-textbox" class="form-textbox validate[required]" data-defaultvalue="" size="65"
+                      value="" placeholder=" " data-component="textbox" aria-labelledby="label_27 sublabel_input_27"
+                      required="" />
+                    <label class="form-sub-label" for="input_27" id="sublabel_input_27" style="min-height:13px"
+                      aria-hidden="false"> When do you intend to start? e.g. March 2021, July 2021 </label>
+                    <div
+                      *ngIf="studentApplicationForm.get('applicationDetails.propoosedStartDate')?.touched && studentApplicationForm.get('applicationDetails.propoosedStartDate')?.invalid"
+                      class="form-error-message" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
-                       This field is required.
+                      This field is required.
                       <div class="form-error-arrow">
                         <div class="form-error-arrow-inner">
                         </div>
                       </div>
                     </div>
-                </span>
-              </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_radio" id="id_73">
-              <label class="form-label form-label-left form-label-auto width-339" id="label_73" for="input_73">
-                How do you intend to pay your tuition fees?
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_73" class="form-input jf-required">
-                <div class="form-single-column" role="group" aria-labelledby="label_73" data-component="radio">
-                  <span class="form-radio-item" style="clear:left">
-                    <span class="dragger-item">
-                    </span>
-                    <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73" class="form-radio validate[required]"
-                      id="input_73_0" name="q73_howDo" value="Government Scholarship" required="" />
-                    <label id="label_input_73_0" for="input_73_0"> Government Scholarship </label>
-                  </span>
-                  <span class="form-radio-item" style="clear:left">
-                    <span class="dragger-item">
-                    </span>
-                    <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73" class="form-radio validate[required]"
-                      id="input_73_1" name="q73_howDo" value="Private Scholarship" required="" />
-                    <label id="label_input_73_1" for="input_73_1"> Private Scholarship </label>
-                  </span>
-                  <span class="form-radio-item" style="clear:left">
-                    <span class="dragger-item">
-                    </span>
-                    <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73" class="form-radio validate[required]"
-                      id="input_73_2" name="q73_howDo" value="Self-Funded" required="" checked="true"/>
-                    <label id="label_input_73_2" for="input_73_2"> Self-Funded </label>
                   </span>
                 </div>
-              </div>
-            </li>
-            <li class="form-line" data-type="control_textbox" id="id_74">
-              <label class="form-label form-label-left form-label-auto width-339" id="label_74" for="input_74"> Name of sponsoring
-                body: </label>
-              <div id="cid_74" class="form-input">
-                <input formControlName="sponser" type="text" id="input_74" name="q74_nameAnd" data-type="input-textbox" class="form-textbox"
-                  data-defaultvalue="" size="65" value="" placeholder=" " data-component="textbox"
-                  aria-labelledby="label_74" />
-              </div>
-              <div *ngIf="studentApplicationForm.get('applicationDetails.sponser')?.touched && studentApplicationForm.get('applicationDetails.sponser')?.invalid" class="form-error-message" role="alert">
-                <img src="../../assets/icons/exclamation-octagon.png">
-                 This field is required.
-                <div class="form-error-arrow">
-                  <div class="form-error-arrow-inner">
+              </li>
+              <li class="form-line jf-required" data-type="control_radio" id="id_73">
+                <label class="form-label form-label-left form-label-auto width-339" id="label_73" for="input_73">
+                  How do you intend to pay your tuition fees?
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_73" class="form-input jf-required">
+                  <div class="form-single-column" role="group" aria-labelledby="label_73" data-component="radio">
+                    <span class="form-radio-item" style="clear:left">
+                      <span class="dragger-item">
+                      </span>
+                      <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73"
+                        class="form-radio validate[required]" id="input_73_0" name="q73_howDo"
+                        value="Government Scholarship" required="" />
+                      <label id="label_input_73_0" for="input_73_0"> Government Scholarship </label>
+                    </span>
+                    <span class="form-radio-item" style="clear:left">
+                      <span class="dragger-item">
+                      </span>
+                      <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73"
+                        class="form-radio validate[required]" id="input_73_1" name="q73_howDo"
+                        value="Private Scholarship" required="" />
+                      <label id="label_input_73_1" for="input_73_1"> Private Scholarship </label>
+                    </span>
+                    <span class="form-radio-item" style="clear:left">
+                      <span class="dragger-item">
+                      </span>
+                      <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73"
+                        class="form-radio validate[required]" id="input_73_2" name="q73_howDo" value="Self-Funded"
+                        required="" checked="true" />
+                      <label id="label_input_73_2" for="input_73_2"> Self-Funded </label>
+                    </span>
                   </div>
                 </div>
-              </div>
-            </li>
-          </div>
-
-          <!-- Education Details -->
-          <div>
-            <li id="cid_75" class="form-input-wide" data-type="control_head">
-              <div class="form-header-group  header-default">
-                <div class="header-text httac htvam">
-                  <h2 id="header_75" class="form-header" data-component="header">
-                    Education Details
-                  </h2>
-                  <div id="subHeader_75" class="form-subHeader">
-                    Please give details of all the Schools, Colleges, Universities you attended.
-                  </div>
+              </li>
+              <li class="form-line" data-type="control_textbox" id="id_74">
+                <label class="form-label form-label-left form-label-auto width-339" id="label_74" for="input_74"> Name
+                  of sponsoring
+                  body: </label>
+                <div id="cid_74" class="form-input">
+                  <input formControlName="sponser" type="text" id="input_74" name="q74_nameAnd"
+                    data-type="input-textbox" class="form-textbox" data-defaultvalue="" size="65" value=""
+                    placeholder=" " data-component="textbox" aria-labelledby="label_74" />
                 </div>
-              </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_matrix" id="id_79">
-              <label class="form-label form-label-top" id="label_79" for="input_79">
-                Secondary, Higher Education
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_79" class="form-input-wide jf-required">
-                <table summary="" aria-labelledby="label_79" cellPadding="4" cellSpacing="0" class="form-matrix-table width-100 lable-fonts"
-                  data-component="matrix">
-                  <tr class="form-matrix-tr form-matrix-header-tr">
-                    <th class="form-matrix-th" style="border:none">
-
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
-                      <label id="label_79_col_0"> Name of secondary School/College/University </label>
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
-                      <label id="label_79_col_1"> Country </label>
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
-                      <label id="label_79_col_2"> Dates Attended From(mm/yy)To(mm/yy) </label>
-                    </th>
-                  </tr>
-                <div formArrayName="educationDetails" >
-                  <div *ngFor="let educationDetailGroup of educationDetailGroups.controls; let i=index">
-                  <tr [formGroupName]="i" class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_79 label_79_row_0">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_79_row_0"> </label>
-                    </th>
-                    <td class="form-matrix-values">
-                      <input formControlName="instituteName" type="text" id="input_79_0_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q79_secondaryfurtherhigherEducation[0][]"
-                        style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_79_col_0 label_79_row_0" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input formControlName="country" type="text" id="input_79_0_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q79_secondaryfurtherhigherEducation[0][]"
-                        style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_79_col_1 label_79_row_0" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input formControlName="attendedFrom" type="text" id="input_79_0_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q79_secondaryfurtherhigherEducation[0][]"
-                        style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_79_col_2 label_79_row_0" />
-                    </td>
-                  </tr>
-                  <div  class="form-error-message" role="alert">
-                    <img src="../../assets/icons/exclamation-octagon.png">
-                     This field is required.
-                    <div class="form-error-arrow">
-                      <div class="form-error-arrow-inner">
-                      </div>
+                <div
+                  *ngIf="studentApplicationForm.get('applicationDetails.sponser')?.touched && studentApplicationForm.get('applicationDetails.sponser')?.invalid"
+                  class="form-error-message" role="alert">
+                  <img src="../../assets/icons/exclamation-octagon.png">
+                  This field is required.
+                  <div class="form-error-arrow">
+                    <div class="form-error-arrow-inner">
                     </div>
                   </div>
                 </div>
+              </li>
+            </div>
+
+            <!-- Education Details -->
+            <div>
+              <li id="cid_75" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group  header-default">
+                  <div class="header-text httac htvam">
+                    <h2 id="header_75" class="form-header" data-component="header">
+                      Education Details
+                    </h2>
+                    <div id="subHeader_75" class="form-subHeader">
+                      Please give details of all the Schools, Colleges, Universities you attended.
+                    </div>
+                  </div>
                 </div>
-                </table>
-              </div>
-            </li>
-          </div>
+              </li>
+              <li class="form-line jf-required" data-type="control_matrix" id="id_79">
+                <label class="form-label form-label-top" id="label_79" for="input_79">
+                  Secondary, Higher Education
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_79" class="form-input-wide jf-required">
+                  <table summary="" aria-labelledby="label_79" cellPadding="4" cellSpacing="0"
+                    class="form-matrix-table width-100 lable-fonts" data-component="matrix">
+                    <tr class="form-matrix-tr form-matrix-header-tr">
+                      <!-- <th class="form-matrix-th" style="border:none">
+
+                    </th> -->
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
+                        <label id="label_79_col_0"> Name of secondary School/College/University </label>
+                      </th>
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
+                        <label id="label_79_col_1"> Country </label>
+                      </th>
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
+                        <label id="label_79_col_2"> Dates Attended From(mm/yy)To(mm/yy) </label>
+                      </th>
+                    </tr>
+
+                    <tr [formGroupName]="i" class="form-matrix-tr form-matrix-value-tr"
+                      *ngFor="let educationDetailGroup of educationDetailGroups.controls; let i=index">
+                      <td class="form-matrix-values">
+                        <input formControlName="instituteName" type="text" id="input_79_0_0"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q79_secondaryfurtherhigherEducation[0][]" style="width:100%;box-sizing:border-box"
+                          value="" aria-labelledby="label_79_col_0 label_79_row_0" />
+                      </td>
+                      <td class="form-matrix-values">
+                        <input formControlName="country" type="text" id="input_79_0_1"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q79_secondaryfurtherhigherEducation[0][]" style="width:100%;box-sizing:border-box"
+                          value="" aria-labelledby="label_79_col_1 label_79_row_0" />
+                      </td>
+                      <td class="form-matrix-values">
+                        <input formControlName="attendedFrom" type="text" id="input_79_0_2"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q79_secondaryfurtherhigherEducation[0][]" style="width:100%;box-sizing:border-box"
+                          value="" aria-labelledby="label_79_col_2 label_79_row_0" />
+                      </td>
+                      <td class="add-remove width-20">
+                        <span>
+                          <i class="fas fa-trash"></i>
+                          <i class="fas fa-plus-circle"></i>
+                        </span>
+                      </td>
+                    </tr>
+                    <div class="form-error-message width-100" role="alert">
+                      <img src="../../assets/icons/exclamation-octagon.png">
+                      This field is required.
+                      <div class="form-error-arrow">
+                        <div class="form-error-arrow-inner">
+                        </div>
+                      </div>
+                    </div>
+                  </table>
+                </div>
+              </li>
+            </div>
             <li class="form-line jf-required" data-type="control_matrix" id="id_81">
               <label class="form-label form-label-top" id="label_81" for="input_81">
                 Educational Qualifications
@@ -642,12 +701,9 @@
                 </span>
               </label>
               <div id="cid_81" class="form-input-wide jf-required">
-                <table summary="" aria-labelledby="label_81" cellPadding="4" cellSpacing="0" class="form-matrix-table lable-fonts width-100"
-                  data-component="matrix">
+                <table summary="" aria-labelledby="label_81" cellPadding="4" cellSpacing="0"
+                  class="form-matrix-table lable-fonts width-100" data-component="matrix">
                   <tr class="form-matrix-tr form-matrix-header-tr">
-                    <th class="form-matrix-th" style="border:none">
-
-                    </th>
                     <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
                       <label id="label_81_col_0"> Subject </label>
                     </th>
@@ -660,44 +716,49 @@
                     <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_3">
                       <label id="label_81_col_3"> Date(mm/yy) </label>
                     </th>
-                    
                   </tr>
-                  <tr formArrayName="educationQualification" 
-                    *ngFor="let educationQualificationGroup of educationQualificationGroups.controls; let i=index" class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_81 label_81_row_0">
-                    <div [formGroupName]="i">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_81_row_0"> </label>
-                    </th>
+                  <tr [formGroupName]="i" formArrayName="educationQualification"
+                    *ngFor="let educationQualificationGroup of educationQualificationGroups.controls; let i=index"
+                    class="form-matrix-tr form-matrix-value-tr">
                     <td class="form-matrix-values">
-                      <input formControlName="subject" type="text" id="input_81_0_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_0 label_81_row_0" />
+                      <input formControlName="subject" type="text" id="input_81_0_0"
+                        class="form-textbox validate[required, requireOneAnswer]" size="5"
+                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                        aria-labelledby="label_81_col_0 label_81_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input formControlName="level" type="text" id="input_81_0_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_1 label_81_row_0" />
+                      <input formControlName="level" type="text" id="input_81_0_1"
+                        class="form-textbox validate[required, requireOneAnswer]" size="5"
+                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                        aria-labelledby="label_81_col_1 label_81_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input formControlName="grade" type="text" id="input_81_0_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_2 label_81_row_0" />
+                      <input formControlName="grade" type="text" id="input_81_0_2"
+                        class="form-textbox validate[required, requireOneAnswer]" size="5"
+                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                        aria-labelledby="label_81_col_2 label_81_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input formControlName="date" type="text" id="input_81_0_3" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_3 label_81_row_0" />
+                      <input formControlName="date" type="text" id="input_81_0_3"
+                        class="form-textbox validate[required, requireOneAnswer]" size="5"
+                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                        aria-labelledby="label_81_col_3 label_81_row_0" />
                     </td>
-                  </div>
-                  <div  class="form-error-message" role="alert">
+                    <td class="add-remove width-20">
+                      <span>
+                        <i class="fas fa-trash"></i>
+                        <i class="fas fa-plus-circle"></i>
+                      </span>
+                    </td>
+                  </tr>
+                  <div class="form-error-message width-100" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
-                     This field is required.
+                    This field is required.
                     <div class="form-error-arrow">
                       <div class="form-error-arrow-inner">
                       </div>
                     </div>
                   </div>
-                  </tr>
                 </table>
               </div>
             </li>
@@ -709,12 +770,9 @@
                 </span>
               </label>
               <div id="cid_82" class="form-input-wide jf-required">
-                <table summary="" aria-labelledby="label_82" cellPadding="4" cellSpacing="0" class="form-matrix-table lable-fonts width-100"
-                  data-component="matrix">
+                <table summary="" aria-labelledby="label_82" cellPadding="4" cellSpacing="0"
+                  class="form-matrix-table lable-fonts width-100" data-component="matrix">
                   <tr class="form-matrix-tr form-matrix-header-tr">
-                    <th class="form-matrix-th" style="border:none">
-
-                    </th>
                     <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
                       <label id="label_82_col_0"> Name of certificate (IELTS, TOEFL IBT, PTE, Cambridge English, None)
                       </label>
@@ -727,37 +785,42 @@
                       <label id="label_82_col_2"> Date(mm/yy) </label>
                     </th>
                   </tr>
-                  <tr formArrayName="englishProficiency" 
-                    *ngFor="let englishProficiencyGroup of englishProficiencyGroups.controls; let i=index"class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_0">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_82_row_0">  </label>
-                    </th>
-                    <div [formGroupName]="i">
-                    <td class="form-matrix-values">
-                      <input formControlName="certificateName" type="text" id="input_82_0_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_82_col_0 label_82_row_0" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input formControlName="grade" type="text" id="input_82_0_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_82_col_1 label_82_row_0" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input formControlName="date" type="text" id="input_82_0_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_82_col_2 label_82_row_0" />
-                    </td>
-                  </div>
-                  <div  class="form-error-message" role="alert">
+                  <tr [formGroupName]="i" formArrayName="englishProficiency"
+                    *ngFor="let englishProficiencyGroup of englishProficiencyGroups.controls; let i=index"
+                    class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_0">
+                      <td class="form-matrix-values">
+                        <input formControlName="certificateName" type="text" id="input_82_0_0"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
+                          aria-labelledby="label_82_col_0 label_82_row_0" />
+                      </td>
+                      <td class="form-matrix-values">
+                        <input formControlName="grade" type="text" id="input_82_0_1"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
+                          aria-labelledby="label_82_col_1 label_82_row_0" />
+                      </td>
+                      <td class="form-matrix-values">
+                        <input formControlName="date" type="text" id="input_82_0_2"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
+                          aria-labelledby="label_82_col_2 label_82_row_0" />
+                      </td>
+                      <td class="add-remove width-20">
+                        <span>
+                          <i class="fas fa-trash"></i>
+                          <i class="fas fa-plus-circle"></i>
+                        </span>
+                      </td>
+                  </tr>
+                  <div class="form-error-message" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
-                     This field is required.
+                    This field is required.
                     <div class="form-error-arrow">
                       <div class="form-error-arrow-inner">
                       </div>
                     </div>
                   </div>
-                  </tr>
                 </table>
               </div>
             </li>
@@ -776,21 +839,24 @@
               </div>
             </li>
             <li class="form-line jf-required" data-type="control_textarea" id="id_91">
-              
+
               <label class="form-label form-label-top" id="label_91" for="input_91">
                 Type your answer here:
                 <span class="form-required">
                   *
                 </span>
               </label>
-             
+
               <div id="cid_91" class="form-input-wide jf-required">
-                <textarea formControlName="statement" id="input_91" class="form-textarea validate[required] width-100" name="q91_typeYour" cols="65" rows="6"
-                  data-component="textarea" required="" aria-labelledby="label_91"></textarea>
+                <textarea formControlName="statement" id="input_91" class="form-textarea validate[required] width-100"
+                  name="q91_typeYour" cols="65" rows="6" data-component="textarea" required=""
+                  aria-labelledby="label_91"></textarea>
               </div>
-              <div *ngIf="studentApplicationForm.get('statement')?.touched && studentApplicationForm.get('statement')?.invalid" class="form-error-message" role="alert">
+              <div
+                *ngIf="studentApplicationForm.get('statement')?.touched && studentApplicationForm.get('statement')?.invalid"
+                class="form-error-message" role="alert">
                 <img src="../../assets/icons/exclamation-octagon.png">
-                 This field is required.
+                This field is required.
                 <div class="form-error-arrow">
                   <div class="form-error-arrow-inner">
                   </div>
@@ -798,112 +864,117 @@
               </div>
             </li>
             <!-- Declaration -->
-          <div formGroupName="declaration">
-            <li id="cid_108" class="form-input-wide" data-type="control_head">
-              <div class="form-header-group  header-default">
-                <div class="header-text httal htvam display-flex">
-                  <h2 id="header_108" class="form-header" data-component="header">
-                    Declaration
-                  </h2>
+            <div formGroupName="declaration">
+              <li id="cid_108" class="form-input-wide" data-type="control_head">
+                <div class="form-header-group  header-default">
+                  <div class="header-text httal htvam display-flex">
+                    <h2 id="header_108" class="form-header" data-component="header">
+                      Declaration
+                    </h2>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="form-line" data-type="control_text" id="id_112">
-              <div id="cid_112" class="form-input-wide">
-                <div id="text_112" class="form-html" data-component="text">
-                  <p><span style="text-decoration: underline;"><strong>Declaration:</strong></span></p>
-                  <p>1) I confirm that I give the authority to Scholar Students Ltd to discuss my application, receive
-                    correspondence and apply to universities and institutes in New Zealand on my behalf.</p>
-                  <p>2) I certify that, to the best of my knowledge, the information I have provided is complete and
-                    true.</p>
+              </li>
+              <li class="form-line" data-type="control_text" id="id_112">
+                <div id="cid_112" class="form-input-wide">
+                  <div id="text_112" class="form-html" data-component="text">
+                    <p><span style="text-decoration: underline;"><strong>Declaration:</strong></span></p>
+                    <p>1) I confirm that I give the authority to Scholar Students Ltd to discuss my application, receive
+                      correspondence and apply to universities and institutes in New Zealand on my behalf.</p>
+                    <p>2) I certify that, to the best of my knowledge, the information I have provided is complete and
+                      true.</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="form-line jf-required" data-type="control_fullname" id="id_127">
-              <label class="form-label form-label-left form-label-auto" id="label_127" for="first_127">
-                Name
-                <span class="form-required">
-                  *
-                </span>
-              </label>
-              <div id="cid_127" class="form-input jf-required width-100">
-                <div data-wrapper-react="true" class="extended d-flex">
-                  <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="first">
-                    <input formControlName="firstName" type="text" id="first_127" name="q127_name[first]" class="form-textbox validate[required] width-100"
-                      data-defaultvalue="" size="10" value="" data-component="first"
-                      aria-labelledby="label_127 sublabel_127_first" required="" />
-                    <label class="form-sub-label" for="first_127" id="sublabel_127_first" style="min-height:13px"
-                      aria-hidden="false"> First Name </label>
-                      <div *ngIf="studentApplicationForm.get('declaration.firstName')?.touched && studentApplicationForm.get('declaration.firstName')?.invalid" class="form-error-message" role="alert">
+              </li>
+              <li class="form-line jf-required" data-type="control_fullname" id="id_127">
+                <label class="form-label form-label-left form-label-auto" id="label_127" for="first_127">
+                  Name
+                  <span class="form-required">
+                    *
+                  </span>
+                </label>
+                <div id="cid_127" class="form-input jf-required width-100">
+                  <div data-wrapper-react="true" class="extended d-flex">
+                    <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="first">
+                      <input formControlName="firstName" type="text" id="first_127" name="q127_name[first]"
+                        class="form-textbox validate[required] width-100" data-defaultvalue="" size="10" value=""
+                        data-component="first" aria-labelledby="label_127 sublabel_127_first" required="" />
+                      <label class="form-sub-label" for="first_127" id="sublabel_127_first" style="min-height:13px"
+                        aria-hidden="false"> First Name </label>
+                      <div
+                        *ngIf="studentApplicationForm.get('declaration.firstName')?.touched && studentApplicationForm.get('declaration.firstName')?.invalid"
+                        class="form-error-message" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
-                         This field is required.
+                        This field is required.
                         <div class="form-error-arrow">
                           <div class="form-error-arrow-inner">
                           </div>
                         </div>
                       </div>
-                  </span>
-                  <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="middle">
-                    <input formControlName="middleName" type="text" id="middle_127" name="q127_name[middle]" class="form-textbox width-100"
-                      data-defaultvalue="" size="10" value="" data-component="middle"
-                      aria-labelledby="label_127 sublabel_127_middle" required="" />
-                    <label class="form-sub-label" for="middle_127" id="sublabel_127_middle" style="min-height:13px"
-                      aria-hidden="false"> Middle Name </label>
-                  </span>
-                  <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="last">
-                    <input formControlName="lastName" type="text" id="last_127" name="q127_name[last]" class="form-textbox validate[required] width-100"
-                      data-defaultvalue="" size="15" value="" data-component="last"
-                      aria-labelledby="label_127 sublabel_127_last" required="" />
-                    <label class="form-sub-label" for="last_127" id="sublabel_127_last" style="min-height:13px"
-                      aria-hidden="false"> Last Name </label>
-                      <div *ngIf="studentApplicationForm.get('declaration.lastName')?.touched && studentApplicationForm.get('declaration.lastName')?.invalid" class="form-error-message" role="alert">
+                    </span>
+                    <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="middle">
+                      <input formControlName="middleName" type="text" id="middle_127" name="q127_name[middle]"
+                        class="form-textbox width-100" data-defaultvalue="" size="10" value="" data-component="middle"
+                        aria-labelledby="label_127 sublabel_127_middle" required="" />
+                      <label class="form-sub-label" for="middle_127" id="sublabel_127_middle" style="min-height:13px"
+                        aria-hidden="false"> Middle Name </label>
+                    </span>
+                    <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="last">
+                      <input formControlName="lastName" type="text" id="last_127" name="q127_name[last]"
+                        class="form-textbox validate[required] width-100" data-defaultvalue="" size="15" value=""
+                        data-component="last" aria-labelledby="label_127 sublabel_127_last" required="" />
+                      <label class="form-sub-label" for="last_127" id="sublabel_127_last" style="min-height:13px"
+                        aria-hidden="false"> Last Name </label>
+                      <div
+                        *ngIf="studentApplicationForm.get('declaration.lastName')?.touched && studentApplicationForm.get('declaration.lastName')?.invalid"
+                        class="form-error-message" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
-                         This field is required.
+                        This field is required.
                         <div class="form-error-arrow">
                           <div class="form-error-arrow-inner">
                           </div>
                         </div>
                       </div>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="form-line" data-type="control_signature" id="id_128">
-              <label class="form-label form-label-left form-label-auto" id="label_128" for="input_128"> Signature
-              </label>
-              <div id="cid_128" class="form-input">
-                <div data-wrapper-react="true">
-                  <div id="signature_pad_128" class="signature-pad-wrapper" style="width:402px;height:202px">
-                    <div data-wrapper-react="true">
-                    </div>
-                    <div class="signature-line signature-wrapper signature-placeholder" data-component="signature"
-                      style="width:402px;height:202px">
-                      <div id="sig_pad_128" data-width="400" data-height="200" data-id="128" data-required="false"
-                        class="pad " aria-labelledby="label_128">
-                      </div>
-                      <input formControlName="signature" type="hidden" name="q128_signature" class="output4" id="input_128" />
-                    </div>
-                    <span class="clear-pad-btn clear-pad" role="button" tabindex="0">
-                      Clear
                     </span>
                   </div>
+                </div>
+              </li>
+              <li class="form-line" data-type="control_signature" id="id_128">
+                <label class="form-label form-label-left form-label-auto" id="label_128" for="input_128"> Signature
+                </label>
+                <div id="cid_128" class="form-input">
                   <div data-wrapper-react="true">
-                    <script type="text/javascript">
-                      window.signatureForm = true
-                    </script>
+                    <div id="signature_pad_128" class="signature-pad-wrapper" style="width:402px;height:202px">
+                      <div data-wrapper-react="true">
+                      </div>
+                      <div class="signature-line signature-wrapper signature-placeholder" data-component="signature"
+                        style="width:402px;height:202px">
+                        <div id="sig_pad_128" data-width="400" data-height="200" data-id="128" data-required="false"
+                          class="pad " aria-labelledby="label_128">
+                        </div>
+                        <input formControlName="signature" type="hidden" name="q128_signature" class="output4"
+                          id="input_128" />
+                      </div>
+                      <span class="clear-pad-btn clear-pad" role="button" tabindex="0">
+                        Clear
+                      </span>
+                    </div>
+                    <div data-wrapper-react="true">
+                      <script type="text/javascript">
+                        window.signatureForm = true
+                      </script>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="form-line d-flex" data-type="control_birthdate" id="id_121">
-              <label class="form-label form-label-left form-label-auto" id="label_121" for="input_121"> Date </label>
-              <div id="cid_121" class="form-input width-100">
-                <div data-wrapper-react="true" class="width-62">
-                  <input formControlName="date" type="date" class="customDateField width-92" #calendar/>
+              </li>
+              <li class="form-line d-flex" data-type="control_birthdate" id="id_121">
+                <label class="form-label form-label-left form-label-auto" id="label_121" for="input_121"> Date </label>
+                <div id="cid_121" class="form-input width-100">
+                  <div data-wrapper-react="true" class="width-62">
+                    <input formControlName="date" type="date" class="customDateField width-92" #calendar />
+                  </div>
                 </div>
-              </div>
-            </li>
-          </div>
+              </li>
+            </div>
             <li class="form-line" data-type="control_button" id="id_32">
               <div id="cid_32" class="form-input-wide">
                 <div style="text-align:center" data-align="center"

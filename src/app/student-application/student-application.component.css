@@ -6,6 +6,9 @@
 .width-100{
     width: 100%;
 }
+.width-20{
+    width: 20px;
+}
 
 .width-62{
     width: 62% !important;
@@ -30,6 +33,12 @@
 
 .width-50{
     width: 50%;
+}
+
+.add-remove{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .country-select{
@@ -1376,7 +1385,7 @@ li[data-type="control_mixed"] .form-sub-label-container[data-colsize="1"] input,
 }
 
 .form-all {
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
 }
 
@@ -1523,7 +1532,7 @@ li[data-type="control_mixed"] .form-sub-label-container[data-colsize="1"] input,
 }
 
 .form-all {
-    width: 690px;
+    width: 800px;
 }
 
 .form-label-left, .form-label-right {
