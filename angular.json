@@ -49,14 +49,12 @@
               "src/assets/css/open-iconic-bootstrap.min.css",
               "src/assets/css/animate.css" ,
               "src/assets/css/owl.theme.default.min.css", 
-              "src/assets/css/owl.carousel.min.css", 
               "src/assets/css/magnific-popup.css",
               "src/assets/css/aos.css",
               "src/assets/css/ionicons.min.css", 
               "src/assets/css/flaticon.css",
               "src/assets/css/icomoon.css",
-              "src/assets/css/style.css",
-              "src/assets/css/main.css"
+              "src/assets/css/style.css"
 
               
             ],
