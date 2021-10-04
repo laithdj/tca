@@ -620,6 +620,14 @@
                         aria-labelledby="label_79_col_2 label_79_row_0" />
                     </td>
                   </tr>
+                  <div  class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                     This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 </div>
                 </table>
@@ -652,131 +660,43 @@
                     <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_3">
                       <label id="label_81_col_3"> Date(mm/yy) </label>
                     </th>
+                    
                   </tr>
-                  <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_81 label_81_row_0">
+                  <tr formArrayName="educationQualification" 
+                    *ngFor="let educationQualificationGroup of educationQualificationGroups.controls; let i=index" class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_81 label_81_row_0">
+                    <div [formGroupName]="i">
                     <th scope="row" class="form-matrix-headers form-matrix-row-headers">
                       <label id="label_81_row_0"> </label>
                     </th>
                     <td class="form-matrix-values">
-                      <input type="text" id="input_81_0_0" class="form-textbox validate[required, requireOneAnswer]"
+                      <input formControlName="subject" type="text" id="input_81_0_0" class="form-textbox validate[required, requireOneAnswer]"
                         size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
                         value="" aria-labelledby="label_81_col_0 label_81_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input type="text" id="input_81_0_1" class="form-textbox validate[required, requireOneAnswer]"
+                      <input formControlName="level" type="text" id="input_81_0_1" class="form-textbox validate[required, requireOneAnswer]"
                         size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
                         value="" aria-labelledby="label_81_col_1 label_81_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input type="text" id="input_81_0_2" class="form-textbox validate[required, requireOneAnswer]"
+                      <input formControlName="grade" type="text" id="input_81_0_2" class="form-textbox validate[required, requireOneAnswer]"
                         size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
                         value="" aria-labelledby="label_81_col_2 label_81_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input type="text" id="input_81_0_3" class="form-textbox validate[required, requireOneAnswer]"
+                      <input formControlName="date" type="text" id="input_81_0_3" class="form-textbox validate[required, requireOneAnswer]"
                         size="5" name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box"
                         value="" aria-labelledby="label_81_col_3 label_81_row_0" />
                     </td>
-                  </tr>
-                  <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_81 label_81_row_1">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_81_row_1"> </label>
-                    </th>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_1_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[1][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_0 label_81_row_1" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_1_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[1][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_1 label_81_row_1" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_1_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[1][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_2 label_81_row_1" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_1_3" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[1][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_3 label_81_row_1" />
-                    </td>
-                  </tr>
-                  <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_81 label_81_row_2">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_81_row_2"> </label>
-                    </th>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_2_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[2][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_0 label_81_row_2" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_2_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[2][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_1 label_81_row_2" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_2_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[2][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_2 label_81_row_2" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_2_3" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[2][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_3 label_81_row_2" />
-                    </td>
-                  </tr>
-                  <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_81 label_81_row_3">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_81_row_3"> </label>
-                    </th>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_3_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[3][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_0 label_81_row_3" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_3_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[3][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_1 label_81_row_3" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_3_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[3][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_2 label_81_row_3" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_3_3" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[3][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_3 label_81_row_3" />
-                    </td>
-                  </tr>
-                  <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_81 label_81_row_4">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_81_row_4"> </label>
-                    </th>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_4_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[4][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_0 label_81_row_4" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_4_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[4][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_1 label_81_row_4" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_4_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[4][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_2 label_81_row_4" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_81_4_3" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q81_educationalQualifications[4][]" style="width:100%;box-sizing:border-box"
-                        value="" aria-labelledby="label_81_col_3 label_81_row_4" />
-                    </td>
+                  </div>
+                  <div  class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                     This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+                      </div>
+                    </div>
+                  </div>
                   </tr>
                 </table>
               </div>
@@ -807,45 +727,36 @@
                       <label id="label_82_col_2"> Date(mm/yy) </label>
                     </th>
                   </tr>
-                  <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_0">
+                  <tr formArrayName="englishProficiency" 
+                    *ngFor="let englishProficiencyGroup of englishProficiencyGroups.controls; let i=index"class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_0">
                     <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_82_row_0"> 1 </label>
+                      <label id="label_82_row_0">  </label>
                     </th>
+                    <div [formGroupName]="i">
                     <td class="form-matrix-values">
-                      <input type="text" id="input_82_0_0" class="form-textbox validate[required, requireOneAnswer]"
+                      <input formControlName="certificateName" type="text" id="input_82_0_0" class="form-textbox validate[required, requireOneAnswer]"
                         size="5" name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
                         aria-labelledby="label_82_col_0 label_82_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input type="text" id="input_82_0_1" class="form-textbox validate[required, requireOneAnswer]"
+                      <input formControlName="grade" type="text" id="input_82_0_1" class="form-textbox validate[required, requireOneAnswer]"
                         size="5" name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
                         aria-labelledby="label_82_col_1 label_82_row_0" />
                     </td>
                     <td class="form-matrix-values">
-                      <input type="text" id="input_82_0_2" class="form-textbox validate[required, requireOneAnswer]"
+                      <input formControlName="date" type="text" id="input_82_0_2" class="form-textbox validate[required, requireOneAnswer]"
                         size="5" name="q82_educationalLanguage[0][]" style="width:100%;box-sizing:border-box" value=""
                         aria-labelledby="label_82_col_2 label_82_row_0" />
                     </td>
-                  </tr>
-                  <tr class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_1">
-                    <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                      <label id="label_82_row_1"> 2 </label>
-                    </th>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_82_1_0" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q82_educationalLanguage[1][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_82_col_0 label_82_row_1" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_82_1_1" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q82_educationalLanguage[1][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_82_col_1 label_82_row_1" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input type="text" id="input_82_1_2" class="form-textbox validate[required, requireOneAnswer]"
-                        size="5" name="q82_educationalLanguage[1][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_82_col_2 label_82_row_1" />
-                    </td>
+                  </div>
+                  <div  class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                     This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+                      </div>
+                    </div>
+                  </div>
                   </tr>
                 </table>
               </div>

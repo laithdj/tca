@@ -12,6 +12,8 @@ export class StudentApplicationComponent implements OnInit {
   public countries:any;
   public studentApplicationForm : FormGroup = new FormGroup({});
   educationDetails: FormArray = new FormArray([]);
+  educationQualification: FormArray = new FormArray([]);
+  englishProficiency: FormArray = new FormArray([]);
   todayDate: Date = new Date();
 
   constructor(
@@ -63,23 +65,9 @@ export class StudentApplicationComponent implements OnInit {
         sponser: ['',[Validators.required, Validators.minLength(3)]],
       }),
 
-      //should be form array
       educationDetails: this.fb.array([this.getEducationDetailGroup()]),
-      //should be form array
-      educationQualification: new FormGroup({
-        qualifications: new FormArray([]),
-        subject: new FormControl('', [Validators.required]),
-        level: new FormControl('', [Validators.required]), 
-        grade: new FormControl('', [Validators.required]),
-        date: new FormControl('', [Validators.required])
-      }),
-      //should be form array
-      englishProficiency: new FormGroup({
-        certificates: new FormArray([]),
-        certificateName: new FormControl('', [Validators.required]), //IETS, TOEFEL
-        grade: new FormControl('', [Validators.required]),
-        date: new FormControl('', [Validators.required])
-      }),
+      educationQualification: this.fb.array([this.getEducationQualificationGroup()]),
+      englishProficiency: this.fb.array([this.getEnglishProficiencyGroup()]),
 
       statement: ['',[Validators.required, Validators.minLength(6)]],
 
@@ -100,6 +88,25 @@ export class StudentApplicationComponent implements OnInit {
       attendedFrom: ['', Validators.required]
     })
   }
+
+  getEducationQualificationGroup(){
+    return this.fb.group({
+     subject: ['', Validators.required],
+     level: ['', Validators.required], 
+     grade: ['', Validators.required],
+     date: ['', Validators.required],
+   })
+ }
+
+ getEnglishProficiencyGroup(){
+  return this.fb.group({
+    certificateName: ['', Validators.required], //IETS, TOEFEL
+    grade: ['', Validators.required],
+    date: ['', Validators.required],
+ })
+}
+ 
+
   createItem(): FormGroup {
     return new FormGroup({
       institue: new FormControl(),
@@ -116,6 +123,15 @@ export class StudentApplicationComponent implements OnInit {
   get educationDetailGroups(){
     return this.studentApplicationForm.get('educationDetails') as FormArray;
   }
+
+  get educationQualificationGroups(){
+    return this.studentApplicationForm.get('educationQualification') as FormArray;
+  }
+
+ get englishProficiencyGroups(){
+    return this.studentApplicationForm.get('englishProficiency') as FormArray;
+  }
+  
   onSubmit(){
     console.log(this.studentApplicationForm.value)
   }
