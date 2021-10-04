@@ -90,19 +90,14 @@
             </div>
           </div>
         </form><br>
-        <div class='row'>
-            <div style='background:white;width:50%;align-items: center;margin-left:25%;padding:15px;'>
-                <h3>Maths Teacher</h3>
-                <p>description</p>
-                <button type="button" class="btn btn-primary">Apply</button>
-            
-            </div>
-            <div style='background:white;width:50%;height:100px;display: flex;align-items: center;margin-left:25%;margin-top:5px;padding:15px;'>
-            
-            </div>
-            <div style='background:white;width:50%;height:100px;display: flex;align-items: center;margin-left:25%;margin-top:5px;padding:15px;'>
-            
-            </div>
+        <div *ngFor="let job of jobs">
+          <app-job-card 
+            [jobTitle]="job.jobTitle"
+            [jobDescription]="job.jobDescription"
+            [jobCategory]="job.jobCategory"
+          >
+  
+          </app-job-card>
         </div>
       </div>
 

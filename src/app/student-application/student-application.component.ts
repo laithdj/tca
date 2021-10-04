@@ -64,12 +64,7 @@ export class StudentApplicationComponent implements OnInit {
       }),
 
       //should be form array
-      educationDetails: new FormGroup({
-        education: new FormArray([]),
-        instituteName: new FormControl('', [Validators.required, Validators.minLength(3)]),
-        country: new FormControl('', [Validators.required]), 
-        attendedFrom: new FormControl('', [Validators.required])
-      }),
+      educationDetails: this.fb.array([this.getEducationDetailGroup()]),
       //should be form array
       educationQualification: new FormGroup({
         qualifications: new FormArray([]),
@@ -98,6 +93,13 @@ export class StudentApplicationComponent implements OnInit {
     });
   }
 
+  getEducationDetailGroup(){
+     return this.fb.group({
+      instituteName: ['', Validators.required],
+      country: ['', Validators.required], 
+      attendedFrom: ['', Validators.required]
+    })
+  }
   createItem(): FormGroup {
     return new FormGroup({
       institue: new FormControl(),
@@ -109,6 +111,10 @@ export class StudentApplicationComponent implements OnInit {
   addItem(): void {
     this.educations = this.studentApplicationForm.get('educations') as FormArray;
     this.educations.push(this.createItem());
+  }
+
+  get educationDetailGroups(){
+    return this.studentApplicationForm.get('educationDetails') as FormArray;
   }
   onSubmit(){
     console.log(this.studentApplicationForm.value)
