@@ -9,8 +9,8 @@ import { ConstService } from '../services/const-service';
 })
 
 export class StudentApplicationComponent implements OnInit {
-  public countries:any;
-  public studentApplicationForm : FormGroup = new FormGroup({});
+  public countries: any;
+  public studentApplicationForm: FormGroup = new FormGroup({});
   educationDetails: FormArray = new FormArray([]);
   educationQualification: FormArray = new FormArray([]);
   englishProficiency: FormArray = new FormArray([]);
@@ -19,7 +19,7 @@ export class StudentApplicationComponent implements OnInit {
   constructor(
     public constantService: ConstService,
     private fb: FormBuilder
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.countries = this.constantService.country_list;
@@ -30,109 +30,130 @@ export class StudentApplicationComponent implements OnInit {
     this.studentApplicationForm = this.fb.group({
 
       name: this.fb.group({
-        firstName: ['' ,[Validators.required, Validators.minLength(3)]],
+        firstName: ['', [Validators.required, Validators.minLength(3)]],
         middleName: [''],
-        lastName: ['',[Validators.required, Validators.minLength(3)]],
+        lastName: ['', [Validators.required, Validators.minLength(3)]],
       }),
       gender: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
-      nationality: ['',[Validators.required, Validators.minLength(3)]],
+      nationality: ['', [Validators.required, Validators.minLength(3)]],
       countryOfBirth: ['', Validators.required],
 
       homeAddress: this.fb.group({
-        streetAddressLine1: ['',[Validators.required, Validators.minLength(3)]],
-        streetAddressLine2: ['',[Validators.required, Validators.minLength(3)]],
-        city: ['',[Validators.required, Validators.minLength(3)]],
-        stateOrProvince: ['',[Validators.required, Validators.minLength(3)]],
-        postalCode: ['',[Validators.required, Validators.minLength(3)]],
-        country: ['',[Validators.required, Validators.minLength(3)]],
+        streetAddressLine1: ['', [Validators.required, Validators.minLength(3)]],
+        streetAddressLine2: ['', [Validators.required, Validators.minLength(3)]],
+        city: ['', [Validators.required, Validators.minLength(3)]],
+        stateOrProvince: ['', [Validators.required, Validators.minLength(3)]],
+        postalCode: ['', [Validators.required, Validators.minLength(3)]],
+        country: ['', [Validators.required, Validators.minLength(3)]],
       }),
 
-      contact: ['',[Validators.required, Validators.minLength(6)]],
-      email: ['',[Validators.required, Validators.email]],
+      contact: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', [Validators.required, Validators.email]],
 
       guardian: this.fb.group({
-        guardianName: ['',[Validators.required, Validators.minLength(3)]],
-        guardianRelationship: ['',[Validators.required, Validators.minLength(3)]],
-        guardianContact: ['',[Validators.required, Validators.minLength(6)]],
-        guardianAddress: ['',[Validators.required, Validators.minLength(3)]],
+        guardianName: ['', [Validators.required, Validators.minLength(3)]],
+        guardianRelationship: ['', [Validators.required, Validators.minLength(3)]],
+        guardianContact: ['', [Validators.required, Validators.minLength(6)]],
+        guardianAddress: ['', [Validators.required, Validators.minLength(3)]],
       }),
 
       applicationDetails: this.fb.group({
-        intendedDegree: ['',[Validators.required, Validators.minLength(3)]],
-        propoosedStartDate: ['',[Validators.required, Validators.minLength(3)]], //March 2022
-        tutionFeeMode: ['',[Validators.required]],
-        sponser: ['',[Validators.required, Validators.minLength(3)]],
+        intendedDegree: ['', [Validators.required, Validators.minLength(3)]],
+        propoosedStartDate: ['', [Validators.required, Validators.minLength(3)]], //March 2022
+        tutionFeeMode: ['', [Validators.required]],
+        sponser: ['', [Validators.required, Validators.minLength(3)]],
       }),
 
       educationDetails: this.fb.array([this.getEducationDetailGroup()]),
       educationQualification: this.fb.array([this.getEducationQualificationGroup()]),
       englishProficiency: this.fb.array([this.getEnglishProficiencyGroup()]),
 
-      statement: ['',[Validators.required, Validators.minLength(6)]],
+      statement: ['', [Validators.required, Validators.minLength(6)]],
 
       declaration: this.fb.group({
-        firstName: ['',[Validators.required, Validators.minLength(3)]],
-        middleName: ['',[Validators.required, Validators.minLength(3)]],
-        lastName: ['',[Validators.required, Validators.minLength(3)]],
-        signature: ['',Validators.required],
-        date: ['',[Validators.required]],
+        firstName: ['', [Validators.required, Validators.minLength(3)]],
+        middleName: ['', [Validators.required, Validators.minLength(3)]],
+        lastName: ['', [Validators.required, Validators.minLength(3)]],
+        signature: ['', Validators.required],
+        date: ['', [Validators.required]],
       }),
     });
   }
 
-  getEducationDetailGroup(){
-     return this.fb.group({
+  getEducationDetailGroup() {
+    return this.fb.group({
       instituteName: ['', Validators.required],
-      country: ['', Validators.required], 
+      country: ['', Validators.required],
       attendedFrom: ['', Validators.required]
     })
   }
 
-  getEducationQualificationGroup(){
+  getEducationQualificationGroup() {
     return this.fb.group({
-     subject: ['', Validators.required],
-     level: ['', Validators.required], 
-     grade: ['', Validators.required],
-     date: ['', Validators.required],
-   })
- }
-
- getEnglishProficiencyGroup(){
-  return this.fb.group({
-    certificateName: ['', Validators.required], //IETS, TOEFEL
-    grade: ['', Validators.required],
-    date: ['', Validators.required],
- })
-}
- 
-
-  createItem(): FormGroup {
-    return new FormGroup({
-      institue: new FormControl(),
-      subject: new FormControl(),
-      attenedFrom: new FormControl(),
-    });
-  }
-  
-  addItem(): void {
-    // this.educations = this.studentApplicationForm.get('educations') as FormArray;
-    // this.educations.push(this.createItem());
+      subject: ['', Validators.required],
+      level: ['', Validators.required],
+      grade: ['', Validators.required],
+      date: ['', Validators.required],
+    })
   }
 
-  get educationDetailGroups(){
+  getEnglishProficiencyGroup() {
+    return this.fb.group({
+      certificateName: ['', Validators.required],
+      grade: ['', Validators.required],
+      date: ['', Validators.required],
+    })
+  }
+
+
+  aadEducation() {
+    this.educationDetails = this.studentApplicationForm.get('educationDetails') as FormArray;
+    this.educationDetails.push(this.getEducationDetailGroup());
+    console.log("add");
+  }
+
+  removeEducation(index: number) {
+    this.educationDetails = this.studentApplicationForm.get('educationDetails') as FormArray;
+    this.educationDetails.removeAt(index);
+    console.log("remove");
+
+  }
+
+  addQualification() {
+    this.educationQualification = this.studentApplicationForm.get('educationQualification') as FormArray;
+    this.educationQualification.push(this.getEducationQualificationGroup());
+  }
+
+  removeQualification(index: number) {
+    this.educationQualification = this.studentApplicationForm.get('educationQualification') as FormArray;
+    this.educationQualification.removeAt(index);
+
+  }
+
+  addEngCertificate() {
+    this.englishProficiency = this.studentApplicationForm.get('englishProficiency') as FormArray;
+    this.englishProficiency.push(this.getEnglishProficiencyGroup());
+  }
+
+  removeEngCertificate(index: number) {
+    this.englishProficiency = this.studentApplicationForm.get('englishProficiency') as FormArray;
+    this.englishProficiency.removeAt(index);
+  }
+
+  get educationDetailGroups() {
     return this.studentApplicationForm.get('educationDetails') as FormArray;
   }
 
-  get educationQualificationGroups(){
+  get educationQualificationGroups() {
     return this.studentApplicationForm.get('educationQualification') as FormArray;
   }
 
- get englishProficiencyGroups(){
+  get englishProficiencyGroups() {
     return this.studentApplicationForm.get('englishProficiency') as FormArray;
   }
-  
-  onSubmit(){
+
+  onSubmit() {
     console.log(this.studentApplicationForm.value)
   }
 }

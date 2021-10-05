@@ -654,8 +654,10 @@
                       </th>
                     </tr>
 
-                    <tr [formGroupName]="i" class="form-matrix-tr form-matrix-value-tr"
-                      *ngFor="let educationDetailGroup of educationDetailGroups.controls; let i=index">
+                    <tr formArrayName="educationDetails" class="form-matrix-tr form-matrix-value-tr"
+                      *ngFor="let educationDetailGroup of educationDetailGroups.controls; let i=index"
+                      >
+                      <div [formGroupName]="i">
                       <td class="form-matrix-values">
                         <input formControlName="instituteName" type="text" id="input_79_0_0"
                           class="form-textbox validate[required, requireOneAnswer]" size="5"
@@ -675,11 +677,12 @@
                           value="" aria-labelledby="label_79_col_2 label_79_row_0" />
                       </td>
                       <td class="add-remove width-20">
-                        <span>
-                          <i class="fas fa-trash"></i>
-                          <i class="fas fa-plus-circle"></i>
+                        <span class="add-remove-button">
+                          <i class="fas fa-trash trash-icon" *ngIf="(i!=0)" (click)="removeEducation(i)"></i>
+                          <i class="fas fa-plus-circle add-icon" (click)="aadEducation()"></i>
                         </span>
                       </td>
+                    </div>
                     </tr>
                     <div class="form-error-message width-100" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
@@ -717,9 +720,10 @@
                       <label id="label_81_col_3"> Date(mm/yy) </label>
                     </th>
                   </tr>
-                  <tr [formGroupName]="i" formArrayName="educationQualification"
+                  <tr formArrayName="educationQualification"
                     *ngFor="let educationQualificationGroup of educationQualificationGroups.controls; let i=index"
                     class="form-matrix-tr form-matrix-value-tr">
+                    <div [formGroupName]="i" >
                     <td class="form-matrix-values">
                       <input formControlName="subject" type="text" id="input_81_0_0"
                         class="form-textbox validate[required, requireOneAnswer]" size="5"
@@ -746,10 +750,11 @@
                     </td>
                     <td class="add-remove width-20">
                       <span>
-                        <i class="fas fa-trash"></i>
-                        <i class="fas fa-plus-circle"></i>
+                        <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeQualification(i)"></i>
+                        <i class="fas fa-plus-circle" (click)="addQualification()"></i>
                       </span>
                     </td>
+                  </div>
                   </tr>
                   <div class="form-error-message width-100" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
@@ -785,9 +790,10 @@
                       <label id="label_82_col_2"> Date(mm/yy) </label>
                     </th>
                   </tr>
-                  <tr [formGroupName]="i" formArrayName="englishProficiency"
+                  <tr formArrayName="englishProficiency"
                     *ngFor="let englishProficiencyGroup of englishProficiencyGroups.controls; let i=index"
                     class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_0">
+                    <div [formGroupName]="i">
                       <td class="form-matrix-values">
                         <input formControlName="certificateName" type="text" id="input_82_0_0"
                           class="form-textbox validate[required, requireOneAnswer]" size="5"
@@ -808,10 +814,11 @@
                       </td>
                       <td class="add-remove width-20">
                         <span>
-                          <i class="fas fa-trash"></i>
-                          <i class="fas fa-plus-circle"></i>
+                          <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeEngCertificate(i)"></i>
+                          <i class="fas fa-plus-circle" (click)="addEngCertificate()"></i>
                         </span>
                       </td>
+                    </div>
                   </tr>
                   <div class="form-error-message" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
