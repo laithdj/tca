@@ -110,14 +110,11 @@ export class StudentApplicationComponent implements OnInit {
   aadEducation() {
     this.educationDetails = this.studentApplicationForm.get('educationDetails') as FormArray;
     this.educationDetails.push(this.getEducationDetailGroup());
-    console.log("add");
   }
 
   removeEducation(index: number) {
     this.educationDetails = this.studentApplicationForm.get('educationDetails') as FormArray;
     this.educationDetails.removeAt(index);
-    console.log("remove");
-
   }
 
   addQualification() {
