@@ -65,9 +65,9 @@ export class StudentApplicationComponent implements OnInit {
         sponser: ['', [Validators.required, Validators.minLength(3)]],
       }),
 
-      educationDetails: this.fb.array([this.getEducationDetailGroup()]),
-      educationQualification: this.fb.array([this.getEducationQualificationGroup()]),
-      englishProficiency: this.fb.array([this.getEnglishProficiencyGroup()]),
+      educationDetails: this.fb.array([]),
+      educationQualification: this.fb.array([]),
+      englishProficiency: this.fb.array([]),
 
       statement: ['', [Validators.required, Validators.minLength(6)]],
 
@@ -79,6 +79,9 @@ export class StudentApplicationComponent implements OnInit {
         date: ['', [Validators.required]],
       }),
     });
+    this.aadEducation();
+    this.addQualification();
+    this.addEngCertificate();
   }
 
   getEducationDetailGroup() {

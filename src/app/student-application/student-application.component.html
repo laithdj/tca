@@ -673,7 +673,7 @@
                         <td class="add-remove width-20">
                           <span class="add-remove-button">
                             <i class="fas fa-trash trash-icon" *ngIf="(i!=0)" (click)="removeEducation(i)"></i>
-                            <i class="fas fa-plus-circle add-icon" (click)="aadEducation()"></i>
+                            <i class="fas fa-plus-circle add-icon" *ngIf=" (i+1 === educationDetails.length)" (click)="aadEducation()"></i>
                           </span>
                         </td>
                       </tr>
@@ -749,7 +749,7 @@
                       <td class="add-remove width-20">
                         <span>
                           <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeQualification(i)"></i>
-                          <i class="fas fa-plus-circle" (click)="addQualification()"></i>
+                          <i class="fas fa-plus-circle" *ngIf="(i+1 === educationQualification.length)" (click)="addQualification()"></i>
                         </span>
                       </td>
                     </tr>
@@ -817,7 +817,7 @@
                       <td class="add-remove width-20">
                         <span>
                           <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeEngCertificate(i)"></i>
-                          <i class="fas fa-plus-circle" (click)="addEngCertificate()"></i>
+                          <i class="fas fa-plus-circle" *ngIf=" (i+1 === englishProficiency.length)" (click)="addEngCertificate()"></i>
                         </span>
                       </td>
                     </tr>
