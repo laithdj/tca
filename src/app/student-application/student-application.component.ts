@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ConstService } from '../services/const-service';
 
 @Component({
@@ -18,7 +19,8 @@ export class StudentApplicationComponent implements OnInit {
 
   constructor(
     public constantService: ConstService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -154,6 +156,12 @@ export class StudentApplicationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.studentApplicationForm.value)
+    console.log(this.studentApplicationForm.value);
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
   }
 }

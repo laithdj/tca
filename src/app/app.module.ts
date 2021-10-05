@@ -37,6 +37,7 @@ import { JobSearchComponent } from './job-search/job-search.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { SharedModule } from './shared/shared/shared.module';
 import { JobCardComponent } from './job-search/job-cards/job-card/job-card.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { JobCardComponent } from './job-search/job-cards/job-card/job-card.compo
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    NgxSpinnerModule,
     AuthModule.forRoot({
       ...env.auth,
     })
