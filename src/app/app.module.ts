@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { GraduatesComponent } from './graduates/graduates.component';
@@ -41,6 +41,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorInterceptor } from './interceptors';
+import {DialogModule} from 'primeng/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +82,8 @@ import { ErrorInterceptor } from './interceptors';
     SharedModule,
     NgxSpinnerModule,
     BrowserAnimationsModule,
+    DialogModule,
+    HttpClientModule,
     ToastrModule.forRoot(
       {
         timeOut: 10000,
