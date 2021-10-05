@@ -92,8 +92,8 @@
                     <span class="dragger-item">
                     </span>
                     <input formControlName="gender" type="radio" aria-describedby="label_61"
-                      class="form-radio validate[required]" id="input_61_1" name="q61_gender" value="Female" required=""
-                      />
+                      class="form-radio validate[required]" id="input_61_1" name="q61_gender" value="Female"
+                      required="" />
                     <label id="label_input_61_1" for="input_61_1"> Female </label>
                   </span>
 
@@ -588,7 +588,7 @@
                       </span>
                       <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73"
                         class="form-radio validate[required]" id="input_73_2" name="q73_howDo" value="Self-Funded"
-                        required=""/>
+                        required="" />
                       <label id="label_input_73_2" for="input_73_2"> Self-Funded </label>
 
                     </span>
@@ -959,30 +959,19 @@
               <li class="form-line" data-type="control_signature" id="id_128">
                 <label class="form-label form-label-left form-label-auto" id="label_128" for="input_128"> Signature
                 </label>
-                <div id="cid_128" class="form-input">
-                  <div data-wrapper-react="true">
-                    <div id="signature_pad_128" class="signature-pad-wrapper" style="width:402px;height:202px">
-                      <div data-wrapper-react="true">
-                      </div>
-                      <div class="signature-line signature-wrapper signature-placeholder" data-component="signature"
-                        style="width:402px;height:202px">
-                        <div id="sig_pad_128" data-width="400" data-height="200" data-id="128" data-required="false"
-                          class="pad " aria-labelledby="label_128">
-                        </div>
-                        <input formControlName="signature" type="hidden" name="q128_signature" class="output4"
-                          id="input_128" />
-                      </div>
-                      <span class="clear-pad-btn clear-pad" role="button" tabindex="0">
-                        Clear
-                      </span>
-                    </div>
-                    <div data-wrapper-react="true">
-                      <script type="text/javascript">
-                        window.signatureForm = true
-                      </script>
-                    </div>
-                  </div>
+                <!-- Signature -->
+                <div class="signature-container">
+                  <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()"
+                    (onEndEvent)="drawComplete()"></signature-pad>
                 </div>
+                <div class="buttons">
+                  <button (click)="clearSignature()">Clear signature pad</button>
+                  <button (click)="savePad()">Save signature</button>
+                </div>
+                <div class="signature-image" *ngIf="signatureImg">
+                  <img src='{{ signatureImg }}' />
+                </div>
+                <!-- End Signature -->
               </li>
               <li class="form-line d-flex" data-type="control_birthdate" id="id_121">
                 <label class="form-label form-label-left form-label-auto" id="label_121" for="input_121"> Date </label>

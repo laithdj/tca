@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { SignaturePad } from 'angular2-signaturepad';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ConstService } from '../services/const-service';
@@ -8,7 +9,7 @@ import { StudentService } from '../services/student-service';
 @Component({
   selector: 'app-student-application',
   templateUrl: './student-application.component.html',
-  styleUrls: ['./student-application.component.css']
+  styleUrls: ['./student-application.component.scss']
 })
 
 export class StudentApplicationComponent implements OnInit {
@@ -19,6 +20,17 @@ export class StudentApplicationComponent implements OnInit {
   englishProficiency: FormArray = new FormArray([]);
   todayDate: Date = new Date();
 
+  //signature
+  signatureImg!: string;
+  @ViewChild(SignaturePad)
+  signaturePad!: SignaturePad;
+
+  signaturePadOptions: Object = { 
+    'minWidth': 2,
+    'canvasWidth': 700,
+    'canvasHeight': 300
+  };
+  // -------------------
   constructor(
     public constantService: ConstService,
     private fb: FormBuilder,
@@ -26,6 +38,30 @@ export class StudentApplicationComponent implements OnInit {
     private toastr: ToastrService,
     private studentService: StudentService
   ) { }
+
+  ngAfterViewInit() {
+    // this.signaturePad is now available
+    this.signaturePad.set('minWidth', 2); 
+    this.signaturePad.clear(); 
+  }
+
+  drawComplete() {
+    console.log(this.signaturePad.toDataURL());
+  }
+
+  drawStart() {
+    console.log('begin drawing');
+  }
+
+  clearSignature() {
+    this.signaturePad.clear();
+  }
+
+  savePad() {
+    const base64Data = this.signaturePad.toDataURL();
+    this.signatureImg = base64Data;
+  }
+
 
   ngOnInit(): void {
     this.countries = this.constantService.country_list;

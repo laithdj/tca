@@ -42,6 +42,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorInterceptor } from './interceptors';
 import {DialogModule} from 'primeng/dialog';
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import {DialogModule} from 'primeng/dialog';
     BrowserAnimationsModule,
     DialogModule,
     HttpClientModule,
+    SignaturePadModule,
     ToastrModule.forRoot(
       {
         timeOut: 10000,
