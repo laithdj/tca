@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JobService } from '../services/job-service';
 
 @Component({
   selector: 'app-job-search',
@@ -18,9 +19,21 @@ export class JobSearchComponent implements OnInit {
     jobCategory:"Doctor"
   }]
 
-  constructor() { }
+  constructor(
+    private jobService: JobService
+  ) { }
 
   ngOnInit(): void {
+    this.fetchJobs();
+  }
+
+
+  fetchJobs() {
+    this.jobService.getJobs().subscribe(res=>{
+      // this.jobs = res.data;
+    }, error=>{
+
+    })
   }
 
 }

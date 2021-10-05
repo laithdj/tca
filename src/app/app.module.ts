@@ -38,7 +38,9 @@ import { StudentApplicationComponent } from './student-application/student-appli
 import { SharedModule } from './shared/shared/shared.module';
 import { JobCardComponent } from './job-search/job-cards/job-card/job-card.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ErrorInterceptor } from './interceptors';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,12 +73,20 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     WaikatoComponent,
     JobSearchComponent,
     StudentApplicationComponent,
-    JobCardComponent  ],
+    JobCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     NgxSpinnerModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 10000,
+        positionClass: 'toast-top-right',
+        preventDuplicates: true,
+      }
+    ),
     AuthModule.forRoot({
       ...env.auth,
     })
@@ -85,6 +95,12 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthHttpInterceptor,
+      multi: true,
+    },
+
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
       multi: true,
     },
   ],

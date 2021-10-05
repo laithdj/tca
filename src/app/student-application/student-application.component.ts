@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { ConstService } from '../services/const-service';
+import { StudentService } from '../services/student-service';
 
 @Component({
   selector: 'app-student-application',
@@ -20,7 +22,9 @@ export class StudentApplicationComponent implements OnInit {
   constructor(
     public constantService: ConstService,
     private fb: FormBuilder,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private toastr: ToastrService,
+    private studentService: StudentService
   ) { }
 
   ngOnInit(): void {
@@ -57,14 +61,14 @@ export class StudentApplicationComponent implements OnInit {
         guardianName: ['', [Validators.required, Validators.minLength(3)]],
         guardianRelationship: ['', [Validators.required, Validators.minLength(3)]],
         guardianContact: ['', [Validators.required, Validators.minLength(6)]],
-        guardianAddress: ['', [Validators.required, Validators.minLength(3)]],
+        guardianAddress: '', //optional
       }),
 
       applicationDetails: this.fb.group({
         intendedDegree: ['', [Validators.required, Validators.minLength(3)]],
         propoosedStartDate: ['', [Validators.required, Validators.minLength(3)]], //March 2022
         tutionFeeMode: ['', [Validators.required]],
-        sponser: ['', [Validators.required, Validators.minLength(3)]],
+        sponser: '' //optional
       }),
 
       educationDetails: this.fb.array([]),
@@ -78,7 +82,7 @@ export class StudentApplicationComponent implements OnInit {
         middleName: ['', [Validators.required, Validators.minLength(3)]],
         lastName: ['', [Validators.required, Validators.minLength(3)]],
         signature: ['', Validators.required],
-        date: ['', [Validators.required]],
+        date: [new Date(), [Validators.required]],
       }),
     });
     this.aadEducation();
@@ -157,11 +161,32 @@ export class StudentApplicationComponent implements OnInit {
 
   onSubmit() {
     console.log(this.studentApplicationForm.value);
+
+    // if(this.studentApplicationForm.invalid){
+    //   this.studentApplicationForm.markAllAsTouched();;
+    //   return;
+    // }
     this.spinner.show();
 
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
+
+      if (this.studentApplicationForm.invalid) {
+        this.studentApplicationForm.markAllAsTouched();
+        this.toastr.success("Validation Error.", "Error");
+      } else {
+        this.toastr.success("Your application has been submitted.", "Success");
+      }
+
+
     }, 5000);
+
+    this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res=>{
+      //success
+    }, error=>{
+      //failure
+    })
+
   }
 }

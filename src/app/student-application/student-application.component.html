@@ -84,18 +84,29 @@
                     <span class="dragger-item">
                     </span>
                     <input formControlName="gender" type="radio" aria-describedby="label_61"
-                      class="form-radio validate[required]" id="input_61_0" name="q61_gender" value="Male" required=""
-                      checked />
+                      class="form-radio validate[required]" id="input_61_0" name="q61_gender" value="Male"
+                      required="" />
                     <label id="label_input_61_0" for="input_61_0"> Male </label>
                   </span>
                   <span class="form-radio-item" style="clear:left">
                     <span class="dragger-item">
                     </span>
                     <input formControlName="gender" type="radio" aria-describedby="label_61"
-                      class="form-radio validate[required]" id="input_61_1" name="q61_gender" value="Female"
-                      required="" />
+                      class="form-radio validate[required]" id="input_61_1" name="q61_gender" value="Female" required=""
+                      />
                     <label id="label_input_61_1" for="input_61_1"> Female </label>
                   </span>
+
+                </div>
+                <div
+                  *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid"
+                  class="form-error-message" role="alert">
+                  <img src="../../assets/icons/exclamation-octagon.png">
+                  This field is required.
+                  <div class="form-error-arrow">
+                    <div class="form-error-arrow-inner">
+                    </div>
+                  </div>
                 </div>
               </div>
             </li>
@@ -288,11 +299,12 @@
                       </span>
                       <span class="form-address-line form-address-country-line jsTest-address-lineField ">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                          <select class="form-dropdown form-address-country noTranslate country-select"
+                          <select formControlName="country"
+                            class="form-dropdown form-address-country noTranslate country-select"
                             name="q44_homeAddress[country]" id="input_44_country" data-component="country" required=""
                             aria-labelledby="label_44 sublabel_44_country">
                             <option value=""> Please Select </option>
-                            <!-- <option *ngFor="let country of countries" [value]="country"> {{country}} </option> -->
+                            <option *ngFor="let country of countries" [value]="country"> {{country}} </option>
                           </select>
                           <label class="form-sub-label" for="input_44_country" id="sublabel_44_country"
                             style="min-height:13px" aria-hidden="false"> Country </label>
@@ -470,17 +482,6 @@
                     data-type="input-textbox" class="form-textbox" data-defaultvalue="" size="65" value=""
                     placeholder=" " data-component="textbox" aria-labelledby="label_22" />
                 </div>
-                <div
-                  *ngIf="studentApplicationForm.get('guardian.guardianAddress')?.touched && studentApplicationForm.get('guardian.guardianAddress')?.invalid"
-                  class="form-error-message" role="alert">
-                  <img src="../../assets/icons/exclamation-octagon.png">
-                  This field is required.
-                  <div class="form-error-arrow">
-                    <div class="form-error-arrow-inner">
-
-                    </div>
-                  </div>
-                </div>
               </li>
             </div>
             <!-- Guardian End -->
@@ -587,9 +588,22 @@
                       </span>
                       <input formControlName="tutionFeeMode" type="radio" aria-describedby="label_73"
                         class="form-radio validate[required]" id="input_73_2" name="q73_howDo" value="Self-Funded"
-                        required="" checked="true" />
+                        required=""/>
                       <label id="label_input_73_2" for="input_73_2"> Self-Funded </label>
+
                     </span>
+
+                  </div>
+
+                  <div
+                    *ngIf="studentApplicationForm.get('applicationDetails.tutionFeeMode')?.touched && studentApplicationForm.get('applicationDetails.tutionFeeMode')?.invalid"
+                    class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                    This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+                      </div>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -602,16 +616,7 @@
                     data-type="input-textbox" class="form-textbox" data-defaultvalue="" size="65" value=""
                     placeholder=" " data-component="textbox" aria-labelledby="label_74" />
                 </div>
-                <div
-                  *ngIf="studentApplicationForm.get('applicationDetails.sponser')?.touched && studentApplicationForm.get('applicationDetails.sponser')?.invalid"
-                  class="form-error-message" role="alert">
-                  <img src="../../assets/icons/exclamation-octagon.png">
-                  This field is required.
-                  <div class="form-error-arrow">
-                    <div class="form-error-arrow-inner">
-                    </div>
-                  </div>
-                </div>
+
               </li>
             </div>
 
@@ -673,7 +678,8 @@
                         <td class="add-remove width-20">
                           <span class="add-remove-button">
                             <i class="fas fa-trash trash-icon" *ngIf="(i!=0)" (click)="removeEducation(i)"></i>
-                            <i class="fas fa-plus-circle add-icon" *ngIf=" (i+1 === educationDetails.length)" (click)="aadEducation()"></i>
+                            <i class="fas fa-plus-circle add-icon" *ngIf=" (i+1 === educationDetails.length)"
+                              (click)="aadEducation()"></i>
                           </span>
                         </td>
                       </tr>
@@ -749,7 +755,8 @@
                       <td class="add-remove width-20">
                         <span>
                           <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeQualification(i)"></i>
-                          <i class="fas fa-plus-circle" *ngIf="(i+1 === educationQualification.length)" (click)="addQualification()"></i>
+                          <i class="fas fa-plus-circle" *ngIf="(i+1 === educationQualification.length)"
+                            (click)="addQualification()"></i>
                         </span>
                       </td>
                     </tr>
@@ -817,7 +824,8 @@
                       <td class="add-remove width-20">
                         <span>
                           <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeEngCertificate(i)"></i>
-                          <i class="fas fa-plus-circle" *ngIf=" (i+1 === englishProficiency.length)" (click)="addEngCertificate()"></i>
+                          <i class="fas fa-plus-circle" *ngIf=" (i+1 === englishProficiency.length)"
+                            (click)="addEngCertificate()"></i>
                         </span>
                       </td>
                     </tr>

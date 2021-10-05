@@ -10,7 +10,7 @@ export const environment = {
     clientId:"SFw2ARsxLPiDYAmoHaZAJanyyinhch4G",
     redirectUrl: window.location.origin
   },
-  api_url: ""
+  api_url: "http://localhost:3000/api/v1/"
 };
 
 /*

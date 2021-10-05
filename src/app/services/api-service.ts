@@ -5,11 +5,14 @@ const URLS: any = {
   // authentication
   login: { path: "api/Login" },
   logout: { path: "api/Logout" },
-  forgotPassword: { path: "api/ForgotPassword" },
-  resetPassword: { path: "api/Account/ResetPassword" },
-  changePassword: { path: "api/Account/ChangePassword" },
-  updatePassword: { path: "api/Account/UpdatePassword" },
+  forgotPassword: { path: "ForgotPassword" },
+  resetPassword: { path: "Account/ResetPassword" },
+  changePassword: { path: "Account/ChangePassword" },
+  updatePassword: { path: "Account/UpdatePassword" },
 
+  getJobs: { path: "jobs" },
+  submitApplication: { path: "submit-application" },
+  applyJob: { path: "apply-jobs" },
 };
 
 @Injectable({

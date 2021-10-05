@@ -52,9 +52,8 @@
               "src/assets/css/ionicons.min.css", 
               "src/assets/css/flaticon.css",
               "src/assets/css/icomoon.css",
-              "src/assets/css/style.css"
-
-              
+              "src/assets/css/style.css",
+              "node_modules/ngx-toastr/toastr.css" 
             ],
 
             "scripts": [

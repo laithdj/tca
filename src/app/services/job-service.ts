@@ -7,7 +7,7 @@ import { HttpService } from './http-service';
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
+export class JobService {
 
   constructor(
     private http: HttpService,
@@ -15,8 +15,13 @@ export class StudentService {
     private router: Router
   ) { }
 
-  public submitApplication(data: any): Observable<any> {
-    let url = this.apiService.get("submitApplication");
+  public getJobs(): Observable<any> {
+    let url = this.apiService.get("getJobs");
+    return this.http.get(url);
+  }
+
+  public applyJob(data: any): Observable<any> {
+    let url = this.apiService.get("getJobs");
     return this.http.post(url, data);
   }
 }
