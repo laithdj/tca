@@ -636,54 +636,49 @@
                     *
                   </span>
                 </label>
-                <div id="cid_79" class="form-input-wide jf-required">
-                  <table summary="" aria-labelledby="label_79" cellPadding="4" cellSpacing="0"
-                    class="form-matrix-table width-100 lable-fonts" data-component="matrix">
-                    <tr class="form-matrix-tr form-matrix-header-tr">
-                      <!-- <th class="form-matrix-th" style="border:none">
+                <div class="form-input-wide jf-required">
+                  <table cellPadding="4" cellSpacing="0" class="form-matrix-table width-100 lable-fonts"
+                    data-component="matrix">
+                    <thead>
+                      <tr class="form-matrix-tr form-matrix-header-tr">
+                        <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
+                          <label> Name of secondary School/College/University </label>
+                        </th>
+                        <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
+                          <label> Country </label>
+                        </th>
+                        <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
+                          <label> Dates Attended From(mm/yy)To(mm/yy) </label>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody formArrayName="educationDetails">
+                      <tr [formGroupName]="i" class="form-matrix-tr form-matrix-value-tr"
+                        *ngFor="let educationDetailGroup of educationDetailGroups.controls; let i=index">
+                        <td class="form-matrix-values">
+                          <input formControlName="instituteName" type="text"
+                            class="form-textbox validate[required, requireOneAnswer]" size="5"
+                            style="width:100%;box-sizing:border-box" value="" />
+                        </td>
+                        <td class="form-matrix-values">
+                          <input formControlName="country" type="text"
+                            class="form-textbox validate[required, requireOneAnswer]" size="5"
+                            style="width:100%;box-sizing:border-box" value="" />
+                        </td>
+                        <td class="form-matrix-values">
+                          <input formControlName="attendedFrom" type="text"
+                            class="form-textbox validate[required, requireOneAnswer]" size="5"
+                            style="width:100%;box-sizing:border-box" value="" />
+                        </td>
+                        <td class="add-remove width-20">
+                          <span class="add-remove-button">
+                            <i class="fas fa-trash trash-icon" *ngIf="(i!=0)" (click)="removeEducation(i)"></i>
+                            <i class="fas fa-plus-circle add-icon" (click)="aadEducation()"></i>
+                          </span>
+                        </td>
+                      </tr>
 
-                    </th> -->
-                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
-                        <label id="label_79_col_0"> Name of secondary School/College/University </label>
-                      </th>
-                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
-                        <label id="label_79_col_1"> Country </label>
-                      </th>
-                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
-                        <label id="label_79_col_2"> Dates Attended From(mm/yy)To(mm/yy) </label>
-                      </th>
-                    </tr>
-
-                    <tr formArrayName="educationDetails" class="form-matrix-tr form-matrix-value-tr"
-                      *ngFor="let educationDetailGroup of educationDetailGroups.controls; let i=index"
-                      >
-                      <div [formGroupName]="i">
-                      <td class="form-matrix-values">
-                        <input formControlName="instituteName" type="text" id="input_79_0_0"
-                          class="form-textbox validate[required, requireOneAnswer]" size="5"
-                          name="q79_secondaryfurtherhigherEducation[0][]" style="width:100%;box-sizing:border-box"
-                          value="" aria-labelledby="label_79_col_0 label_79_row_0" />
-                      </td>
-                      <td class="form-matrix-values">
-                        <input formControlName="country" type="text" id="input_79_0_1"
-                          class="form-textbox validate[required, requireOneAnswer]" size="5"
-                          name="q79_secondaryfurtherhigherEducation[0][]" style="width:100%;box-sizing:border-box"
-                          value="" aria-labelledby="label_79_col_1 label_79_row_0" />
-                      </td>
-                      <td class="form-matrix-values">
-                        <input formControlName="attendedFrom" type="text" id="input_79_0_2"
-                          class="form-textbox validate[required, requireOneAnswer]" size="5"
-                          name="q79_secondaryfurtherhigherEducation[0][]" style="width:100%;box-sizing:border-box"
-                          value="" aria-labelledby="label_79_col_2 label_79_row_0" />
-                      </td>
-                      <td class="add-remove width-20">
-                        <span class="add-remove-button">
-                          <i class="fas fa-trash trash-icon" *ngIf="(i!=0)" (click)="removeEducation(i)"></i>
-                          <i class="fas fa-plus-circle add-icon" (click)="aadEducation()"></i>
-                        </span>
-                      </td>
-                    </div>
-                    </tr>
+                    </tbody>
                     <div class="form-error-message width-100" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                       This field is required.
@@ -706,56 +701,60 @@
               <div id="cid_81" class="form-input-wide jf-required">
                 <table summary="" aria-labelledby="label_81" cellPadding="4" cellSpacing="0"
                   class="form-matrix-table lable-fonts width-100" data-component="matrix">
-                  <tr class="form-matrix-tr form-matrix-header-tr">
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
-                      <label id="label_81_col_0"> Subject </label>
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
-                      <label id="label_81_col_1"> Level(eg IGCSE, IB, BA, MSc) </label>
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
-                      <label id="label_81_col_2"> Grade </label>
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_3">
-                      <label id="label_81_col_3"> Date(mm/yy) </label>
-                    </th>
-                  </tr>
-                  <tr formArrayName="educationQualification"
-                    *ngFor="let educationQualificationGroup of educationQualificationGroups.controls; let i=index"
-                    class="form-matrix-tr form-matrix-value-tr">
-                    <div [formGroupName]="i" >
-                    <td class="form-matrix-values">
-                      <input formControlName="subject" type="text" id="input_81_0_0"
-                        class="form-textbox validate[required, requireOneAnswer]" size="5"
-                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_81_col_0 label_81_row_0" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input formControlName="level" type="text" id="input_81_0_1"
-                        class="form-textbox validate[required, requireOneAnswer]" size="5"
-                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_81_col_1 label_81_row_0" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input formControlName="grade" type="text" id="input_81_0_2"
-                        class="form-textbox validate[required, requireOneAnswer]" size="5"
-                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_81_col_2 label_81_row_0" />
-                    </td>
-                    <td class="form-matrix-values">
-                      <input formControlName="date" type="text" id="input_81_0_3"
-                        class="form-textbox validate[required, requireOneAnswer]" size="5"
-                        name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
-                        aria-labelledby="label_81_col_3 label_81_row_0" />
-                    </td>
-                    <td class="add-remove width-20">
-                      <span>
-                        <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeQualification(i)"></i>
-                        <i class="fas fa-plus-circle" (click)="addQualification()"></i>
-                      </span>
-                    </td>
-                  </div>
-                  </tr>
+                  <thead>
+                    <tr class="form-matrix-tr form-matrix-header-tr">
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
+                        <label> Subject </label>
+                      </th>
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
+                        <label> Level(eg IGCSE, IB, BA, MSc) </label>
+                      </th>
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
+                        <label> Grade </label>
+                      </th>
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_3">
+                        <label> Date(mm/yy) </label>
+                      </th>
+                    </tr>
+
+                  </thead>
+                  <tbody formArrayName="educationQualification">
+                    <tr [formGroupName]="i"
+                      *ngFor="let educationQualificationGroup of educationQualificationGroups.controls; let i=index"
+                      class="form-matrix-tr form-matrix-value-tr">
+                      <td class="form-matrix-values">
+                        <input formControlName="subject" type="text" id="input_81_0_0"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                          aria-labelledby="label_81_col_0 label_81_row_0" />
+                      </td>
+                      <td class="form-matrix-values">
+                        <input formControlName="level" type="text" id="input_81_0_1"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                          aria-labelledby="label_81_col_1 label_81_row_0" />
+                      </td>
+                      <td class="form-matrix-values">
+                        <input formControlName="grade" type="text" id="input_81_0_2"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                          aria-labelledby="label_81_col_2 label_81_row_0" />
+                      </td>
+                      <td class="form-matrix-values">
+                        <input formControlName="date" type="text" id="input_81_0_3"
+                          class="form-textbox validate[required, requireOneAnswer]" size="5"
+                          name="q81_educationalQualifications[0][]" style="width:100%;box-sizing:border-box" value=""
+                          aria-labelledby="label_81_col_3 label_81_row_0" />
+                      </td>
+                      <td class="add-remove width-20">
+                        <span>
+                          <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeQualification(i)"></i>
+                          <i class="fas fa-plus-circle" (click)="addQualification()"></i>
+                        </span>
+                      </td>
+                    </tr>
+
+                  </tbody>
                   <div class="form-error-message width-100" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
                     This field is required.
@@ -777,23 +776,26 @@
               <div id="cid_82" class="form-input-wide jf-required">
                 <table summary="" aria-labelledby="label_82" cellPadding="4" cellSpacing="0"
                   class="form-matrix-table lable-fonts width-100" data-component="matrix">
-                  <tr class="form-matrix-tr form-matrix-header-tr">
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
-                      <label id="label_82_col_0"> Name of certificate (IELTS, TOEFL IBT, PTE, Cambridge English, None)
-                      </label>
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
-                      <label id="label_82_col_1"> English Language Proficiency Grade(including scores for individual
-                        skills if applicable) </label>
-                    </th>
-                    <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
-                      <label id="label_82_col_2"> Date(mm/yy) </label>
-                    </th>
-                  </tr>
-                  <tr formArrayName="englishProficiency"
-                    *ngFor="let englishProficiencyGroup of englishProficiencyGroups.controls; let i=index"
-                    class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_0">
-                    <div [formGroupName]="i">
+                  <thead>
+                    <tr class="form-matrix-tr form-matrix-header-tr">
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
+                        <label id="label_82_col_0"> Name of certificate (IELTS, TOEFL IBT, PTE, Cambridge English, None)
+                        </label>
+                      </th>
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
+                        <label id="label_82_col_1"> English Language Proficiency Grade(including scores for individual
+                          skills if applicable) </label>
+                      </th>
+                      <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
+                        <label id="label_82_col_2"> Date(mm/yy) </label>
+                      </th>
+                    </tr>
+
+                  </thead>
+                  <tbody formArrayName="englishProficiency">
+                    <tr [formGroupName]="i"
+                      *ngFor="let englishProficiencyGroup of englishProficiencyGroups.controls; let i=index"
+                      class="form-matrix-tr form-matrix-value-tr" aria-labelledby="label_82 label_82_row_0">
                       <td class="form-matrix-values">
                         <input formControlName="certificateName" type="text" id="input_82_0_0"
                           class="form-textbox validate[required, requireOneAnswer]" size="5"
@@ -818,8 +820,9 @@
                           <i class="fas fa-plus-circle" (click)="addEngCertificate()"></i>
                         </span>
                       </td>
-                    </div>
-                  </tr>
+                    </tr>
+
+                  </tbody>
                   <div class="form-error-message" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
                     This field is required.
