@@ -100,7 +100,7 @@
                 </div>
                 <div
                   *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid"
-                  class="form-error-message" role="alert">
+                  class="form-error-message ml-145" role="alert">
                   <img src="../../assets/icons/exclamation-octagon.png">
                   This field is required.
                   <div class="form-error-arrow">
@@ -122,7 +122,7 @@
                   <input formControlName="dateOfBirth" type="date" class="customDateField width-92" #calendar />
                   <div
                     *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid"
-                    class="form-error-message" role="alert">
+                    class="form-error-message width-92" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
                     This field is required.
                     <div class="form-error-arrow">
@@ -207,7 +207,7 @@
                             style="min-height:13px" aria-hidden="false"> Street Address </label>
                           <div
                             *ngIf="studentApplicationForm.get('homeAddress.streetAddressLine1')?.touched && studentApplicationForm.get('homeAddress.streetAddressLine1')?.invalid"
-                            class="form-error-message" role="alert">
+                            class="form-error-message width-96" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
                             This field is required.
                             <div class="form-error-arrow">
@@ -242,7 +242,7 @@
                             style="min-height:13px" aria-hidden="false"> City </label>
                           <div
                             *ngIf="studentApplicationForm.get('homeAddress.city')?.touched && studentApplicationForm.get('homeAddress.city')?.invalid"
-                            class="form-error-message" role="alert">
+                            class="form-error-message width-96" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
                             This field is required.
                             <div class="form-error-arrow">
@@ -263,7 +263,7 @@
                             style="min-height:13px" aria-hidden="false"> State / Province </label>
                           <div
                             *ngIf="studentApplicationForm.get('homeAddress.stateOrProvince')?.touched && studentApplicationForm.get('homeAddress.stateOrProvince')?.invalid"
-                            class="form-error-message" role="alert">
+                            class="form-error-message width-96" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
                             This field is required.
                             <div class="form-error-arrow">
@@ -286,7 +286,7 @@
                             style="min-height:13px" aria-hidden="false"> Postal / Zip Code </label>
                           <div
                             *ngIf="studentApplicationForm.get('homeAddress.postalCode')?.touched && studentApplicationForm.get('homeAddress.postalCode')?.invalid"
-                            class="form-error-message" role="alert">
+                            class="form-error-message width-96" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
                             This field is required.
                             <div class="form-error-arrow">
@@ -310,7 +310,7 @@
                             style="min-height:13px" aria-hidden="false"> Country </label>
                           <div
                             *ngIf="studentApplicationForm.get('homeAddress.country')?.touched && studentApplicationForm.get('homeAddress.country')?.invalid"
-                            class="form-error-message" role="alert">
+                            class="form-error-message width-96" role="alert">
                             <img src="../../assets/icons/exclamation-octagon.png">
                             This field is required.
                             <div class="form-error-arrow">
@@ -341,7 +341,7 @@
                   aria-labelledby="label_11" required="" />
                 <div
                   *ngIf="studentApplicationForm.get('contact')?.touched && studentApplicationForm.get('contact')?.invalid"
-                  class="form-error-message" role="alert">
+                  class="form-error-message width-50" role="alert">
                   <img src="../../assets/icons/exclamation-octagon.png">
                   This field is required.
                   <div class="form-error-arrow">
@@ -368,7 +368,7 @@
                     aria-hidden="false"> e.g. example@gmail.com </label>
                   <div
                     *ngIf="studentApplicationForm.get('email')?.touched && studentApplicationForm.get('email')?.invalid"
-                    class="form-error-message" role="alert">
+                    class="form-error-message width-50" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
                     This field is required.
                     <div class="form-error-arrow">
@@ -400,7 +400,7 @@
                       aria-hidden="false"> Name of Parent/Guardian </label>
                     <div
                       *ngIf="studentApplicationForm.get('guardian.guardianName')?.touched && studentApplicationForm.get('guardian.guardianName')?.invalid"
-                      class="form-error-message" role="alert">
+                      class="form-error-message width-50" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                       This field is required.
                       <div class="form-error-arrow">
@@ -430,7 +430,7 @@
                       aria-hidden="false"> e.g. Father, Mother, Brother, Sister, Guardian etc. </label>
                     <div
                       *ngIf="studentApplicationForm.get('guardian.guardianRelationship')?.touched && studentApplicationForm.get('guardian.guardianRelationship')?.invalid"
-                      class="form-error-message" class="form-error-message" role="alert">
+                      class="form-error-message width-50" role="alert">
                       <img src="../../assets/icons/exclamation-octagon.png">
                       This field is required.
                       <div class="form-error-arrow">
@@ -460,7 +460,7 @@
                         style="min-height:13px" aria-hidden="false"> Phone Number </label>
                       <div
                         *ngIf="studentApplicationForm.get('guardian.guardianContact')?.touched && studentApplicationForm.get('guardian.guardianContact')?.invalid"
-                        class="form-error-message" class="form-error-message" role="alert">
+                        class="form-error-message width-50" role="alert">
                         <img src="../../assets/icons/exclamation-octagon.png">
                         This field is required.
                         <div class="form-error-arrow">
@@ -597,7 +597,7 @@
 
                   <div
                     *ngIf="studentApplicationForm.get('applicationDetails.tutionFeeMode')?.touched && studentApplicationForm.get('applicationDetails.tutionFeeMode')?.invalid"
-                    class="form-error-message" role="alert">
+                    class="form-error-message ml-336" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
                     This field is required.
                     <div class="form-error-arrow">
@@ -869,16 +869,16 @@
                 <textarea formControlName="statement" id="input_91" class="form-textarea validate[required] width-100"
                   name="q91_typeYour" cols="65" rows="6" data-component="textarea" required=""
                   aria-labelledby="label_91"></textarea>
-              </div>
-              <div
-                *ngIf="studentApplicationForm.get('statement')?.touched && studentApplicationForm.get('statement')?.invalid"
-                class="form-error-message" role="alert">
-                <img src="../../assets/icons/exclamation-octagon.png">
-                This field is required.
-                <div class="form-error-arrow">
-                  <div class="form-error-arrow-inner">
+                  <div
+                    *ngIf="studentApplicationForm.get('statement')?.touched && studentApplicationForm.get('statement')?.invalid"
+                    class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                    This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
+                      </div>
+                    </div>
                   </div>
-                </div>
               </div>
             </li>
             <!-- Declaration -->

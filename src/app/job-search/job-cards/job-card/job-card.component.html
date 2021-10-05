@@ -11,7 +11,7 @@
     transitionOptions="250ms" (onHide)="closeDialog()">
     <div class="dialog-header">
         <span>
-            <h2>Job Application</h2>
+            <h3>Job Application</h3>
         </span>
         <i (click)="show = false" class="fa fa-times cursor-pointer"></i>
     </div>
@@ -24,9 +24,17 @@
                 <li id="cid_10" class="form-input-wide" data-type="control_head">
                     <div class="form-header-group  header-large">
                         <div class="header-text httal htvam">
-                            <h3 id="header_10" class="form-header" data-component="header">
-                                {{jobDescription}}
-                            </h3>
+                            <div class="pl-10">
+                                <h3 id="header_10" class="form-header" data-component="header">
+                                    {{jobTitle}}
+                                </h3>
+                                <h4>
+                                    {{jobCategory}}
+                                </h4>
+                                <h5>
+                                    {{jobDescription}}
+                                </h5>
+                            </div>
                             <div id="subHeader_10" class="form-subHeader">
                                 Please complete the form below to apply for a position with us.
                             </div>
@@ -122,7 +130,7 @@
     </div>
 
     <div class="dialog-footer">
-        <button type="button" class="btn btn-primary" (click)="applyJob()">Apply</button>
+        <button type="button" class="btn btn-primary width-10" (click)="applyJob()">Apply</button>
     </div>
 
 </p-dialog>
