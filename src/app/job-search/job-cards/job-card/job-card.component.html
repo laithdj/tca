@@ -3,6 +3,126 @@
         <h3>{{jobTitle}}</h3>
         <h5>{{jobCategory}}</h5>
         <p>{{jobDescription}}</p>
-        <button type="button" class="btn btn-primary">Apply</button>
+        <button type="button" class="btn btn-primary" (click)="dialogOpen()">Apply</button>
     </div>
 </div>
+
+<p-dialog [(visible)]="show" [draggable]="false" [modal]="true" [dismissableMask]="true" position="center"
+    transitionOptions="250ms" (onHide)="closeDialog()">
+    <div class="dialog-header">
+        <span>
+            <h2>Job Application</h2>
+        </span>
+        <i (click)="show = false" class="fa fa-times cursor-pointer"></i>
+    </div>
+
+    <div class="dialog-body">
+        <form class="jotform-form" action="https://submit.jotform.com/submit/212775589234466/" method="post"
+            enctype="multipart/form-data" name="form_212775589234466" id="212775589234466" accept-charset="utf-8"
+            autocomplete="on">
+            <ul class="form-section page-section">
+                <li id="cid_10" class="form-input-wide" data-type="control_head">
+                    <div class="form-header-group  header-large">
+                        <div class="header-text httal htvam">
+                            <h3 id="header_10" class="form-header" data-component="header">
+                                {{jobDescription}}
+                            </h3>
+                            <div id="subHeader_10" class="form-subHeader">
+                                Please complete the form below to apply for a position with us.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_fullname" id="id_11">
+                    <label class="form-label form-label-top form-label-extended form-label-auto" id="label_11"
+                        for="first_11"> Full Name </label>
+                    <div id="cid_11" class="form-input-wide" data-layout="full">
+                        <div data-wrapper-react="true" class="extended">
+                            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
+                                <input type="text" id="first_11" name="q11_fullName[first]" class="form-textbox"
+                                    data-defaultvalue="" size="10" value="" data-component="first"
+                                    aria-labelledby="label_11 sublabel_11_first" />
+                                <label class="form-sub-label" for="first_11" id="sublabel_11_first"
+                                    style="min-height:13px" aria-hidden="false"> First Name </label>
+                            </span>
+                            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle">
+                                <input type="text" id="middle_11" name="q11_fullName[middle]" class="form-textbox"
+                                    data-defaultvalue="" size="10" value="" data-component="middle"
+                                    aria-labelledby="label_11 sublabel_11_middle" />
+                                <label class="form-sub-label" for="middle_11" id="sublabel_11_middle"
+                                    style="min-height:13px" aria-hidden="false"> Middle Name </label>
+                            </span>
+                            <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
+                                <input type="text" id="last_11" name="q11_fullName[last]" class="form-textbox"
+                                    data-defaultvalue="" size="15" value="" data-component="last"
+                                    aria-labelledby="label_11 sublabel_11_last" />
+                                <label class="form-sub-label" for="last_11" id="sublabel_11_last"
+                                    style="min-height:13px" aria-hidden="false"> Last Name </label>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_email" id="id_12">
+                    <label class="form-label form-label-top form-label-auto" id="label_12" for="input_12"> Email Address
+                    </label>
+                    <div id="cid_12" class="form-input-wide" data-layout="half">
+                        <span class="form-sub-label-container" style="vertical-align:top">
+                            <input type="email" id="input_12" name="q12_emailAddress"
+                                class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310"
+                                value="" placeholder="ex: myname@example.com" data-component="email"
+                                aria-labelledby="label_12 sublabel_input_12" />
+                            <label class="form-sub-label" for="input_12" id="sublabel_input_12" style="min-height:13px"
+                                aria-hidden="false"> example@example.com </label>
+                        </span>
+                    </div>
+                </li>
+                <li class="form-line" data-type="control_fileupload" id="id_17">
+                    <label class="form-label form-label-top form-label-auto" id="label_17" for="input_17"> Upload Your
+                        Resume </label>
+                    <div id="cid_17" class="form-input-wide" data-layout="full">
+                        <div class="jfQuestion-fields" data-wrapper-react="true">
+                            <div class="jfField isFilled">
+                                <div class="jfUpload-wrapper">
+                                    <div class="jfUpload-container">
+                                        <div class="jfUpload-button-container">
+                                            <div class="jfUpload-button" aria-hidden="true" tabindex="0"
+                                                style="display:none" data-version="v2">
+                                                Browse Files
+                                                <div class="jfUpload-heading forDesktop">
+                                                    Drag and drop files here
+                                                </div>
+                                                <div class="jfUpload-heading forMobile">
+                                                    Choose a file
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="jfUpload-files-container">
+                                        <input type="file" id="input_17" name="q17_uploadYour[]" multiple=""
+                                            class="form-upload-multiple" data-imagevalidate="yes"
+                                            data-file-accept="pdf, doc, docx, xls, xlsx, csv, txt, rtf, html, zip, mp3, wma, mpg, flv, avi, jpg, jpeg, png, gif"
+                                            data-file-maxsize="10854" data-file-minsize="0" data-file-limit="0"
+                                            data-component="fileupload" aria-label="Browse Files" />
+                                    </div>
+                                </div>
+                                <div data-wrapper-react="true">
+                                </div>
+                            </div>
+                            <span style="display:none" class="cancelText">
+                                Cancel
+                            </span>
+                            <span style="display:none" class="ofText">
+                                of
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <div class="dialog-footer">
+        <button type="button" class="btn btn-primary" (click)="applyJob()">Apply</button>
+    </div>
+
+</p-dialog>

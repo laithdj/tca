@@ -3,14 +3,22 @@
 }
 .display-flex{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .card{
     background: white;
-    width: 62%;
+    width: 42%;
     align-items: center;
-    margin-left: 9%;
+    margin-left: 24%;
     padding: 15px;
     display: block;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-1{
+    flex: 1;
 }
