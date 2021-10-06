@@ -197,34 +197,40 @@ export class StudentApplicationComponent implements OnInit {
 
   onSubmit() {
     console.log(this.studentApplicationForm.value);
-
+    // this.signatureImg;
     // if(this.studentApplicationForm.invalid){
     //   this.studentApplicationForm.markAllAsTouched();;
     //   return;
     // }
-    this.spinner.show();
+    // this.spinner.show();
 
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
+    // setTimeout(() => {
+    //   /** spinner ends after 5 seconds */
+    //   this.spinner.hide();
 
-      if (this.studentApplicationForm.invalid) {
-        this.studentApplicationForm.markAllAsTouched();
-        this.toastr.success("Validation Error.", "Error");
-      } else {
-        this.toastr.success("Your application has been submitted.", "Success");
-      }
+    //   if (this.studentApplicationForm.invalid) {
+    //     this.studentApplicationForm.markAllAsTouched();
+    //     this.toastr.success("Validation Error.", "Error");
+    //   } else {
+    //     this.toastr.success("Your application has been submitted.", "Success");
+    //   }
 
 
-    }, 5000);
+    // }, 5000);
 
     this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res=>{
       //success
+        this.toastr.success("Your application has been submitted.", "Success");
+        console.log(res);
     }, error=>{
       //failure
+      console.log(error);
+      this.toastr.success("Validation Error.", "Error");
+
     })
 
   }
+
   onPrint(){
     window.print();
   }

@@ -17,9 +17,9 @@
     </div>
 
     <div class="dialog-body">
-        <form class="jotform-form" action="https://submit.jotform.com/submit/212775589234466/" method="post"
-            enctype="multipart/form-data" name="form_212775589234466" id="212775589234466" accept-charset="utf-8"
-            autocomplete="on">
+        <form [formGroup]="jobApplyForm" (ngSubmit)="onSubmit()" class="jotform-form"
+            action="https://submit.jotform.com/submit/212775589234466/" method="post" enctype="multipart/form-data"
+            name="form_212775589234466" id="212775589234466" accept-charset="utf-8" autocomplete="on">
             <ul class="form-section page-section">
                 <li id="cid_10" class="form-input-wide" data-type="control_head">
                     <div class="form-header-group  header-large">
@@ -47,25 +47,45 @@
                     <div id="cid_11" class="form-input-wide" data-layout="full">
                         <div data-wrapper-react="true" class="extended">
                             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="first">
-                                <input type="text" id="first_11" name="q11_fullName[first]" class="form-textbox"
-                                    data-defaultvalue="" size="10" value="" data-component="first"
+                                <input formControlName="firstName" type="text" id="first_11" name="q11_fullName[first]"
+                                    class="form-textbox" data-defaultvalue="" size="10" value="" data-component="first"
                                     aria-labelledby="label_11 sublabel_11_first" />
                                 <label class="form-sub-label" for="first_11" id="sublabel_11_first"
                                     style="min-height:13px" aria-hidden="false"> First Name </label>
+                                <div *ngIf="jobApplyForm.get('firstName')?.touched && jobApplyForm.get('firstName')?.invalid"
+                                    class="form-error-message" role="alert">
+                                    <img src="../../assets/icons/exclamation-octagon.png">
+                                    This field is required.
+                                    <div class="form-error-arrow">
+                                        <div class="form-error-arrow-inner">
+
+                                        </div>
+                                    </div>
+                                </div>
                             </span>
                             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="middle">
-                                <input type="text" id="middle_11" name="q11_fullName[middle]" class="form-textbox"
-                                    data-defaultvalue="" size="10" value="" data-component="middle"
-                                    aria-labelledby="label_11 sublabel_11_middle" />
+                                <input formControlName="middleName" type="text" id="middle_11"
+                                    name="q11_fullName[middle]" class="form-textbox" data-defaultvalue="" size="10"
+                                    value="" data-component="middle" aria-labelledby="label_11 sublabel_11_middle" />
                                 <label class="form-sub-label" for="middle_11" id="sublabel_11_middle"
                                     style="min-height:13px" aria-hidden="false"> Middle Name </label>
                             </span>
                             <span class="form-sub-label-container" style="vertical-align:top" data-input-type="last">
-                                <input type="text" id="last_11" name="q11_fullName[last]" class="form-textbox"
-                                    data-defaultvalue="" size="15" value="" data-component="last"
+                                <input formControlName="lastName" type="text" id="last_11" name="q11_fullName[last]"
+                                    class="form-textbox" data-defaultvalue="" size="15" value="" data-component="last"
                                     aria-labelledby="label_11 sublabel_11_last" />
                                 <label class="form-sub-label" for="last_11" id="sublabel_11_last"
                                     style="min-height:13px" aria-hidden="false"> Last Name </label>
+                                <div *ngIf="jobApplyForm.get('lastName')?.touched && jobApplyForm.get('lastName')?.invalid"
+                                    class="form-error-message" role="alert">
+                                    <img src="../../assets/icons/exclamation-octagon.png">
+                                    This field is required.
+                                    <div class="form-error-arrow">
+                                        <div class="form-error-arrow-inner">
+
+                                        </div>
+                                    </div>
+                                </div>
                             </span>
                         </div>
                     </div>
@@ -75,12 +95,22 @@
                     </label>
                     <div id="cid_12" class="form-input-wide" data-layout="half">
                         <span class="form-sub-label-container" style="vertical-align:top">
-                            <input type="email" id="input_12" name="q12_emailAddress"
+                            <input formControlName="email" type="email" id="input_12" name="q12_emailAddress"
                                 class="form-textbox validate[Email]" data-defaultvalue="" style="width:310px" size="310"
                                 value="" placeholder="ex: myname@example.com" data-component="email"
                                 aria-labelledby="label_12 sublabel_input_12" />
                             <label class="form-sub-label" for="input_12" id="sublabel_input_12" style="min-height:13px"
                                 aria-hidden="false"> example@example.com </label>
+                            <div *ngIf="jobApplyForm.get('email')?.touched && jobApplyForm.get('email')?.invalid"
+                                class="form-error-message" role="alert">
+                                <img src="../../assets/icons/exclamation-octagon.png">
+                                This field is required.
+                                <div class="form-error-arrow">
+                                    <div class="form-error-arrow-inner">
+
+                                    </div>
+                                </div>
+                            </div>
                         </span>
                     </div>
                 </li>
@@ -112,6 +142,16 @@
                                             data-file-maxsize="10854" data-file-minsize="0" data-file-limit="0"
                                             data-component="fileupload" aria-label="Browse Files" />
                                     </div>
+                                    <div *ngIf="jobApplyForm.get('firstName')?.touched && jobApplyForm.get('firstName')?.invalid"
+                                        class="form-error-message" role="alert">
+                                        <img src="../../assets/icons/exclamation-octagon.png">
+                                        This field is required.
+                                        <div class="form-error-arrow">
+                                            <div class="form-error-arrow-inner">
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div data-wrapper-react="true">
                                 </div>
@@ -130,7 +170,7 @@
     </div>
 
     <div class="dialog-footer">
-        <button type="button" class="btn btn-primary width-10" (click)="applyJob()">Apply</button>
+        <button type="submit" class="btn btn-primary width-10" (click)="onSubmit()">Apply</button>
     </div>
 
 </p-dialog>

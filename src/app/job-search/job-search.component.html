@@ -92,9 +92,9 @@
         </form><br>
         <div *ngFor="let job of jobs">
           <app-job-card 
-            [jobTitle]="job.jobTitle"
-            [jobDescription]="job.jobDescription"
-            [jobCategory]="job.jobCategory"
+            [jobTitle]="job.title"
+            [jobDescription]="job.description"
+            [jobCategory]="job.catagory"
           >
   
           </app-job-card>

@@ -8,17 +8,17 @@ import { JobService } from '../services/job-service';
 })
 export class JobSearchComponent implements OnInit {
 
-  public jobs = [{
-    jobTitle: 'Job1',
-    jobDescription:'This is Description for Job 1.',
-    jobCategory: "Teaching"
-  },
-  {
-    jobTitle: 'Job2',
-    jobDescription:'This is Description for Job 2.',
-    jobCategory:"Doctor"
-  }]
-
+  // public jobs = [{
+  //   jobTitle: 'Job1',
+  //   jobDescription:'This is Description for Job 1.',
+  //   jobCategory: "Teaching"
+  // },
+  // {
+  //   jobTitle: 'Job2',
+  //   jobDescription:'This is Description for Job 2.',
+  //   jobCategory:"Doctor"
+  // }]
+  jobs: any;
   constructor(
     private jobService: JobService
   ) { }
@@ -29,9 +29,10 @@ export class JobSearchComponent implements OnInit {
 
 
   fetchJobs() {
-    this.jobService.getJobs().subscribe(res=>{
-      // this.jobs = res.data;
-    }, error=>{
+    this.jobService.getJobs().subscribe(res => {
+      this.jobs = res.data.data;
+      console.log(res);
+    }, error => {
 
     })
   }
