@@ -87,9 +87,7 @@ export class JobCardComponent implements OnInit {
       return;
     }
     this.spinner.show();
-    const data: any = this.jobApplyForm.value;
     const formData: FormData = new FormData();
-    console.log(this.getFullName());
     formData.append("jobId", this.jobId);
     formData.append("name", this.getFullName());
     formData.append("email", this.jobApplyForm.get("email")?.value);

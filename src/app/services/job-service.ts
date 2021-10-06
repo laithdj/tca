@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -15,9 +16,10 @@ export class JobService {
     private router: Router
   ) { }
 
-  public getJobs(): Observable<any> {
+  public getJobs(params: HttpParams): Observable<any> {
     let url = this.apiService.get("getJobs");
-    return this.http.get(url);
+    console.log(params.toString)
+    return this.http.get(url, params);
   }
 
   public applyJob(data: any): Observable<any> {

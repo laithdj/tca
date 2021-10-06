@@ -19,13 +19,14 @@ export class StudentApplicationComponent implements OnInit {
   educationQualification: FormArray = new FormArray([]);
   englishProficiency: FormArray = new FormArray([]);
   todayDate: Date = new Date();
+  formData: FormData = new FormData();
 
   //signature
   signatureImg!: string;
   @ViewChild(SignaturePad)
   signaturePad!: SignaturePad;
 
-  signaturePadOptions: Object = { 
+  signaturePadOptions: Object = {
     'minWidth': 2,
     'canvasWidth': 500,
     'canvasHeight': 200
@@ -41,8 +42,8 @@ export class StudentApplicationComponent implements OnInit {
 
   ngAfterViewInit() {
     // this.signaturePad is now available
-    this.signaturePad.set('minWidth', 2); 
-    this.signaturePad.clear(); 
+    this.signaturePad.set('minWidth', 2);
+    this.signaturePad.clear();
   }
 
   drawComplete() {
@@ -196,42 +197,46 @@ export class StudentApplicationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.studentApplicationForm.value);
+    // console.log(this.studentApplicationForm.value);
+    console.log(this.getFormData());
     // this.signatureImg;
     // if(this.studentApplicationForm.invalid){
     //   this.studentApplicationForm.markAllAsTouched();;
     //   return;
     // }
     // this.spinner.show();
+    
 
-    // setTimeout(() => {
-    //   /** spinner ends after 5 seconds */
-    //   this.spinner.hide();
+    //send post request
+    // this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res => {
+    //   //success
+    //   this.toastr.success("Your application has been submitted.", "Success");
+    //   console.log(res);
+    // }, error => {
+    //   //failure
+    //   console.log(error);
+    //   this.toastr.success("Validation Error.", "Error");
 
-    //   if (this.studentApplicationForm.invalid) {
-    //     this.studentApplicationForm.markAllAsTouched();
-    //     this.toastr.success("Validation Error.", "Error");
-    //   } else {
-    //     this.toastr.success("Your application has been submitted.", "Success");
-    //   }
-
-
-    // }, 5000);
-
-    this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res=>{
-      //success
-        this.toastr.success("Your application has been submitted.", "Success");
-        console.log(res);
-    }, error=>{
-      //failure
-      console.log(error);
-      this.toastr.success("Validation Error.", "Error");
-
-    })
+    // })
 
   }
 
-  onPrint(){
+  getFormData() {
+    for (const key in this.studentApplicationForm.value) {
+      if (this.studentApplicationForm.value.hasOwnProperty(key)) {
+        this.formData.append(key, this.studentApplicationForm.value[key]);
+      }
+      this.formData.append("signature", this.signatureImg);
+    }
+    return this.formData;
+  }
+
+  onFileChange(event: any) {
+    if (event.target.files && event.target.files.length > 0) {
+      this.signatureImg = event.target.files[0];
+    }
+  }
+  onPrint() {
     window.print();
   }
 }
