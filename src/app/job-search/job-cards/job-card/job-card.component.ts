@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '@auth0/auth0-angular';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { JobService } from 'src/app/services/job-service';
-import { Job } from 'src/app/shared/shared/models/Job.model';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-job-card',
@@ -22,7 +23,8 @@ export class JobCardComponent implements OnInit {
     private fb: FormBuilder,
     private jobService: JobService,
     private spinner: NgxSpinnerService,
-    private toastService: ToastrService
+    private toastService: ToastrService,
+    public auth: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -40,9 +42,43 @@ export class JobCardComponent implements OnInit {
   }
 
   dialogOpen() {
-    this.show = true;
+    this.spinner.show();
+    this.auth.isAuthenticated$.subscribe(res => {
+      this.spinner.hide();
+      if(res=== true){
+        this.show = true;
+      }else{
+        this.notAuthenticated();
+      }
+    }, error => {
+      this.spinner.hide();
+      console.log(error);
+    })
   }
 
+  notAuthenticated(){
+    swal({
+      title: "You are not Logged In!",
+      text: "To apply job, please login first !",
+      icon: "warning",
+      buttons: ["Cancel", "Login"],
+      dangerMode: true,
+    })
+    .then((res) => {
+      if (res) {
+        // login page redirect
+        this.auth.loginWithRedirect();
+      } else {
+        //cancel
+      }
+    });
+  }
+  async isAuthenticated() {
+    this.auth.isAuthenticated$.subscribe(res => {
+      return res;
+    })
+
+  }
   onSubmit() {
     this.spinner.show();
     const data: any = this.jobApplyForm.value;
