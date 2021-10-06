@@ -21,7 +21,7 @@ export class JobService {
   }
 
   public applyJob(data: any): Observable<any> {
-    let url = this.apiService.get("getJobs");
+    let url = this.apiService.get("applyJob");
     return this.http.post(url, data);
   }
 }

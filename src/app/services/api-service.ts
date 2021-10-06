@@ -10,9 +10,9 @@ const URLS: any = {
   changePassword: { path: "Account/ChangePassword" },
   updatePassword: { path: "Account/UpdatePassword" },
 
-  getJobs: { path: "/public/job/list" },
+  getJobs: { path: "public/job/list" },
   submitApplication: { path: "user/student-application" },
-  applyJob: { path: "/public/job/list" },
+  applyJob: { path: "public/job/apply" },
 };
 
 @Injectable({

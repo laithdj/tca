@@ -33,7 +33,7 @@ export class JobSearchComponent implements OnInit {
       this.jobs = res.data.data;
       console.log(res);
     }, error => {
-
+      console.log(error);
     })
   }
 
