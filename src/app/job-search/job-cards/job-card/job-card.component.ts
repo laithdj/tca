@@ -5,7 +5,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { JobService } from 'src/app/services/job-service';
 import swal from 'sweetalert';
-
+import * as _swal from 'sweetalert';
+import { SweetAlert } from 'sweetalert/typings/core';
 @Component({
   selector: 'app-job-card',
   templateUrl: './job-card.component.html',
@@ -19,6 +20,7 @@ export class JobCardComponent implements OnInit {
   @Input() jobId: any;
   public jobApplyForm: FormGroup = new FormGroup({});
   public show = false;
+  swal: SweetAlert = _swal as any;
   constructor(
     private fb: FormBuilder,
     private jobService: JobService,
