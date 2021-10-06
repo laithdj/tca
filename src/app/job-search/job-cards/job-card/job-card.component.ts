@@ -82,13 +82,16 @@ export class JobCardComponent implements OnInit {
 
   }
   onSubmit() {
+    if(this.jobApplyForm.invalid){
+      this.jobApplyForm.markAllAsTouched();
+      return;
+    }
     this.spinner.show();
     const data: any = this.jobApplyForm.value;
     const formData: FormData = new FormData();
+    console.log(this.getFullName());
     formData.append("jobId", this.jobId);
-    formData.append("name", this.jobApplyForm.get("firstName")?.value);
-    // formData.append("middleName", this.jobApplyForm.get("middleName")?.value);
-    // formData.append("lastName", this.jobApplyForm.get("lastName")?.value);
+    formData.append("name", this.getFullName());
     formData.append("email", this.jobApplyForm.get("email")?.value);
     formData.append("resume", this.jobApplyForm.get("resume")?.value);
     this.jobService.applyJob(formData).subscribe(res => {
@@ -101,6 +104,12 @@ export class JobCardComponent implements OnInit {
       console.log(error);
     })
 
+  }
+  getFullName() {
+    let fullName = `${this.jobApplyForm.get("firstName")?.value}` + " " +
+    `${this.jobApplyForm.get("middleName")?.value}` + " " +
+    `${this.jobApplyForm.get("lastName")?.value}`;
+    return fullName;
   }
 
   onFileChange(event: any) {
