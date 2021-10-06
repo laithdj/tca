@@ -27,7 +27,7 @@ export class StudentApplicationComponent implements OnInit {
 
   signaturePadOptions: Object = { 
     'minWidth': 2,
-    'canvasWidth': 300,
+    'canvasWidth': 500,
     'canvasHeight': 200
   };
   // -------------------

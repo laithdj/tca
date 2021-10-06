@@ -21,9 +21,29 @@
   button {
     margin-right: 10px;
     padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
     background-color: lightgray;
 
     border-radius: 5px;
   }
 }
 
+.signature-image{
+    border: 2px solid black;
+    margin-top: 70px;
+}
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .section-to-print, .section-to-print * {
+      visibility: visible;
+    }
+    // .section-to-print {
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    // }
+  }
+  
