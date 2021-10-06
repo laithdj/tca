@@ -685,14 +685,16 @@
                       </tr>
 
                     </tbody>
-                    <div class="form-error-message width-100" role="alert">
-                      <img src="../../assets/icons/exclamation-octagon.png">
-                      This field is required.
-                      <div class="form-error-arrow">
-                        <div class="form-error-arrow-inner">
-                        </div>
+                    <div
+                    *ngIf="studentApplicationForm.get('educationDetails')?.touched && studentApplicationForm.get('educationDetails')?.invalid"
+                    class="form-error-message" role="alert">
+                    <img src="../../assets/icons/exclamation-octagon.png">
+                    This field is required.
+                    <div class="form-error-arrow">
+                      <div class="form-error-arrow-inner">
                       </div>
                     </div>
+                  </div>
                   </table>
                 </div>
               </li>
@@ -762,14 +764,16 @@
                     </tr>
 
                   </tbody>
-                  <div class="form-error-message width-100" role="alert">
-                    <img src="../../assets/icons/exclamation-octagon.png">
-                    This field is required.
-                    <div class="form-error-arrow">
-                      <div class="form-error-arrow-inner">
-                      </div>
+                  <div
+                  *ngIf="studentApplicationForm.get('educationQualification')?.touched && studentApplicationForm.get('educationQualification')?.invalid"
+                  class="form-error-message" role="alert">
+                  <img src="../../assets/icons/exclamation-octagon.png">
+                  This field is required.
+                  <div class="form-error-arrow">
+                    <div class="form-error-arrow-inner">
                     </div>
                   </div>
+                </div>
                 </table>
               </div>
             </li>
@@ -831,7 +835,9 @@
                     </tr>
 
                   </tbody>
-                  <div class="form-error-message" role="alert">
+                  <div
+                    *ngIf="studentApplicationForm.get('englishProficiency')?.touched && studentApplicationForm.get('englishProficiency')?.invalid"
+                    class="form-error-message" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
                     This field is required.
                     <div class="form-error-arrow">
@@ -965,8 +971,8 @@
                     (onEndEvent)="drawComplete()"></signature-pad>
                 </div>
                 <div class="buttons">
-                  <button (click)="clearSignature()">Clear signature pad</button>
-                  <button (click)="savePad()">Save signature</button>
+                  <button (click)="clearSignature()">Clear</button>
+                  <button (click)="savePad()">Save</button>
                 </div>
                 <div class="signature-image" *ngIf="signatureImg">
                   <img src='{{ signatureImg }}' />
@@ -1001,7 +1007,7 @@
                   <span>
                      
                   </span>
-                  <button id="input_print_32" type="button"
+                  <button (click)="onPrint()" id="input_print_32" type="button"
                     class="form-submit-print form-submit-button-simple_rose jf-form-buttons" data-component="button">
                     <img src="../../assets/icons/printer.png" style="vertical-align:middle" />
                     <span id="span_print_32" class="span_print">

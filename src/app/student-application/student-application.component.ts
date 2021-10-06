@@ -27,8 +27,8 @@ export class StudentApplicationComponent implements OnInit {
 
   signaturePadOptions: Object = { 
     'minWidth': 2,
-    'canvasWidth': 700,
-    'canvasHeight': 300
+    'canvasWidth': 300,
+    'canvasHeight': 200
   };
   // -------------------
   constructor(
@@ -224,5 +224,8 @@ export class StudentApplicationComponent implements OnInit {
       //failure
     })
 
+  }
+  onPrint(){
+    window.print();
   }
 }
