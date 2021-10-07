@@ -971,8 +971,8 @@
                     (onEndEvent)="drawComplete()"></signature-pad>
                 </div>
                 <div class="buttons">
-                  <button (click)="clearSignature()">Clear</button>
-                  <button (click)="savePad()">Save</button>
+                  <button type="button" (click)="clearSignature()">Clear</button>
+                  <button type="button" (click)="savePad()">Save</button>
                 </div>
                 <div class="signature-image" *ngIf="signatureImg">
                   <img src='{{ signatureImg }}' />
@@ -1007,7 +1007,7 @@
                   <span>
                      
                   </span>
-                  <button (click)="downloadAsPDF()" id="input_print_32" type="button"
+                  <button (click)="onPrint()" id="input_print_32" type="button"
                     class="form-submit-print form-submit-button-simple_rose jf-form-buttons" data-component="button">
                     <img src="../../assets/icons/printer.png" style="vertical-align:middle" />
                     <span id="span_print_32" class="span_print">

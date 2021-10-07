@@ -35,19 +35,7 @@ export class StudentApplicationComponent implements OnInit {
     'canvasHeight': 200
   };
 
-  public downloadAsPDF() {
-    const doc = new jsPDF("p", "pt", "a1");
 
-    doc.html(this.el.nativeElement, {
-      callback: (doc) => {
-        doc.canvas.pdf;
-        this.studentApplication=doc.output('datauristring');
-        console.log(this.studentApplication)
-      }
-
-    });
-
-  }
   // -------------------
   constructor(
     public constantService: ConstService,
@@ -78,6 +66,7 @@ export class StudentApplicationComponent implements OnInit {
   savePad() {
     const base64Data = this.signaturePad.toDataURL();
     this.signatureImg = base64Data;
+    // this.formData.append("sign", base64Data);
   }
 
 
@@ -214,28 +203,24 @@ export class StudentApplicationComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.studentApplicationForm.value);
-    console.log(this.getFormData());
-    // this.signatureImg;
-    // if(this.studentApplicationForm.invalid){
-    //   this.studentApplicationForm.markAllAsTouched();;
-    //   return;
-    // }
-    // this.spinner.show();
-    
+    console.log(this.studentApplicationForm.value);
+    this.signatureImg;
+    if(this.studentApplicationForm.invalid){
+      this.studentApplicationForm.markAllAsTouched();;
+      return;
+    }
+    this.spinner.show();
+    if(this.signatureImg){
+      const file = this.DataURIToBlob(this.signatureImg)
+      this.formData.append("signature", file, "signature");
+    }
 
-    //send post request
-    // this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res => {
-    //   //success
-    //   this.toastr.success("Your application has been submitted.", "Success");
-    //   console.log(res);
-    // }, error => {
-    //   //failure
-    //   console.log(error);
-    //   this.toastr.success("Validation Error.", "Error");
+    //send post req when pdf file is generated
+    this.getPdf();
+  }
 
-    // })
-    this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res => {
+  sendReq(){
+    this.studentService.submitApplication(this.formData).subscribe(res => {
       //success
       this.toastr.success("Your application has been submitted.", "Success");
       console.log(res);
@@ -243,6 +228,7 @@ export class StudentApplicationComponent implements OnInit {
       //failure
       console.log(error);
       this.toastr.success("Validation Error.", "Error");
+    });
 
   }
 
@@ -251,17 +237,47 @@ export class StudentApplicationComponent implements OnInit {
       if (this.studentApplicationForm.value.hasOwnProperty(key)) {
         this.formData.append(key, this.studentApplicationForm.value[key]);
       }
-      this.formData.append("signature", this.signatureImg);
     }
-    return this.formData;
+    
   }
 
-  onFileChange(event: any) {
-    if (event.target.files && event.target.files.length > 0) {
-      this.signatureImg = event.target.files[0];
-    }
-  }
+  // onFileChange(event: any) {
+  //   if (event.target.files && event.target.files.length > 0) {
+  //     this.studentApplicationForm.patchValue({
+  //       signature: event.target.files[0],
+  //     })
+  //   }
+  // }
+  
   onPrint() {
     window.print();
+  }
+
+  public getPdf() {
+    const doc = new jsPDF("p", "pt", "a1");
+
+    doc.html(this.el.nativeElement, {
+      callback: (doc) => {
+        doc.canvas.pdf;
+        this.studentApplication=doc.output('datauristring');
+        this.formData.append("studentApplication", this.DataURIToBlob(this.studentApplication), "studentApplication.pdf");
+        this.sendReq();
+      }
+
+    });
+
+  }
+  
+
+  DataURIToBlob(dataURI: string) {
+    const splitDataURI = dataURI.split(',')
+    const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
+    const mimeString = splitDataURI[0].split(':')[1].split(';')[0]
+  
+    const ia = new Uint8Array(byteString.length)
+    for (let i = 0; i < byteString.length; i++)
+      ia[i] = byteString.charCodeAt(i)
+  
+    return new Blob([ia], { type: mimeString })
   }
 }

@@ -11,7 +11,7 @@ const URLS: any = {
   updatePassword: { path: "Account/UpdatePassword" },
 
   getJobs: { path: "public/job/list" },
-  submitApplication: { path: "user/student-application" },
+  submitApplication: { path: "public/student-application" },
   applyJob: { path: "public/job/apply" },
 };
 
