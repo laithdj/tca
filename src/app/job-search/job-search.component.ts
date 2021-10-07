@@ -1,5 +1,6 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { JobService } from '../services/job-service';
 
 @Component({
@@ -7,44 +8,59 @@ import { JobService } from '../services/job-service';
   templateUrl: './job-search.component.html',
   styleUrls: ['./job-search.component.css']
 })
+
 export class JobSearchComponent implements OnInit {
 
-  params = new HttpParams();
-  // public jobs = [{
-  //   jobTitle: 'Job1',
-  //   jobDescription:'This is Description for Job 1.',
-  //   jobCategory: "Teaching"
-  // },
-  // {
-  //   jobTitle: 'Job2',
-  //   jobDescription:'This is Description for Job 2.',
-  //   jobCategory:"Doctor"
-  // }]
-  jobs: any;
+  params = {
+    keyword: "",
+    page: 0
+  };
+
+
+  totalJobs = 0;
+  totalJobsArray: any;
+  jobs: any = [];
   constructor(
-    private jobService: JobService
+    private jobService: JobService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
     this.fetchJobs();
   }
 
+  
+  onNextClick(){
+    this.params.page+1;
+    this.fetchJobs();
+  }
 
+  onPreviousClick(){
+    this.params.page-1;
+    this.fetchJobs();
+  }
+  onPageNumberClick(i:number){
+    this.params.page=i/10;
+    this.fetchJobs();
+  }
   fetchJobs() {
+    this.spinner.show();
     this.jobService.getJobs(this.params).subscribe(res => {
       this.jobs = res.data.data;
-      console.log(res);
+      this.totalJobs = res.data.totalRecords;
+      this.totalJobsArray = Array(this.totalJobs).fill(0).map((x, i) => i);
+      this.spinner.hide();
     }, error => {
+      this.spinner.hide();
       this.jobs = [];
-
       console.log(error);
+
     })
   }
 
-  onSearchJob(event: any){
+  onSearchJob(event: any) {
     const keyword = event.target.value;
-    this.params.append('keyword', keyword);
-    console.log(this.params.toString)
+    this.params.keyword = keyword;
     this.fetchJobs();
   }
 

@@ -16,7 +16,7 @@ export class JobService {
     private router: Router
   ) { }
 
-  public getJobs(params: HttpParams): Observable<any> {
+  public getJobs(params: any): Observable<any> {
     let url = this.apiService.get("getJobs");
     console.log(params.toString)
     return this.http.get(url, params);

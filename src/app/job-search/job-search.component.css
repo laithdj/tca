@@ -1,3 +1,9 @@
 .ml-40{
     margin-left: 40%;
 }
+
+.not-found{
+    background-color: white;
+    padding: 0 15px;
+    border-radius: 5px;
+}
