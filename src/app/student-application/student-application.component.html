@@ -1,7 +1,7 @@
 <div style='background-color: #284953;'>
   <div style='background-color: #284953;'>
     <div class='s7'>
-      <form class="jotform-form section-to-print" [formGroup]="studentApplicationForm" (ngSubmit)="onSubmit()" accept-charset="utf-8"
+      <form id="content" #content class="jotform-form section-to-print" [formGroup]="studentApplicationForm" (ngSubmit)="onSubmit()" accept-charset="utf-8"
         autocomplete="on">
         <div role="main" class="form-all">
           <ul class="form-section page-section">
@@ -677,7 +677,7 @@
                         </td>
                         <td class="add-remove width-20">
                           <span class="add-remove-button">
-                            <i class="fas fa-trash trash-icon" *ngIf="(i!=0)" (click)="removeEducation(i)"></i>
+                            <i class="fas fa-trash trash-icon" *ngIf="(i!=0 || educationDetails.length>1)" (click)="removeEducation(i)"></i>
                             <i class="fas fa-plus-circle add-icon" *ngIf=" (i+1 === educationDetails.length)"
                               (click)="aadEducation()"></i>
                           </span>
@@ -689,7 +689,7 @@
                     *ngIf="studentApplicationForm.get('educationDetails')?.touched && studentApplicationForm.get('educationDetails')?.invalid"
                     class="form-error-message" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
-                    This field is required.
+                    All fields are required.
                     <div class="form-error-arrow">
                       <div class="form-error-arrow-inner">
                       </div>
@@ -756,7 +756,7 @@
                       </td>
                       <td class="add-remove width-20">
                         <span>
-                          <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeQualification(i)"></i>
+                          <i class="fas fa-trash" *ngIf="(i!=0 || educationQualification.length>1)" (click)="removeQualification(i)"></i>
                           <i class="fas fa-plus-circle" *ngIf="(i+1 === educationQualification.length)"
                             (click)="addQualification()"></i>
                         </span>
@@ -768,7 +768,7 @@
                   *ngIf="studentApplicationForm.get('educationQualification')?.touched && studentApplicationForm.get('educationQualification')?.invalid"
                   class="form-error-message" role="alert">
                   <img src="../../assets/icons/exclamation-octagon.png">
-                  This field is required.
+                  All fields are required.
                   <div class="form-error-arrow">
                     <div class="form-error-arrow-inner">
                     </div>
@@ -827,7 +827,7 @@
                       </td>
                       <td class="add-remove width-20">
                         <span>
-                          <i class="fas fa-trash" *ngIf="(i!=0)" (click)="removeEngCertificate(i)"></i>
+                          <i class="fas fa-trash" *ngIf="(i!=0 || englishProficiency.length>1)" (click)="removeEngCertificate(i)"></i>
                           <i class="fas fa-plus-circle" *ngIf=" (i+1 === englishProficiency.length)"
                             (click)="addEngCertificate()"></i>
                         </span>
@@ -839,7 +839,7 @@
                     *ngIf="studentApplicationForm.get('englishProficiency')?.touched && studentApplicationForm.get('englishProficiency')?.invalid"
                     class="form-error-message" role="alert">
                     <img src="../../assets/icons/exclamation-octagon.png">
-                    This field is required.
+                    All fields are required.
                     <div class="form-error-arrow">
                       <div class="form-error-arrow-inner">
                       </div>
@@ -1007,7 +1007,7 @@
                   <span>
                      
                   </span>
-                  <button (click)="onPrint()" id="input_print_32" type="button"
+                  <button (click)="downloadAsPDF()" id="input_print_32" type="button"
                     class="form-submit-print form-submit-button-simple_rose jf-form-buttons" data-component="button">
                     <img src="../../assets/icons/printer.png" style="vertical-align:middle" />
                     <span id="span_print_32" class="span_print">
