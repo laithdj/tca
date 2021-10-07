@@ -1,10 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignaturePad } from 'angular2-signaturepad';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ConstService } from '../services/const-service';
 import { StudentService } from '../services/student-service';
+import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-student-application',
@@ -19,17 +20,32 @@ export class StudentApplicationComponent implements OnInit {
   educationQualification: FormArray = new FormArray([]);
   englishProficiency: FormArray = new FormArray([]);
   todayDate: Date = new Date();
-
+  studentApplication!: any;
+  @ViewChild('content', { static: false }) el!: ElementRef;
   //signature
   signatureImg!: string;
   @ViewChild(SignaturePad)
   signaturePad!: SignaturePad;
 
-  signaturePadOptions: Object = { 
+  signaturePadOptions: Object = {
     'minWidth': 2,
     'canvasWidth': 500,
     'canvasHeight': 200
   };
+
+  public downloadAsPDF() {
+    const doc = new jsPDF("p", "pt", "a1");
+
+    doc.html(this.el.nativeElement, {
+      callback: (doc) => {
+        doc.canvas.pdf;
+        this.studentApplication=doc.output('datauristring');
+        console.log(this.studentApplication)
+      }
+
+    });
+
+  }
   // -------------------
   constructor(
     public constantService: ConstService,
@@ -41,8 +57,8 @@ export class StudentApplicationComponent implements OnInit {
 
   ngAfterViewInit() {
     // this.signaturePad is now available
-    this.signaturePad.set('minWidth', 2); 
-    this.signaturePad.clear(); 
+    this.signaturePad.set('minWidth', 2);
+    this.signaturePad.clear();
   }
 
   drawComplete() {
@@ -218,11 +234,11 @@ export class StudentApplicationComponent implements OnInit {
 
     // }, 5000);
 
-    this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res=>{
+    this.studentService.submitApplication(this.studentApplicationForm.value).subscribe(res => {
       //success
-        this.toastr.success("Your application has been submitted.", "Success");
-        console.log(res);
-    }, error=>{
+      this.toastr.success("Your application has been submitted.", "Success");
+      console.log(res);
+    }, error => {
       //failure
       console.log(error);
       this.toastr.success("Validation Error.", "Error");
@@ -231,7 +247,7 @@ export class StudentApplicationComponent implements OnInit {
 
   }
 
-  onPrint(){
+  onPrint() {
     window.print();
   }
 }
