@@ -61,6 +61,7 @@ export class JobSearchComponent implements OnInit {
   onSearchJob(event: any) {
     const keyword = event.target.value;
     this.params.keyword = keyword;
+    this.params.page=0;
     this.fetchJobs();
   }
 

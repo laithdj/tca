@@ -66,7 +66,6 @@ export class StudentApplicationComponent implements OnInit {
   savePad() {
     const base64Data = this.signaturePad.toDataURL();
     this.signatureImg = base64Data;
-    // this.formData.append("sign", base64Data);
   }
 
 
@@ -90,7 +89,7 @@ export class StudentApplicationComponent implements OnInit {
 
       homeAddress: this.fb.group({
         streetAddressLine1: ['', [Validators.required, Validators.minLength(3)]],
-        streetAddressLine2: ['', [Validators.required, Validators.minLength(3)]],
+        streetAddressLine2: [''],
         city: ['', [Validators.required, Validators.minLength(3)]],
         stateOrProvince: ['', [Validators.required, Validators.minLength(3)]],
         postalCode: ['', [Validators.required, Validators.minLength(3)]],
@@ -206,14 +205,15 @@ export class StudentApplicationComponent implements OnInit {
     //clear form data
     this.formData=new FormData();
     
-    console.log(this.formData);
+    // console.log(this.formData);
     // if(this.studentApplicationForm.invalid){
-    //   this.studentApplicationForm.markAllAsTouched();;
+    //   this.studentApplicationForm.markAllAsTouched();
+    //   console.log(this.studentApplication.erors);
+    //   this.toastr.error("please fill all required fields", "Error");
     //   return;
     // }
     this.getFormData();
     this.spinner.show();
-    // this.formData.append("declar")
     if(this.signatureImg){
       const file = this.DataURIToBlob(this.signatureImg)
       this.formData.append("signature", file, "signature.png");
@@ -234,32 +234,21 @@ export class StudentApplicationComponent implements OnInit {
     }, error => {
       //failure
       console.log(error);
-      this.toastr.success("Validation Error.", "Error");
+      this.toastr.error(error.error.message || "Something went wrong", "Error");
     });
 
   }
 
   getFormData() {
-    console.log("enter to")
-    console.log(this.studentApplicationForm.value)
     for (const key in this.studentApplicationForm.value) {
-      console.log(key);
       if (this.studentApplicationForm.value.hasOwnProperty(key)) {
-        this.formData.append(key, this.studentApplicationForm.value[key]);
+        let a=JSON.stringify(this.studentApplicationForm.value[key]);
+        this.formData.set(key, a);
       }
-      console.log(key)
     }
-    this.formData.append('declaration',this.studentApplicationForm.value['declaration'])
+    
     
   }
-
-  // onFileChange(event: any) {
-  //   if (event.target.files && event.target.files.length > 0) {
-  //     this.studentApplicationForm.patchValue({
-  //       signature: event.target.files[0],
-  //     })
-  //   }
-  // }
   
   onPrint() {
     window.print();

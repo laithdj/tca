@@ -98,7 +98,7 @@ export class JobCardComponent implements OnInit {
       console.log(res);
     }, error => {
       this.spinner.hide();
-      this.toastService.error("Something went wrong", "Error");
+      this.toastService.error(error.error.message || "Something went wrong", "Error");
       console.log(error);
     })
 
