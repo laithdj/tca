@@ -203,8 +203,10 @@ export class StudentApplicationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.studentApplicationForm.value);
-    this.signatureImg;
+    //clear form data
+    this.formData=new FormData();
+    this.getFormData();
+    console.log(this.formData);
     if(this.studentApplicationForm.invalid){
       this.studentApplicationForm.markAllAsTouched();;
       return;
@@ -233,6 +235,7 @@ export class StudentApplicationComponent implements OnInit {
   }
 
   getFormData() {
+    console.log("enter to")
     for (const key in this.studentApplicationForm.value) {
       if (this.studentApplicationForm.value.hasOwnProperty(key)) {
         this.formData.append(key, this.studentApplicationForm.value[key]);
@@ -261,6 +264,7 @@ export class StudentApplicationComponent implements OnInit {
         doc.canvas.pdf;
         this.studentApplication=doc.output('datauristring');
         this.formData.append("studentApplication", this.DataURIToBlob(this.studentApplication), "studentApplication.pdf");
+        // this.formData.forEach(el=>console.log(el))
         this.sendReq();
       }
 
