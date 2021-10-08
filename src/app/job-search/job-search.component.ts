@@ -40,15 +40,16 @@ export class JobSearchComponent implements OnInit {
     this.fetchJobs();
   }
   onPageNumberClick(i:number){
-    this.params.page=i/10;
+    this.params.page=i;
     this.fetchJobs();
   }
   fetchJobs() {
     this.spinner.show();
     this.jobService.getJobs(this.params).subscribe(res => {
       this.jobs = res.data.data;
-      this.totalJobs = res.data.totalRecords;
+      this.totalJobs = Math.ceil(res.data.totalRecords/10);
       this.totalJobsArray = Array(this.totalJobs).fill(0).map((x, i) => i);
+      console.log(this.totalJobsArray)
       this.spinner.hide();
     }, error => {
       this.spinner.hide();

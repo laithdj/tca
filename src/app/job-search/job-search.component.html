@@ -115,7 +115,7 @@
           </div>
         </div>
       </div>
-      <nav *ngIf="(totalJobs>10)" class="ml-40" aria-label="Page navigation example">
+      <nav  class="ml-40" aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
             <div class="page-link" aria-label="Previous">
@@ -124,12 +124,12 @@
             </div>
           </li>
           <div *ngFor="let job of totalJobsArray; let i=index">
-          <li *ngIf="(i%10===0) && (i!=0)" (click)="onPageNumberClick(i)" class="page-item"><a class="page-link" >{{i/10}}</a></li>
+          <li  (click)="onPageNumberClick(i+1)" class="page-item"><a class="page-link" >{{i+1}}</a></li>
         </div>
           <li class="page-item">
             <a class="page-link" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only" (click)="onNextClick()">Next</span>
+              <span class="sr-only" (click)="onNextClick()">Next1</span>
             </a>
           </li>
         </ul>
