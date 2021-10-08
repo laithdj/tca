@@ -122,9 +122,9 @@ export class StudentApplicationComponent implements OnInit {
 
       declaration: this.fb.group({
         firstName: ['', [Validators.required, Validators.minLength(3)]],
-        middleName: ['', [Validators.required, Validators.minLength(3)]],
+        middleName: [''],
         lastName: ['', [Validators.required, Validators.minLength(3)]],
-        signature: ['', Validators.required],
+        signature: [''],
         date: [new Date(), [Validators.required]],
       }),
     });
@@ -205,16 +205,18 @@ export class StudentApplicationComponent implements OnInit {
   onSubmit() {
     //clear form data
     this.formData=new FormData();
-    this.getFormData();
+    
     console.log(this.formData);
-    if(this.studentApplicationForm.invalid){
-      this.studentApplicationForm.markAllAsTouched();;
-      return;
-    }
+    // if(this.studentApplicationForm.invalid){
+    //   this.studentApplicationForm.markAllAsTouched();;
+    //   return;
+    // }
+    this.getFormData();
     this.spinner.show();
+    // this.formData.append("declar")
     if(this.signatureImg){
       const file = this.DataURIToBlob(this.signatureImg)
-      this.formData.append("signature", file, "signature");
+      this.formData.append("signature", file, "signature.png");
     }
 
     //send post req when pdf file is generated
@@ -222,6 +224,9 @@ export class StudentApplicationComponent implements OnInit {
   }
 
   sendReq(){
+    this.spinner.hide();
+    console.log(JSON.stringify(this.formData.getAll("declaration")));
+
     this.studentService.submitApplication(this.formData).subscribe(res => {
       //success
       this.toastr.success("Your application has been submitted.", "Success");
@@ -236,11 +241,15 @@ export class StudentApplicationComponent implements OnInit {
 
   getFormData() {
     console.log("enter to")
+    console.log(this.studentApplicationForm.value)
     for (const key in this.studentApplicationForm.value) {
+      console.log(key);
       if (this.studentApplicationForm.value.hasOwnProperty(key)) {
         this.formData.append(key, this.studentApplicationForm.value[key]);
       }
+      console.log(key)
     }
+    this.formData.append('declaration',this.studentApplicationForm.value['declaration'])
     
   }
 
