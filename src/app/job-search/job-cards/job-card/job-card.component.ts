@@ -95,6 +95,8 @@ export class JobCardComponent implements OnInit {
     this.jobService.applyJob(formData).subscribe(res => {
       this.spinner.hide();
       this.toastService.success("Your Application has been submitted.", "Success");
+      this.show = false;
+      this.jobApplyForm.reset();
       console.log(res);
     }, error => {
       this.spinner.hide();

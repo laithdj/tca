@@ -31,13 +31,13 @@ export class JobSearchComponent implements OnInit {
 
   
   onNextClick(){
-    this.params.page+1;
-    this.fetchJobs();
+    // this.params.page+1;
+    // this.fetchJobs();
   }
 
   onPreviousClick(){
-    this.params.page-1;
-    this.fetchJobs();
+    // this.params.page-1;
+    // this.fetchJobs();
   }
   onPageNumberClick(i:number){
     this.params.page=i;

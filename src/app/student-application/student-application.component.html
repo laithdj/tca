@@ -45,7 +45,7 @@
                     <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="middle">
                       <input formControlName="middleName" type="text" id="middle_4" name="q4_fullName4[middle]"
                         class="form-textbox width-100" data-defaultvalue="" size="10" value="" data-component="middle"
-                        aria-labelledby="label_4 sublabel_4_middle" required="" />
+                        aria-labelledby="label_4 sublabel_4_middle"/>
                       <label class="form-sub-label" for="middle_4" id="sublabel_4_middle" style="min-height:13px"
                         aria-hidden="false"> Middle Name </label>
                     </span>
@@ -99,7 +99,7 @@
 
                 </div>
                 <div
-                  *ngIf="studentApplicationForm.get('dateOfBirth')?.touched && studentApplicationForm.get('dateOfBirth')?.invalid"
+                  *ngIf="studentApplicationForm.get('gender')?.touched && studentApplicationForm.get('gender')?.invalid"
                   class="form-error-message ml-145" role="alert">
                   <img src="../../assets/icons/exclamation-octagon.png">
                   This field is required.
@@ -938,7 +938,7 @@
                     <span class="form-sub-label-container flex-1" style="vertical-align:top" data-input-type="middle">
                       <input formControlName="middleName" type="text" id="middle_127" name="q127_name[middle]"
                         class="form-textbox width-100" data-defaultvalue="" size="10" value="" data-component="middle"
-                        aria-labelledby="label_127 sublabel_127_middle" required="" />
+                        aria-labelledby="label_127 sublabel_127_middle"/>
                       <label class="form-sub-label" for="middle_127" id="sublabel_127_middle" style="min-height:13px"
                         aria-hidden="false"> Middle Name </label>
                     </span>
@@ -967,8 +967,7 @@
                 </label>
                 <!-- Signature -->
                 <div class="signature-container">
-                  <signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()"
-                    (onEndEvent)="drawComplete()"></signature-pad>
+                  <signature-pad [options]="signaturePadOptions"></signature-pad>
                 </div>
                 <div class="buttons">
                   <button type="button" (click)="clearSignature()">Clear</button>

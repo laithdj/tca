@@ -1,11 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SignaturePad } from 'angular2-signaturepad';
+import { jsPDF } from 'jspdf';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ConstService } from '../services/const-service';
 import { StudentService } from '../services/student-service';
-import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-student-application',
@@ -14,8 +15,8 @@ import { jsPDF } from 'jspdf';
 })
 
 export class StudentApplicationComponent implements OnInit {
-  public countries: any;
-  public studentApplicationForm: FormGroup = new FormGroup({});
+  countries: any;
+  studentApplicationForm: FormGroup = new FormGroup({});
   educationDetails: FormArray = new FormArray([]);
   educationQualification: FormArray = new FormArray([]);
   englishProficiency: FormArray = new FormArray([]);
@@ -35,28 +36,19 @@ export class StudentApplicationComponent implements OnInit {
     'canvasHeight': 200
   };
 
-
-  // -------------------
   constructor(
     public constantService: ConstService,
     private fb: FormBuilder,
     private spinner: NgxSpinnerService,
     private toastr: ToastrService,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private router: Router
   ) { }
 
   ngAfterViewInit() {
     // this.signaturePad is now available
     this.signaturePad.set('minWidth', 2);
     this.signaturePad.clear();
-  }
-
-  drawComplete() {
-    console.log(this.signaturePad.toDataURL());
-  }
-
-  drawStart() {
-    console.log('begin drawing');
   }
 
   clearSignature() {
@@ -79,8 +71,8 @@ export class StudentApplicationComponent implements OnInit {
 
       name: this.fb.group({
         firstName: ['', [Validators.required, Validators.minLength(3)]],
-        middleName: [''],
         lastName: ['', [Validators.required, Validators.minLength(3)]],
+        middleName: '',
       }),
       gender: ['', Validators.required],
       dateOfBirth: ['', Validators.required],
@@ -121,10 +113,11 @@ export class StudentApplicationComponent implements OnInit {
 
       declaration: this.fb.group({
         firstName: ['', [Validators.required, Validators.minLength(3)]],
-        middleName: [''],
         lastName: ['', [Validators.required, Validators.minLength(3)]],
-        signature: [''],
         date: [new Date(), [Validators.required]],
+        signature: '',
+        middleName: '',
+
       }),
     });
     this.aadEducation();
@@ -203,18 +196,14 @@ export class StudentApplicationComponent implements OnInit {
 
   onSubmit() {
     //clear form data
-    this.formData=new FormData();
-    
-    // console.log(this.formData);
-    // if(this.studentApplicationForm.invalid){
-    //   this.studentApplicationForm.markAllAsTouched();
-    //   console.log(this.studentApplication.erors);
-    //   this.toastr.error("please fill all required fields", "Error");
-    //   return;
-    // }
+    this.formData = new FormData();
+    if (this.studentApplicationForm.invalid) {
+      this.studentApplicationForm.markAllAsTouched();;
+      return;
+    }
     this.getFormData();
     this.spinner.show();
-    if(this.signatureImg){
+    if (this.signatureImg) {
       const file = this.DataURIToBlob(this.signatureImg)
       this.formData.append("signature", file, "signature.png");
     }
@@ -223,13 +212,15 @@ export class StudentApplicationComponent implements OnInit {
     this.getPdf();
   }
 
-  sendReq(){
+  sendReq() {
     this.spinner.hide();
     console.log(JSON.stringify(this.formData.getAll("declaration")));
 
     this.studentService.submitApplication(this.formData).subscribe(res => {
       //success
       this.toastr.success("Your application has been submitted.", "Success");
+      this.router.navigateByUrl("/");
+      this.studentApplicationForm.reset();
       console.log(res);
     }, error => {
       //failure
@@ -242,14 +233,14 @@ export class StudentApplicationComponent implements OnInit {
   getFormData() {
     for (const key in this.studentApplicationForm.value) {
       if (this.studentApplicationForm.value.hasOwnProperty(key)) {
-        let a=JSON.stringify(this.studentApplicationForm.value[key]);
+        let a = JSON.stringify(this.studentApplicationForm.value[key]);
         this.formData.set(key, a);
       }
     }
-    
-    
+
+
   }
-  
+
   onPrint() {
     window.print();
   }
@@ -260,7 +251,7 @@ export class StudentApplicationComponent implements OnInit {
     doc.html(this.el.nativeElement, {
       callback: (doc) => {
         doc.canvas.pdf;
-        this.studentApplication=doc.output('datauristring');
+        this.studentApplication = doc.output('datauristring');
         this.formData.append("studentApplication", this.DataURIToBlob(this.studentApplication), "studentApplication.pdf");
         // this.formData.forEach(el=>console.log(el))
         this.sendReq();
@@ -269,17 +260,17 @@ export class StudentApplicationComponent implements OnInit {
     });
 
   }
-  
+
 
   DataURIToBlob(dataURI: string) {
     const splitDataURI = dataURI.split(',')
     const byteString = splitDataURI[0].indexOf('base64') >= 0 ? atob(splitDataURI[1]) : decodeURI(splitDataURI[1])
     const mimeString = splitDataURI[0].split(':')[1].split(';')[0]
-  
+
     const ia = new Uint8Array(byteString.length)
     for (let i = 0; i < byteString.length; i++)
       ia[i] = byteString.charCodeAt(i)
-  
+
     return new Blob([ia], { type: mimeString })
   }
 }
