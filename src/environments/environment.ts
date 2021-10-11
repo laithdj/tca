@@ -5,11 +5,6 @@ import { domain , clientId } from '../../auth_config.json'
 
 export const environment = {
   production: true,
-  auth: {
-    domain:"laithdj.auth0.com",
-    clientId:"SFw2ARsxLPiDYAmoHaZAJanyyinhch4G",
-    redirectUrl: window.location.origin
-  },
   api_url: "http://localhost:3000/api/v1/"
 };
 

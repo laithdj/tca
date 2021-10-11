@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@auth0/auth0-angular';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { JobService } from 'src/app/services/job-service';
 import swal from 'sweetalert';
 import * as _swal from 'sweetalert';
 import { SweetAlert } from 'sweetalert/typings/core';
+import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-job-card',
   templateUrl: './job-card.component.html',

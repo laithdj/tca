@@ -41,7 +41,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorInterceptor } from './interceptors';
-import {DialogModule} from 'primeng/dialog';
+import { DialogModule } from 'primeng/dialog';
 import { SignaturePadModule } from 'angular2-signaturepad';
 
 @NgModule({
@@ -94,7 +94,9 @@ import { SignaturePadModule } from 'angular2-signaturepad';
       }
     ),
     AuthModule.forRoot({
-      ...env.auth,
+      domain: "laithdj.auth0.com",
+      clientId: "SFw2ARsxLPiDYAmoHaZAJanyyinhch4G",
+      redirectUrl: window.location.origin
     })
   ],
   providers: [
