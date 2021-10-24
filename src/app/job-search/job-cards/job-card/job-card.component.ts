@@ -7,7 +7,6 @@ import swal from 'sweetalert';
 import * as _swal from 'sweetalert';
 import { SweetAlert } from 'sweetalert/typings/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { UserService } from 'src/app/services/user-service';
 @Component({
   selector: 'app-job-card',
   templateUrl: './job-card.component.html',
@@ -22,70 +21,27 @@ export class JobCardComponent implements OnInit {
   public jobApplyForm: FormGroup = new FormGroup({});
   public show = false;
   swal: SweetAlert = _swal as any;
-  email: any;
-  name: any;
-  resumeUrl: any;
-
   constructor(
     private fb: FormBuilder,
     private jobService: JobService,
     private spinner: NgxSpinnerService,
     private toastService: ToastrService,
-    public auth: AuthService,
-    private userService: UserService,
-
+    public auth: AuthService
   ) { }
 
   ngOnInit(): void {
     this.initForm();
-    this.auth.user$.subscribe(user => {
-      this.email = user?.email || "";
-      this.name = user?.name || "";
-      this.jobApplyForm.get("email")?.patchValue(this.email);
-      this.jobApplyForm.get("fullName")?.patchValue(this.name);
-      this.getProfile();
-      console.log(this.name);
-      
-      if (!user) {
-        this.email = "";
-      }
-    });
-  }
-
-  urlToBlob(resume: string) {
-    fetch(resume)
-      .then(res => res.blob()) // Gets the response and returns it as a blob
-      .then(blob => {
-        const file = new File([blob], "resume.pdf", {
-          type: 'application/pdf'
-      });
-        this.jobApplyForm.patchValue({
-          resume: file,
-        });
-      });
-  }
-  
-  getProfile() {
-    this.spinner.show();
-    this.userService.getProfile(this.email).subscribe(res => {
-      this.spinner.hide();
+    this.auth.user$.subscribe(res => {
       console.log(res);
-      this.resumeUrl = res.data.resume;
-      if(res.data.resume){
-        this.urlToBlob(res.data.resume);
-      }
-
-      // this.res
-    }, error => {
-      this.spinner.hide();
     })
   }
 
-
   initForm() {
     this.jobApplyForm = this.fb.group({
-      fullName: [this.name, [Validators.required, Validators.minLength(3)]],
-      email: [this.email, [Validators.required, Validators.email]],
+      firstName: ['', [Validators.required, Validators.minLength(3)]],
+      middleName: [''],
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
       resume: [Validators.required],
     });
   }
@@ -145,8 +101,8 @@ export class JobCardComponent implements OnInit {
       this.spinner.hide();
       this.toastService.success("Your Application has been submitted.", "Success");
       this.show = false;
-      // this.jobApplyForm.reset();
-      // console.log(res);
+      this.jobApplyForm.reset();
+      console.log(res);
     }, error => {
       this.spinner.hide();
       this.toastService.error(error.error.message || "Something went wrong", "Error");

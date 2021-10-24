@@ -138,22 +138,3 @@
     -webkit-animation: none;
     animation: none;
 }
-
-
-.download{
-    color: white;
-    border: 2px white solid;
-    border-radius: 5px;
-    margin-top: 5px;
-    padding: 4px 10px;
-}
-
-input{
-    margin-top: -8px !important;
-}
-.title{
-    margin-top: -10px !important;
-}
-.download-icon{
-    width: 20px;
-}

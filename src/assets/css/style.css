@@ -9584,11 +9584,12 @@ textarea.form-control {
   .block-2 .back {
     background: #eceaea;
     -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 70px -10px rgba(31, 22, 22, 0.4);
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg);
+    padding: 20px;
     transform: rotateY(-180deg); }
   .block-2 .back p {
     position: absolute;
