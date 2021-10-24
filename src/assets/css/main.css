@@ -824,6 +824,7 @@ button {
   -ms-flex-align: center;
       align-items: center;
   font-family: 'Poppins', sans-serif;
+  background: url("../../assets/case-1.jpg");
   background-size: cover;
   background-position: center center;
   padding: 15px;
@@ -1648,6 +1649,7 @@ legend {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
+      background: url(../case-1.jpg);
         padding: 15px;
   font-family: 'Roboto', sans-serif;
 }
@@ -1660,6 +1662,7 @@ legend {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
+      background: url(../case-1.jpg);
         padding: 1%;
   font-family: 'Roboto', sans-serif;
 

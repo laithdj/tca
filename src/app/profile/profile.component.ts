@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '@auth0/auth0-angular';
@@ -13,8 +12,9 @@ import { UserService } from '../services/user-service';
 })
 export class ProfileComponent implements OnInit {
 
-  public profileForm: FormGroup = new FormGroup({});
-  public imageURL = "../../assets/user-icon.png";
+  profileForm: FormGroup = new FormGroup({});
+  imageURL = "../../assets/user-icon.png";
+  resumeUrl = "";
   phone: string = "";
   email: string = "";
   isProfileExist: boolean = false;
@@ -25,7 +25,6 @@ export class ProfileComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private toastService: ToastrService,
     private userService: UserService,
-    private httpClient: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -46,16 +45,22 @@ export class ProfileComponent implements OnInit {
     fetch(image)
       .then(res => res.blob()) // Gets the response and returns it as a blob
       .then(blob => {
+        const file = new File([blob], "image.png", {
+          type: 'image/png'
+      });
         this.profileForm.patchValue({
-          image: blob,
+          image: file,
         });
       });
 
-      fetch(resume)
+    fetch(resume)
       .then(res => res.blob()) // Gets the response and returns it as a blob
       .then(blob => {
+        const file = new File([blob], "resume.pdf", {
+          type: 'application/pdf'
+      });
         this.profileForm.patchValue({
-          resume: blob,
+          resume: file,
         });
       });
 
@@ -67,6 +72,7 @@ export class ProfileComponent implements OnInit {
       console.log(res);
       this.isProfileExist = true;
       this.imageURL = res.data.image;
+      this.resumeUrl = res.data.resume;
       this.profileForm.patchValue({
         phone: res.data.phone
       })

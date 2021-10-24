@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
@@ -9,7 +10,9 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public auth: AuthService,
+  constructor(
+    public auth: AuthService,
+    private router: Router,
     @Inject(DOCUMENT) private doc: Document
     ) { }
 
@@ -22,4 +25,13 @@ export class NavComponent implements OnInit {
     this.auth.logout({returnTo: this.doc.location.origin})
   }
 
+  onCreateProfile(){
+    this.auth.isAuthenticated$.subscribe(res=>{
+      if(res){
+        this.router.navigateByUrl("/profile");
+      }else{
+        this.auth.loginWithRedirect();
+      }
+    })
+  }
 }

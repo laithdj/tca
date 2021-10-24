@@ -8,7 +8,7 @@
 
 .card{
     background: white;
-    width: 51%;
+    width: 42%;
     align-items: center;
     margin-left: 24%;
     padding: 15px;
@@ -27,4 +27,8 @@
 }
 .width-44{
     width: 44%;
+}
+
+.form-label {
+    margin-top: -30px !important;
 }

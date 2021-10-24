@@ -1,6 +1,6 @@
 <nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container-fluid px-md-5">
-        <a class="navbar-brand" href="index.html"><img src='./../../assets/thecollaborative-01.png' width="200" height="100"/> </a>
+        <a class="navbar-brand" href="index.html">THE <span>Colloborative</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
             aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
@@ -31,7 +31,7 @@
                             teachers</a>
                         <a href="#">Chat platform/forum
                             platform</a>
-                        <a (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Create profile</a>
+                        <a (click)="onCreateProfile()" [routerLink]="['/profile']">Create profile</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown"><a href="" class="nav-link">Partnership</a>
@@ -69,7 +69,6 @@
                     <div class="dropdown-content" style="height: auto;min-width: 100px;">
                         <a (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Sign In</a>
                         <a *ngIf="(auth.isAuthenticated$ | async) === true" [routerLink]="['profile']">Profile</a>
-
                         <!-- <a [routerLink]="['account']" *ngIf="(auth.isAuthenticated$ | async) === true">Account</a> -->
                         <a (click)="logout()" [routerLink]="['account']"
                             *ngIf="(auth.isAuthenticated$ | async) === true">Sign Out</a>
