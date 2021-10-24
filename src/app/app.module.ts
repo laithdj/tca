@@ -41,10 +41,12 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorInterceptor } from './interceptors';
-import {DialogModule} from 'primeng/dialog';
-import {OverlayPanelModule} from 'primeng/overlaypanel';
+import { DialogModule } from 'primeng/dialog';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { SignaturePadModule } from 'angular2-signaturepad';
 import { ProfileComponent } from './profile/profile.component';
+import { StripePaymentComponent } from './stripe-payment/stripe-payment.component';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -80,6 +82,7 @@ import { ProfileComponent } from './profile/profile.component';
     StudentApplicationComponent,
     JobCardComponent,
     ProfileComponent,
+    StripePaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,6 +94,7 @@ import { ProfileComponent } from './profile/profile.component';
     OverlayPanelModule,
     HttpClientModule,
     SignaturePadModule,
+    NgxStripeModule.forRoot('pk_test_51JfKFyBeAmD37V0JnILV6Odkv2mBUMoJh2aI1kzafvYMmReXvEiHd3q2lac0qAlXjzVW9k6WkZ6vEFVIQMTKAHEA00d7hZAkzT'),
     ToastrModule.forRoot(
       {
         timeOut: 10000,

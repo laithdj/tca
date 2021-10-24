@@ -16,6 +16,7 @@ import { ListpartnershipComponent } from './listpartnership/listpartnership.comp
 import { MainComponent } from './main/main.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RecruitmentComponent } from './recruitment/recruitment.component';
+import { StripePaymentComponent } from './stripe-payment/stripe-payment.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { TutoringComponent } from './tutoring/tutoring.component';
 import { UndergraduatesComponent } from './undergraduates/undergraduates.component';
@@ -58,6 +59,8 @@ const appRoutes: Routes = [
   { path: 'victoria', component: VictoriaComponent },
   { path: 'waikato', component: WaikatoComponent },
   { path: 'student-application', component: StudentApplicationComponent },
+  { path: 'stripe-payment', component: StripePaymentComponent },
+
 
 
 ];

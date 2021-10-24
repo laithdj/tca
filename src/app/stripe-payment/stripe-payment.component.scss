@@ -1,0 +1,65 @@
+.form-submit-button-simple_blue {
+  border-radius: 0.5 em;
+  padding: 8 px 18 px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0px #003ea1;
+  border: 1 px solid #0d4aab;
+  box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  background: #1e62d0;
+  background: linear-gradient(to top, #3d94f6 0%, #1e62d0 100%);
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.ml-145 {
+    margin-left: -145px;
+  }
+  .ml-336 {
+    margin-left: -336px;
+  }
+  
+  .width-96 {
+    width: 96%;
+  }
+  
+  .signature-container {
+    border-style: dashed;
+    border-width: 1px;
+    margin-bottom: 20px;
+    background-color: lightgray;
+  }
+  
+  .buttons {
+    float: right;
+    button {
+      margin-right: 10px;
+      padding: 2px;
+      padding-left: 5px;
+      padding-right: 5px;
+      background-color: lightgray;
+  
+      border-radius: 5px;
+    }
+  }
+  
+  .signature-image{
+      border: 2px solid black;
+      margin-top: 70px;
+  }
+  @media print {
+      body * {
+        visibility: hidden;
+      }
+      .section-to-print, .section-to-print * {
+        visibility: visible;
+      }
+      // .section-to-print {
+      //   position: absolute;
+      //   left: 0;
+      //   top: 0;
+      // }
+    }
+    
