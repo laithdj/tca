@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { GraduatesComponent } from './graduates/graduates.component';
@@ -35,6 +35,16 @@ import { environment as env } from '../environments/environment';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
+import { SharedModule } from './shared/shared/shared.module';
+import { JobCardComponent } from './job-search/job-cards/job-card/job-card.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ErrorInterceptor } from './interceptors';
+import {DialogModule} from 'primeng/dialog';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -67,18 +77,43 @@ import { StudentApplicationComponent } from './student-application/student-appli
     VictoriaComponent,
     WaikatoComponent,
     JobSearchComponent,
-    StudentApplicationComponent  ],
+    StudentApplicationComponent,
+    JobCardComponent,
+    ProfileComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    DialogModule,
+    OverlayPanelModule,
+    HttpClientModule,
+    SignaturePadModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 10000,
+        positionClass: 'toast-top-right',
+        preventDuplicates: true,
+      }
+    ),
     AuthModule.forRoot({
-      ...env.auth,
+      domain: "laithdj.auth0.com",
+      clientId: "SFw2ARsxLPiDYAmoHaZAJanyyinhch4G",
+      redirectUrl: window.location.origin
     })
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthHttpInterceptor,
+      multi: true,
+    },
+
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
       multi: true,
     },
   ],

@@ -14,6 +14,7 @@ import { JobSearchComponent } from './job-search/job-search.component';
 import { JobvacancyComponent } from './jobvacancy/jobvacancy.component';
 import { ListpartnershipComponent } from './listpartnership/listpartnership.component';
 import { MainComponent } from './main/main.component';
+import { ProfileComponent } from './profile/profile.component';
 import { RecruitmentComponent } from './recruitment/recruitment.component';
 import { StudentApplicationComponent } from './student-application/student-application.component';
 import { TutoringComponent } from './tutoring/tutoring.component';
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
   { path: 'career-advice', component: CareeradviceComponent },
   { path: 'becomepartner', component: BecomepartnerComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'aucklanduni', component: AucklanduniComponent },
   { path: 'aut', component: AutComponent },

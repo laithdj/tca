@@ -1,0 +1,113 @@
+<section class="hero-wrap hero-wrap-2" style="background-image: url('../../assets/bg_1.jpg');"
+    data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container1">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+            <div class="profile-page">
+                <div class="wrapper">
+                    <div class="page-header page-header-small" filter-color="green">
+                        <div class="page-header-image" data-parallax="true"
+                            style="background-image: url('images/cc-bg-1.jpg')"></div>
+                        <div class="container">
+                            <form [formGroup]="profileForm"  (ngSubmit)="onSubmit()">
+                                <div class="content-center color-white">
+                                    <!-- picture -->
+                                    <div class="cc-profile-image display-flex">
+                                        <img [src]="imageURL" alt="Image" (click)="fileInput.click()"/>
+                                        <input #fileInput class="hide" type='file' accept="image/*" (change)="onimageChange($event)" />
+                                    </div>
+
+                                    <!-- Name & Email -->
+                                 
+                                    <div *ngIf="auth.user$ | async as user">
+                                        <div class="h2 title">{{user.family_name}}</div>
+                                        <label class="form-label form-label-top form-label-auto color-white"
+                                        id="label_17" for="input_17">Email</label>
+                                        <span class="form-sub-label-container" style="vertical-align:top">
+                                            <input readonly type="email" id="input_12"
+                                                name="q12_emailAddress" class="form-textbox validate[Email]"
+                                                data-defaultvalue="user.email" style="width:310px" size="310"
+                                                value={{user.email}} placeholder="ex: myname@example.com"
+                                                data-component="email" aria-labelledby="label_12 sublabel_input_12" />
+                                        </span>
+                                    </div>
+
+                                    <!-- Phone -->
+                                    <label class="form-label form-label-top form-label-auto color-white"
+                                    id="label_17" for="input_17">Phone</label>
+                                    <span class="form-sub-label-container" style="vertical-align:top">
+                                        <input formControlName="phone" type="email" id="input_12"
+                                            name="q12_emailAddress" class="form-textbox validate[Email]"
+                                            data-defaultvalue="" style="width:310px" size="310" value=""
+                                            placeholder="Phone #" data-component="email"
+                                            aria-labelledby="label_12 sublabel_input_12" />
+                                    </span>
+                                    <!-- Resume -->
+                                    <div>
+                                        <label class="form-label form-label-top form-label-auto color-white"
+                                            id="label_17" for="input_17"> Update
+                                            Resume </label>
+                                        <div id="cid_17" class="form-input-wide" data-layout="full">
+                                            <div class="jfQuestion-fields" data-wrapper-react="true">
+                                                <div class="jfField isFilled">
+                                                    <div class="jfUpload-wrapper">
+                                                        <div class="jfUpload-container">
+                                                            <div class="jfUpload-button-container">
+                                                                <div class="jfUpload-button" aria-hidden="true"
+                                                                    tabindex="0" style="display:none" data-version="v2">
+                                                                    Browse Files
+                                                                    <div class="jfUpload-heading forDesktop">
+                                                                        Drag and drop files here
+                                                                    </div>
+                                                                    <div class="jfUpload-heading forMobile">
+                                                                        Choose a file
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="jfUpload-files-container">
+                                                            <input (change)="onFileChange($event)" type="file"
+                                                                id="input_17" name="q17_uploadYour[]" multiple=""
+                                                                class="form-upload-multiple" data-imagevalidate="yes"
+                                                                data-file-accept="pdf, doc, docx"
+                                                                data-file-maxsize="10854" data-file-minsize="0"
+                                                                data-file-limit="0" data-component="fileupload"
+                                                                aria-label="Browse Files" />
+                                                        </div>
+                                                        <!-- <div class="form-error-message width-44" role="alert">
+                                                            <img src="../../assets/icons/exclamation-octagon.png">
+                                                            This field is required.
+                                                            <div class="form-error-arrow">
+                                                                <div class="form-error-arrow-inner">
+
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                    </div>
+                                                    <div data-wrapper-react="true">
+                                                    </div>
+                                                </div>
+                                                <span style="display:none" class="cancelText">
+                                                    Cancel
+                                                </span>
+                                                <span style="display:none" class="ofText">
+                                                    of
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="save-button">
+                                        <a (click)="onSubmit()" class="btn btn-u rounded primary" >
+                                            Save
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

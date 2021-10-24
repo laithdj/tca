@@ -1,0 +1,30 @@
+.margin-bottom-5{
+    margin-bottom: 5px;
+}
+.display-flex{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card{
+    background: white;
+    width: 51%;
+    align-items: center;
+    margin-left: 24%;
+    padding: 15px;
+    display: block;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.flex-1{
+    flex: 1;
+}
+.pl-10{
+    padding-left: 10px;
+}
+.width-44{
+    width: 44%;
+}

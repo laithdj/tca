@@ -1,0 +1,49 @@
+.ml-145 {
+  margin-left: -145px;
+}
+.ml-336 {
+  margin-left: -336px;
+}
+
+.width-96 {
+  width: 96%;
+}
+
+.signature-container {
+  border-style: dashed;
+  border-width: 1px;
+  margin-bottom: 20px;
+  background-color: lightgray;
+}
+
+.buttons {
+  float: right;
+  button {
+    margin-right: 10px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: lightgray;
+
+    border-radius: 5px;
+  }
+}
+
+.signature-image{
+    border: 2px solid black;
+    margin-top: 70px;
+}
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .section-to-print, .section-to-print * {
+      visibility: visible;
+    }
+    // .section-to-print {
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    // }
+  }
+  

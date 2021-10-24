@@ -1,79 +1,83 @@
 <nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container-fluid px-md-5">
-      <a class="navbar-brand" href="index.html">THE <span>Colloborative</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
+        <a class="navbar-brand" href="index.html"><img src='./../../assets/thecollaborative-01.png' width="200" height="100"/> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+            aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="../index.html" class="nav-link">Home</a></li>
-          <li class="nav-item dropdown" ><a href="" class="nav-link">Students</a>
-            <div class="dropdown-content">
-                    <a [routerLink]="['undergraduates']">Undergraduates</a>
-                    <a [routerLink]="['graduates']">Graduates</a>
-                    <a [routerLink]="['visa']">Visas and Permits</a>
-                    <a [routerLink]="['english']">English programs</a>
-                    <a [routerLink]="['foundation']">Foundation programs</a>
-                     
-                    <a [routerLink]="['tutoring']">Tutoring</a>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown"><a href="" class="nav-link">Students</a>
+                    <div class="dropdown-content">
+                        <a [routerLink]="['undergraduates']">Undergraduates</a>
+                        <a [routerLink]="['graduates']">Graduates</a>
+                        <a [routerLink]="['visa']">Visas and Permits</a>
+                        <a [routerLink]="['english']">English programs</a>
+                        <a [routerLink]="['foundation']">Foundation programs</a>
 
-                    <a [routerLink]="['events']">Events and Functions</a>
-              </div>
-        </li>
-        
-        <li class="nav-item dropdown" ><a href="" class="nav-link">Teacher Recruitment</a>
-            <div class="dropdown-content">
-                    <a [routerLink]="['jobvacancy']">Job Vacancies</a>
-                    <a [routerLink]="['career-advice']">Career Advice</a>
-                    <a href="#">Connect with other
-                        teachers</a>
-                    <a href="#">Chat platform/forum
-                        platform</a>
-                    <a href="#">Create profile</a>
-              </div>
-        </li>
-        <li class="nav-item dropdown" ><a href="" class="nav-link">Partnership</a>
-            <div class="dropdown-content">
-                    <a [routerLink]="['becomepartner']">How to become
-                        our partner</a>
-                    <a [routerLink]="['recruitment']">Recruitment
-                        solutions</a>
-                    <a [routerLink]="['listpartnership']">List of our
-                        partnerships</a>
+                        <a [routerLink]="['tutoring']">Tutoring</a>
 
-              </div>
-        </li>
-        <li class="nav-item dropdown" ><a href="" class="nav-link">About us</a>
-            <div class="dropdown-content">
-                    <a [routerLink]="['aboutus']">Description
-                        of who we
-                        are?</a>
-                    <a href="#">List of our
-                        partnerships</a>
-              </div>
-        </li>
-        <li class="nav-item dropdown" ><a href="" class="nav-link">Contact us</a>
-            <div class="dropdown-content">
-                    <a href="#">Location
-                        map</a>
-                    <a href="#">Phone
-                        numbers</a>
+                        <a [routerLink]="['events']">Events and Functions</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown"><a href="" class="nav-link">Teacher Recruitment</a>
+                    <div class="dropdown-content">
+                        <a [routerLink]="['jobvacancy']">Job Vacancies</a>
+                        <a [routerLink]="['career-advice']">Career Advice</a>
+                        <a href="#">Connect with other
+                            teachers</a>
+                        <a href="#">Chat platform/forum
+                            platform</a>
+                        <a (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Create profile</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown"><a href="" class="nav-link">Partnership</a>
+                    <div class="dropdown-content">
+                        <a [routerLink]="['becomepartner']">How to become
+                            our partner</a>
+                        <a [routerLink]="['recruitment']">Recruitment
+                            solutions</a>
+                        <a [routerLink]="['listpartnership']">List of our
+                            partnerships</a>
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown"><a href="" class="nav-link">About us</a>
+                    <div class="dropdown-content">
+                        <a [routerLink]="['aboutus']">Description
+                            of who we
+                            are?</a>
+                        <a href="#">List of our
+                            partnerships</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown"><a href="" class="nav-link">Contact us</a>
+                    <div class="dropdown-content">
+                        <a href="#">Location
+                            map</a>
+                        <a href="#">Phone
+                            numbers</a>
                         <a href="#">Our emails
                             with names
                             and titles</a>
-              </div>
-        </li>
-        <li class="nav-item dropdown" ><a href="" class="nav-link">Account</a>
-            <div class="dropdown-content" style="height: 100px;min-width: 100px;">
-                    <a  (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Sign In</a>
-                    <a  [routerLink]="['account']" *ngIf="(auth.isAuthenticated$ | async) === true">Account</a>
-                    <a  (click)="loginWithRedirect()" [routerLink]="['account']" *ngIf="(auth.isAuthenticated$ | async) === true">Sign Out</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown"><a href="" class="nav-link">Account</a>
+                    <div class="dropdown-content" style="height: auto;min-width: 100px;">
+                        <a (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Sign In</a>
+                        <a *ngIf="(auth.isAuthenticated$ | async) === true" [routerLink]="['profile']">Profile</a>
+
+                        <!-- <a [routerLink]="['account']" *ngIf="(auth.isAuthenticated$ | async) === true">Account</a> -->
+                        <a (click)="logout()" [routerLink]="['account']"
+                            *ngIf="(auth.isAuthenticated$ | async) === true">Sign Out</a>
 
 
-              </div>
-        </li>
-        </ul>
-      </div>
-      </div>
-  </nav>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
