@@ -50,7 +50,7 @@
                                         <div id="cid_17" class="form-input-wide" data-layout="full">
                                             <div class="jfQuestion-fields" data-wrapper-react="true">
                                                 <div class="jfField isFilled">
-                                                    <div class="jfUpload-wrapper">
+                                                    <div class="jfUpload-wrapper tariq">
                                                         <div class="jfUpload-container">
                                                             <div class="jfUpload-button-container">
                                                                 <div class="jfUpload-button" aria-hidden="true"
@@ -69,7 +69,8 @@
                                                             <input (change)="onFileChange($event)" type="file"
                                                                 id="input_17" name="q17_uploadYour[]" multiple=""
                                                                 class="form-upload-multiple" data-imagevalidate="yes"
-                                                                data-file-accept="pdf, doc, docx"
+                                                                data-file-accept="pdf"
+                                                                accept="application/pdf"
                                                                 data-file-maxsize="10854" data-file-minsize="0"
                                                                 data-file-limit="0" data-component="fileupload"
                                                                 aria-label="Browse Files" />
@@ -83,6 +84,17 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
+
+                                                        <!-- download resume -->
+                                                        
+                                                        <a [href]="resumeUrl" target="_blank" class="btn btn-border download" download="fileName.pdf">
+                                                            
+                                                           Resume 
+                                                            <img src="../../assets/download.png" class="download-icon" alt="">
+
+                                                        
+                                                        </a>
+                                                        <!--  -->
                                                     </div>
                                                     <div data-wrapper-react="true">
                                                     </div>
