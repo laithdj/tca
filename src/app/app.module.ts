@@ -94,7 +94,7 @@ import { NgxStripeModule } from 'ngx-stripe';
     OverlayPanelModule,
     HttpClientModule,
     SignaturePadModule,
-    NgxStripeModule.forRoot('pk_test_51JfKFyBeAmD37V0JnILV6Odkv2mBUMoJh2aI1kzafvYMmReXvEiHd3q2lac0qAlXjzVW9k6WkZ6vEFVIQMTKAHEA00d7hZAkzT'),
+    NgxStripeModule.forRoot('pk_test_51Jo3mxBbyra8PC8GIc4MywzBDCnzOT7WWRseEUt8sFOJEvDbxpwPlbgMYXrymXvkQJvpwyeMONZWmvBqTQYkzDUw00kYyvqANO'),
     ToastrModule.forRoot(
       {
         timeOut: 10000,

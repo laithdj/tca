@@ -17,7 +17,7 @@ export class StripePaymentComponent implements OnInit {
   countries: any;
 
   @ViewChild(StripeCardComponent) card!: StripeCardComponent;
- 
+
   cardOptions: ElementOptions = {
     style: {
       base: {
@@ -33,7 +33,7 @@ export class StripePaymentComponent implements OnInit {
       }
     }
   };
- 
+
   elementsOptions: ElementsOptions = {
     locale: 'en'
   };
@@ -51,14 +51,16 @@ export class StripePaymentComponent implements OnInit {
   }
 
   initForm() {
-    
+
     this.paymentForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required]],
       name: ['', [Validators.required]],
-      studentAdvisorConsultation: ['', [Validators.required]],
-      consultationPlusUniversityApplication: ['', [Validators.required]],
+      studentAdvisorConsultation: [''],
+      consultationPlusUniversityApplication: [''],
       universityApplication: '',
+      amount: '',
+
 
       homeAddress: this.fb.group({
         streetAddressLine1: ['', [Validators.required, Validators.minLength(3)]],
@@ -71,31 +73,48 @@ export class StripePaymentComponent implements OnInit {
     })
   }
 
-  onSubmit(){
+  getPrice() {
+    let price = 0;
+    if (this.paymentForm.get("studentAdvisorConsultation")?.value) {
+      price += 300;
+    }
+    if (this.paymentForm.get("consultationPlusUniversityApplication")?.value) {
+      price += 450;
+    }
+    if (this.paymentForm.get("universityApplication")?.value) {
+      price += 350;
+    }
+    return price;
+  }
+
+  onSubmit() {
     console.log(this.paymentForm.value);
     // if(this.paymentForm.invalid){
     //   this.paymentForm.markAllAsTouched();
     // }
 
-    const details: any = this.paymentForm.value;
+    this.paymentForm.get("amount")?.patchValue(this.getPrice())
     this.stripeService
-    .createToken(this.card.getCard(), details )
-    .subscribe(result => {
-      console.log(result);
-      // this.httpService.post("http://localhost:5000/stripe/payment", result).subscribe(res=>{
-      //   console.log(res);
-      // }, error=>{
-      //   console.log(error);
-      // })
-      if (result.token) {
-     
-        // Use the token to create a charge or a customer
-        // https://stripe.com/docs/charges
-        console.log(result.token.id);
-      } else if (result.error) {
-        // Error creating the token
-        console.log(result.error.message);
-      }
-    });
+      .createToken(this.card.getCard(), this.paymentForm.value)
+      .subscribe(result => {
+        console.log(result);
+        this.httpService.post("http://localhost:3000/api/v1/stripe/payment", result).subscribe(res=>{
+          console.log(res);
+        }, error=>{
+          console.log(error);
+        })
+        if (result.token) {
+
+          // Use the token to create a charge or a customer
+          // https://stripe.com/docs/charges
+          console.log(result.token.id);
+        } else if (result.error) {
+          // Error creating the token
+          console.log(result.error.message);
+        }
+      });
   }
+
+
+
 }
