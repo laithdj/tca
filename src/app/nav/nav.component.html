@@ -14,7 +14,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active"><a href="../index.html" class="nav-link">Home</a></li>
                 <li class="nav-item dropdown"><a href="" class="nav-link">Students</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" style='height: auto;'>
                         <a [routerLink]="['undergraduates']">Undergraduates</a>
                         <a [routerLink]="['graduates']">Graduates</a>
                         <a [routerLink]="['visa']">Visas and Permits</a>
@@ -28,46 +28,33 @@
                 </li>
 
                 <li class="nav-item dropdown"><a href="" class="nav-link">Teacher Recruitment</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" style='height: auto;'>
                         <a [routerLink]="['jobvacancy']">Job Vacancies</a>
                         <a [routerLink]="['career-advice']">Career Advice</a>
                         <a href="#">Connect with other
                             teachers</a>
-                        <a href="#">Chat platform/forum
-                            platform</a>
+
                         <a (click)="loginWithRedirect()" *ngIf="(auth.isAuthenticated$ | async) === false">Create profile</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown"><a href="" class="nav-link">Partnership</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" style='height: auto;'>
                         <a [routerLink]="['becomepartner']">How to become
                             our partner</a>
                         <a [routerLink]="['recruitment']">Recruitment
                             solutions</a>
-                        <a [routerLink]="['listpartnership']">List of our
-                            partnerships</a>
 
                     </div>
                 </li>
                 <li class="nav-item dropdown"><a href="" class="nav-link">About us</a>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content" style='height: auto;'>
                         <a [routerLink]="['aboutus']">Description
                             of who we
                             are?</a>
-                        <a href="#">List of our
-                            partnerships</a>
+
                     </div>
                 </li>
                 <li class="nav-item dropdown"><a href="" class="nav-link">Contact us</a>
-                    <div class="dropdown-content">
-                        <a href="#">Location
-                            map</a>
-                        <a href="#">Phone
-                            numbers</a>
-                        <a href="#">Our emails
-                            with names
-                            and titles</a>
-                    </div>
                 </li>
                 <li class="nav-item dropdown"><a href="" class="nav-link">Account</a>
                     <div class="dropdown-content" style="height: auto;min-width: 100px;">
