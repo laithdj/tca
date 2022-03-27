@@ -202,7 +202,7 @@ export class StudentApplicationComponent implements OnInit {
       return;
     }
     this.getFormData();
-    this.spinner.show();
+  //  this.spinner.show();
     if (this.signatureImg) {
       const file = this.DataURIToBlob(this.signatureImg)
       this.formData.append("signature", file, "signature.png");
@@ -255,6 +255,7 @@ export class StudentApplicationComponent implements OnInit {
         this.formData.append("studentApplication", this.DataURIToBlob(this.studentApplication), "studentApplication.pdf");
         // this.formData.forEach(el=>console.log(el))
         this.sendReq();
+        this.router.navigate(['../stripe-payment']);
       }
 
     });

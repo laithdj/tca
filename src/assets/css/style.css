@@ -5342,7 +5342,7 @@ button.bg-light:focus {
   background-color: #dae0e5 !important; }
 
 .bg-dark {
-  background-color: #343a40 !important; }
+  background-color: white !important; }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
@@ -8081,7 +8081,6 @@ h1, h2, h3, h4, h5,
   color: #67bde4 !important; }
 
 .ftco-navbar-light {
-  background: transparent !important;
   position: absolute;
   top: 20px;
   left: 0;
@@ -8106,7 +8105,7 @@ h1, h2, h3, h4, h5,
     padding-bottom: .9rem;
     padding-left: 20px;
     padding-right: 20px;
-    color: #fff;
+    color: grey;
     font-weight: 400;
     opacity: 1 !important; }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {

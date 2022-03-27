@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AucklanduniComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
+   }
 
   ngOnInit(): void {
+
   }
 
 }
